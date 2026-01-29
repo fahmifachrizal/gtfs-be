@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch src/server.js",
-    "db:reset": "npx prisma migrate reset",
+    "db:reset": "npx prisma migrate reset --force --schema=./prisma/schema.prisma && npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
-    "db:generate": "npx prisma generate"
+    "db:push": "npx prisma db push"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/fahmifachrizal/gtfs-be#readme",
   "dependencies": {
+    "@prisma/adapter-pg": "^7.3.0",
     "@prisma/client": "^7.3.0",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
@@ -32,6 +33,7 @@
     "express-rate-limit": "^8.2.1",
     "jsonwebtoken": "^9.0.3",
     "morgan": "^1.10.1",
+    "pg": "^8.17.2",
     "prisma": "^7"
   }
 }
