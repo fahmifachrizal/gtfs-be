@@ -91,6 +91,7 @@ model UserProject {
   levels         Level[]
   pathways       Pathway[]
   feedInfo       FeedInfo[]
+  routeStops     RouteStop[]
 
   @@index([owner_id])
   @@index([created_at])
@@ -237,6 +238,7 @@ model Stop {
   parentStop  Stop?       @relation("ParentChild", fields: [parent_station], references: [stop_id])
   childStops  Stop[]      @relation("ParentChild")
   level       Level?      @relation(fields: [level_id], references: [level_id])
+  routeStops  RouteStop[]
 
   @@unique([stop_id, project_id])
   @@index([stop_name])
@@ -269,14 +271,35 @@ model Route {
   updated_at DateTime @updatedAt
 
   // Relations
-  project   UserProject @relation(fields: [project_id], references: [id], onDelete: Cascade)
-  agency    Agency?     @relation(fields: [agency_id], references: [agency_id])
-  trips     Trip[]
-  fareRules FareRule[]
+  project    UserProject @relation(fields: [project_id], references: [id], onDelete: Cascade)
+  agency     Agency?     @relation(fields: [agency_id], references: [agency_id])
+  trips      Trip[]
+  fareRules  FareRule[]
+  routeStops RouteStop[]
 
   @@unique([route_id, project_id])
   @@index([route_type])
   @@index([agency_id])
+  @@index([project_id])
+}
+
+model RouteStop {
+  id            String   @id @default(uuid())
+  route_id      String
+  stop_id       String
+  stop_sequence Int
+  project_id    String
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+
+  project UserProject @relation(fields: [project_id], references: [id], onDelete: Cascade)
+  route   Route       @relation(fields: [route_id], references: [route_id], onDelete: Cascade)
+  stop    Stop        @relation(fields: [stop_id], references: [stop_id])
+
+  direction_id Int @default(0) // 0: Outbound, 1: Inbound
+
+  @@unique([route_id, direction_id, stop_sequence, project_id])
+  @@index([route_id])
   @@index([project_id])
 }
 

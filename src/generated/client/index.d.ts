@@ -64,6 +64,11 @@ export type Stop = $Result.DefaultSelection<Prisma.$StopPayload>
  */
 export type Route = $Result.DefaultSelection<Prisma.$RoutePayload>
 /**
+ * Model RouteStop
+ * 
+ */
+export type RouteStop = $Result.DefaultSelection<Prisma.$RouteStopPayload>
+/**
  * Model Trip
  * 
  */
@@ -358,6 +363,16 @@ export class PrismaClient<
     * ```
     */
   get route(): Prisma.RouteDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.routeStop`: Exposes CRUD operations for the **RouteStop** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RouteStops
+    * const routeStops = await prisma.routeStop.findMany()
+    * ```
+    */
+  get routeStop(): Prisma.RouteStopDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.trip`: Exposes CRUD operations for the **Trip** model.
@@ -922,6 +937,7 @@ export namespace Prisma {
     Agency: 'Agency',
     Stop: 'Stop',
     Route: 'Route',
+    RouteStop: 'RouteStop',
     Trip: 'Trip',
     StopTime: 'StopTime',
     Calendar: 'Calendar',
@@ -949,7 +965,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "userPreferences" | "userProject" | "projectShare" | "projectInvite" | "passwordReset" | "userSession" | "agency" | "stop" | "route" | "trip" | "stopTime" | "calendar" | "calendarDate" | "fareAttribute" | "fareRule" | "shape" | "transfer" | "frequency" | "level" | "pathway" | "feedInfo"
+      modelProps: "user" | "userPreferences" | "userProject" | "projectShare" | "projectInvite" | "passwordReset" | "userSession" | "agency" | "stop" | "route" | "routeStop" | "trip" | "stopTime" | "calendar" | "calendarDate" | "fareAttribute" | "fareRule" | "shape" | "transfer" | "frequency" | "level" | "pathway" | "feedInfo"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1690,6 +1706,80 @@ export namespace Prisma {
           count: {
             args: Prisma.RouteCountArgs<ExtArgs>
             result: $Utils.Optional<RouteCountAggregateOutputType> | number
+          }
+        }
+      }
+      RouteStop: {
+        payload: Prisma.$RouteStopPayload<ExtArgs>
+        fields: Prisma.RouteStopFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RouteStopFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RouteStopFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>
+          }
+          findFirst: {
+            args: Prisma.RouteStopFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RouteStopFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>
+          }
+          findMany: {
+            args: Prisma.RouteStopFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>[]
+          }
+          create: {
+            args: Prisma.RouteStopCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>
+          }
+          createMany: {
+            args: Prisma.RouteStopCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RouteStopCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>[]
+          }
+          delete: {
+            args: Prisma.RouteStopDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>
+          }
+          update: {
+            args: Prisma.RouteStopUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>
+          }
+          deleteMany: {
+            args: Prisma.RouteStopDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RouteStopUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RouteStopUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>[]
+          }
+          upsert: {
+            args: Prisma.RouteStopUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RouteStopPayload>
+          }
+          aggregate: {
+            args: Prisma.RouteStopAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRouteStop>
+          }
+          groupBy: {
+            args: Prisma.RouteStopGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RouteStopGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RouteStopCountArgs<ExtArgs>
+            result: $Utils.Optional<RouteStopCountAggregateOutputType> | number
           }
         }
       }
@@ -2699,6 +2789,7 @@ export namespace Prisma {
     agency?: AgencyOmit
     stop?: StopOmit
     route?: RouteOmit
+    routeStop?: RouteStopOmit
     trip?: TripOmit
     stopTime?: StopTimeOmit
     calendar?: CalendarOmit
@@ -2875,6 +2966,7 @@ export namespace Prisma {
     levels: number
     pathways: number
     feedInfo: number
+    routeStops: number
   }
 
   export type UserProjectCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2895,6 +2987,7 @@ export namespace Prisma {
     levels?: boolean | UserProjectCountOutputTypeCountLevelsArgs
     pathways?: boolean | UserProjectCountOutputTypeCountPathwaysArgs
     feedInfo?: boolean | UserProjectCountOutputTypeCountFeedInfoArgs
+    routeStops?: boolean | UserProjectCountOutputTypeCountRouteStopsArgs
   }
 
   // Custom InputTypes
@@ -3027,6 +3120,13 @@ export namespace Prisma {
     where?: FeedInfoWhereInput
   }
 
+  /**
+   * UserProjectCountOutputType without action
+   */
+  export type UserProjectCountOutputTypeCountRouteStopsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RouteStopWhereInput
+  }
+
 
   /**
    * Count Type AgencyCountOutputType
@@ -3079,6 +3179,7 @@ export namespace Prisma {
     pathways: number
     pathwaysTo: number
     childStops: number
+    routeStops: number
   }
 
   export type StopCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3088,6 +3189,7 @@ export namespace Prisma {
     pathways?: boolean | StopCountOutputTypeCountPathwaysArgs
     pathwaysTo?: boolean | StopCountOutputTypeCountPathwaysToArgs
     childStops?: boolean | StopCountOutputTypeCountChildStopsArgs
+    routeStops?: boolean | StopCountOutputTypeCountRouteStopsArgs
   }
 
   // Custom InputTypes
@@ -3143,6 +3245,13 @@ export namespace Prisma {
     where?: StopWhereInput
   }
 
+  /**
+   * StopCountOutputType without action
+   */
+  export type StopCountOutputTypeCountRouteStopsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RouteStopWhereInput
+  }
+
 
   /**
    * Count Type RouteCountOutputType
@@ -3151,11 +3260,13 @@ export namespace Prisma {
   export type RouteCountOutputType = {
     trips: number
     fareRules: number
+    routeStops: number
   }
 
   export type RouteCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     trips?: boolean | RouteCountOutputTypeCountTripsArgs
     fareRules?: boolean | RouteCountOutputTypeCountFareRulesArgs
+    routeStops?: boolean | RouteCountOutputTypeCountRouteStopsArgs
   }
 
   // Custom InputTypes
@@ -3181,6 +3292,13 @@ export namespace Prisma {
    */
   export type RouteCountOutputTypeCountFareRulesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: FareRuleWhereInput
+  }
+
+  /**
+   * RouteCountOutputType without action
+   */
+  export type RouteCountOutputTypeCountRouteStopsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RouteStopWhereInput
   }
 
 
@@ -6019,6 +6137,7 @@ export namespace Prisma {
     levels?: boolean | UserProject$levelsArgs<ExtArgs>
     pathways?: boolean | UserProject$pathwaysArgs<ExtArgs>
     feedInfo?: boolean | UserProject$feedInfoArgs<ExtArgs>
+    routeStops?: boolean | UserProject$routeStopsArgs<ExtArgs>
     _count?: boolean | UserProjectCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userProject"]>
 
@@ -6074,6 +6193,7 @@ export namespace Prisma {
     levels?: boolean | UserProject$levelsArgs<ExtArgs>
     pathways?: boolean | UserProject$pathwaysArgs<ExtArgs>
     feedInfo?: boolean | UserProject$feedInfoArgs<ExtArgs>
+    routeStops?: boolean | UserProject$routeStopsArgs<ExtArgs>
     _count?: boolean | UserProjectCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserProjectIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6104,6 +6224,7 @@ export namespace Prisma {
       levels: Prisma.$LevelPayload<ExtArgs>[]
       pathways: Prisma.$PathwayPayload<ExtArgs>[]
       feedInfo: Prisma.$FeedInfoPayload<ExtArgs>[]
+      routeStops: Prisma.$RouteStopPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -6525,6 +6646,7 @@ export namespace Prisma {
     levels<T extends UserProject$levelsArgs<ExtArgs> = {}>(args?: Subset<T, UserProject$levelsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LevelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     pathways<T extends UserProject$pathwaysArgs<ExtArgs> = {}>(args?: Subset<T, UserProject$pathwaysArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PathwayPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     feedInfo<T extends UserProject$feedInfoArgs<ExtArgs> = {}>(args?: Subset<T, UserProject$feedInfoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FeedInfoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    routeStops<T extends UserProject$routeStopsArgs<ExtArgs> = {}>(args?: Subset<T, UserProject$routeStopsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -7362,6 +7484,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: FeedInfoScalarFieldEnum | FeedInfoScalarFieldEnum[]
+  }
+
+  /**
+   * UserProject.routeStops
+   */
+  export type UserProject$routeStopsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    where?: RouteStopWhereInput
+    orderBy?: RouteStopOrderByWithRelationInput | RouteStopOrderByWithRelationInput[]
+    cursor?: RouteStopWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RouteStopScalarFieldEnum | RouteStopScalarFieldEnum[]
   }
 
   /**
@@ -13344,6 +13490,7 @@ export namespace Prisma {
     parentStop?: boolean | Stop$parentStopArgs<ExtArgs>
     childStops?: boolean | Stop$childStopsArgs<ExtArgs>
     level?: boolean | Stop$levelArgs<ExtArgs>
+    routeStops?: boolean | Stop$routeStopsArgs<ExtArgs>
     _count?: boolean | StopCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["stop"]>
 
@@ -13430,6 +13577,7 @@ export namespace Prisma {
     parentStop?: boolean | Stop$parentStopArgs<ExtArgs>
     childStops?: boolean | Stop$childStopsArgs<ExtArgs>
     level?: boolean | Stop$levelArgs<ExtArgs>
+    routeStops?: boolean | Stop$routeStopsArgs<ExtArgs>
     _count?: boolean | StopCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type StopIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -13455,6 +13603,7 @@ export namespace Prisma {
       parentStop: Prisma.$StopPayload<ExtArgs> | null
       childStops: Prisma.$StopPayload<ExtArgs>[]
       level: Prisma.$LevelPayload<ExtArgs> | null
+      routeStops: Prisma.$RouteStopPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -13879,6 +14028,7 @@ export namespace Prisma {
     parentStop<T extends Stop$parentStopArgs<ExtArgs> = {}>(args?: Subset<T, Stop$parentStopArgs<ExtArgs>>): Prisma__StopClient<$Result.GetResult<Prisma.$StopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     childStops<T extends Stop$childStopsArgs<ExtArgs> = {}>(args?: Subset<T, Stop$childStopsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StopPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     level<T extends Stop$levelArgs<ExtArgs> = {}>(args?: Subset<T, Stop$levelArgs<ExtArgs>>): Prisma__LevelClient<$Result.GetResult<Prisma.$LevelPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    routeStops<T extends Stop$routeStopsArgs<ExtArgs> = {}>(args?: Subset<T, Stop$routeStopsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -14505,6 +14655,30 @@ export namespace Prisma {
   }
 
   /**
+   * Stop.routeStops
+   */
+  export type Stop$routeStopsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    where?: RouteStopWhereInput
+    orderBy?: RouteStopOrderByWithRelationInput | RouteStopOrderByWithRelationInput[]
+    cursor?: RouteStopWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RouteStopScalarFieldEnum | RouteStopScalarFieldEnum[]
+  }
+
+  /**
    * Stop without action
    */
   export type StopDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -14841,6 +15015,7 @@ export namespace Prisma {
     agency?: boolean | Route$agencyArgs<ExtArgs>
     trips?: boolean | Route$tripsArgs<ExtArgs>
     fareRules?: boolean | Route$fareRulesArgs<ExtArgs>
+    routeStops?: boolean | Route$routeStopsArgs<ExtArgs>
     _count?: boolean | RouteCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["route"]>
 
@@ -14917,6 +15092,7 @@ export namespace Prisma {
     agency?: boolean | Route$agencyArgs<ExtArgs>
     trips?: boolean | Route$tripsArgs<ExtArgs>
     fareRules?: boolean | Route$fareRulesArgs<ExtArgs>
+    routeStops?: boolean | Route$routeStopsArgs<ExtArgs>
     _count?: boolean | RouteCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type RouteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -14935,6 +15111,7 @@ export namespace Prisma {
       agency: Prisma.$AgencyPayload<ExtArgs> | null
       trips: Prisma.$TripPayload<ExtArgs>[]
       fareRules: Prisma.$FareRulePayload<ExtArgs>[]
+      routeStops: Prisma.$RouteStopPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -15353,6 +15530,7 @@ export namespace Prisma {
     agency<T extends Route$agencyArgs<ExtArgs> = {}>(args?: Subset<T, Route$agencyArgs<ExtArgs>>): Prisma__AgencyClient<$Result.GetResult<Prisma.$AgencyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     trips<T extends Route$tripsArgs<ExtArgs> = {}>(args?: Subset<T, Route$tripsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TripPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     fareRules<T extends Route$fareRulesArgs<ExtArgs> = {}>(args?: Subset<T, Route$fareRulesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FareRulePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    routeStops<T extends Route$routeStopsArgs<ExtArgs> = {}>(args?: Subset<T, Route$routeStopsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -15863,6 +16041,30 @@ export namespace Prisma {
   }
 
   /**
+   * Route.routeStops
+   */
+  export type Route$routeStopsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    where?: RouteStopWhereInput
+    orderBy?: RouteStopOrderByWithRelationInput | RouteStopOrderByWithRelationInput[]
+    cursor?: RouteStopWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RouteStopScalarFieldEnum | RouteStopScalarFieldEnum[]
+  }
+
+  /**
    * Route without action
    */
   export type RouteDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -15878,6 +16080,1157 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: RouteInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RouteStop
+   */
+
+  export type AggregateRouteStop = {
+    _count: RouteStopCountAggregateOutputType | null
+    _avg: RouteStopAvgAggregateOutputType | null
+    _sum: RouteStopSumAggregateOutputType | null
+    _min: RouteStopMinAggregateOutputType | null
+    _max: RouteStopMaxAggregateOutputType | null
+  }
+
+  export type RouteStopAvgAggregateOutputType = {
+    stop_sequence: number | null
+    direction_id: number | null
+  }
+
+  export type RouteStopSumAggregateOutputType = {
+    stop_sequence: number | null
+    direction_id: number | null
+  }
+
+  export type RouteStopMinAggregateOutputType = {
+    id: string | null
+    route_id: string | null
+    stop_id: string | null
+    stop_sequence: number | null
+    project_id: string | null
+    created_at: Date | null
+    updated_at: Date | null
+    direction_id: number | null
+  }
+
+  export type RouteStopMaxAggregateOutputType = {
+    id: string | null
+    route_id: string | null
+    stop_id: string | null
+    stop_sequence: number | null
+    project_id: string | null
+    created_at: Date | null
+    updated_at: Date | null
+    direction_id: number | null
+  }
+
+  export type RouteStopCountAggregateOutputType = {
+    id: number
+    route_id: number
+    stop_id: number
+    stop_sequence: number
+    project_id: number
+    created_at: number
+    updated_at: number
+    direction_id: number
+    _all: number
+  }
+
+
+  export type RouteStopAvgAggregateInputType = {
+    stop_sequence?: true
+    direction_id?: true
+  }
+
+  export type RouteStopSumAggregateInputType = {
+    stop_sequence?: true
+    direction_id?: true
+  }
+
+  export type RouteStopMinAggregateInputType = {
+    id?: true
+    route_id?: true
+    stop_id?: true
+    stop_sequence?: true
+    project_id?: true
+    created_at?: true
+    updated_at?: true
+    direction_id?: true
+  }
+
+  export type RouteStopMaxAggregateInputType = {
+    id?: true
+    route_id?: true
+    stop_id?: true
+    stop_sequence?: true
+    project_id?: true
+    created_at?: true
+    updated_at?: true
+    direction_id?: true
+  }
+
+  export type RouteStopCountAggregateInputType = {
+    id?: true
+    route_id?: true
+    stop_id?: true
+    stop_sequence?: true
+    project_id?: true
+    created_at?: true
+    updated_at?: true
+    direction_id?: true
+    _all?: true
+  }
+
+  export type RouteStopAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RouteStop to aggregate.
+     */
+    where?: RouteStopWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RouteStops to fetch.
+     */
+    orderBy?: RouteStopOrderByWithRelationInput | RouteStopOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RouteStopWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RouteStops from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RouteStops.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RouteStops
+    **/
+    _count?: true | RouteStopCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: RouteStopAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: RouteStopSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RouteStopMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RouteStopMaxAggregateInputType
+  }
+
+  export type GetRouteStopAggregateType<T extends RouteStopAggregateArgs> = {
+        [P in keyof T & keyof AggregateRouteStop]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRouteStop[P]>
+      : GetScalarType<T[P], AggregateRouteStop[P]>
+  }
+
+
+
+
+  export type RouteStopGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RouteStopWhereInput
+    orderBy?: RouteStopOrderByWithAggregationInput | RouteStopOrderByWithAggregationInput[]
+    by: RouteStopScalarFieldEnum[] | RouteStopScalarFieldEnum
+    having?: RouteStopScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RouteStopCountAggregateInputType | true
+    _avg?: RouteStopAvgAggregateInputType
+    _sum?: RouteStopSumAggregateInputType
+    _min?: RouteStopMinAggregateInputType
+    _max?: RouteStopMaxAggregateInputType
+  }
+
+  export type RouteStopGroupByOutputType = {
+    id: string
+    route_id: string
+    stop_id: string
+    stop_sequence: number
+    project_id: string
+    created_at: Date
+    updated_at: Date
+    direction_id: number
+    _count: RouteStopCountAggregateOutputType | null
+    _avg: RouteStopAvgAggregateOutputType | null
+    _sum: RouteStopSumAggregateOutputType | null
+    _min: RouteStopMinAggregateOutputType | null
+    _max: RouteStopMaxAggregateOutputType | null
+  }
+
+  type GetRouteStopGroupByPayload<T extends RouteStopGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RouteStopGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RouteStopGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RouteStopGroupByOutputType[P]>
+            : GetScalarType<T[P], RouteStopGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RouteStopSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    route_id?: boolean
+    stop_id?: boolean
+    stop_sequence?: boolean
+    project_id?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    direction_id?: boolean
+    project?: boolean | UserProjectDefaultArgs<ExtArgs>
+    route?: boolean | RouteDefaultArgs<ExtArgs>
+    stop?: boolean | StopDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["routeStop"]>
+
+  export type RouteStopSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    route_id?: boolean
+    stop_id?: boolean
+    stop_sequence?: boolean
+    project_id?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    direction_id?: boolean
+    project?: boolean | UserProjectDefaultArgs<ExtArgs>
+    route?: boolean | RouteDefaultArgs<ExtArgs>
+    stop?: boolean | StopDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["routeStop"]>
+
+  export type RouteStopSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    route_id?: boolean
+    stop_id?: boolean
+    stop_sequence?: boolean
+    project_id?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    direction_id?: boolean
+    project?: boolean | UserProjectDefaultArgs<ExtArgs>
+    route?: boolean | RouteDefaultArgs<ExtArgs>
+    stop?: boolean | StopDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["routeStop"]>
+
+  export type RouteStopSelectScalar = {
+    id?: boolean
+    route_id?: boolean
+    stop_id?: boolean
+    stop_sequence?: boolean
+    project_id?: boolean
+    created_at?: boolean
+    updated_at?: boolean
+    direction_id?: boolean
+  }
+
+  export type RouteStopOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "route_id" | "stop_id" | "stop_sequence" | "project_id" | "created_at" | "updated_at" | "direction_id", ExtArgs["result"]["routeStop"]>
+  export type RouteStopInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | UserProjectDefaultArgs<ExtArgs>
+    route?: boolean | RouteDefaultArgs<ExtArgs>
+    stop?: boolean | StopDefaultArgs<ExtArgs>
+  }
+  export type RouteStopIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | UserProjectDefaultArgs<ExtArgs>
+    route?: boolean | RouteDefaultArgs<ExtArgs>
+    stop?: boolean | StopDefaultArgs<ExtArgs>
+  }
+  export type RouteStopIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    project?: boolean | UserProjectDefaultArgs<ExtArgs>
+    route?: boolean | RouteDefaultArgs<ExtArgs>
+    stop?: boolean | StopDefaultArgs<ExtArgs>
+  }
+
+  export type $RouteStopPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RouteStop"
+    objects: {
+      project: Prisma.$UserProjectPayload<ExtArgs>
+      route: Prisma.$RoutePayload<ExtArgs>
+      stop: Prisma.$StopPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      route_id: string
+      stop_id: string
+      stop_sequence: number
+      project_id: string
+      created_at: Date
+      updated_at: Date
+      direction_id: number
+    }, ExtArgs["result"]["routeStop"]>
+    composites: {}
+  }
+
+  type RouteStopGetPayload<S extends boolean | null | undefined | RouteStopDefaultArgs> = $Result.GetResult<Prisma.$RouteStopPayload, S>
+
+  type RouteStopCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RouteStopFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RouteStopCountAggregateInputType | true
+    }
+
+  export interface RouteStopDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RouteStop'], meta: { name: 'RouteStop' } }
+    /**
+     * Find zero or one RouteStop that matches the filter.
+     * @param {RouteStopFindUniqueArgs} args - Arguments to find a RouteStop
+     * @example
+     * // Get one RouteStop
+     * const routeStop = await prisma.routeStop.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RouteStopFindUniqueArgs>(args: SelectSubset<T, RouteStopFindUniqueArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RouteStop that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RouteStopFindUniqueOrThrowArgs} args - Arguments to find a RouteStop
+     * @example
+     * // Get one RouteStop
+     * const routeStop = await prisma.routeStop.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RouteStopFindUniqueOrThrowArgs>(args: SelectSubset<T, RouteStopFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RouteStop that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteStopFindFirstArgs} args - Arguments to find a RouteStop
+     * @example
+     * // Get one RouteStop
+     * const routeStop = await prisma.routeStop.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RouteStopFindFirstArgs>(args?: SelectSubset<T, RouteStopFindFirstArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RouteStop that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteStopFindFirstOrThrowArgs} args - Arguments to find a RouteStop
+     * @example
+     * // Get one RouteStop
+     * const routeStop = await prisma.routeStop.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RouteStopFindFirstOrThrowArgs>(args?: SelectSubset<T, RouteStopFindFirstOrThrowArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RouteStops that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteStopFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RouteStops
+     * const routeStops = await prisma.routeStop.findMany()
+     * 
+     * // Get first 10 RouteStops
+     * const routeStops = await prisma.routeStop.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const routeStopWithIdOnly = await prisma.routeStop.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RouteStopFindManyArgs>(args?: SelectSubset<T, RouteStopFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RouteStop.
+     * @param {RouteStopCreateArgs} args - Arguments to create a RouteStop.
+     * @example
+     * // Create one RouteStop
+     * const RouteStop = await prisma.routeStop.create({
+     *   data: {
+     *     // ... data to create a RouteStop
+     *   }
+     * })
+     * 
+     */
+    create<T extends RouteStopCreateArgs>(args: SelectSubset<T, RouteStopCreateArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RouteStops.
+     * @param {RouteStopCreateManyArgs} args - Arguments to create many RouteStops.
+     * @example
+     * // Create many RouteStops
+     * const routeStop = await prisma.routeStop.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RouteStopCreateManyArgs>(args?: SelectSubset<T, RouteStopCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RouteStops and returns the data saved in the database.
+     * @param {RouteStopCreateManyAndReturnArgs} args - Arguments to create many RouteStops.
+     * @example
+     * // Create many RouteStops
+     * const routeStop = await prisma.routeStop.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RouteStops and only return the `id`
+     * const routeStopWithIdOnly = await prisma.routeStop.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RouteStopCreateManyAndReturnArgs>(args?: SelectSubset<T, RouteStopCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RouteStop.
+     * @param {RouteStopDeleteArgs} args - Arguments to delete one RouteStop.
+     * @example
+     * // Delete one RouteStop
+     * const RouteStop = await prisma.routeStop.delete({
+     *   where: {
+     *     // ... filter to delete one RouteStop
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RouteStopDeleteArgs>(args: SelectSubset<T, RouteStopDeleteArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RouteStop.
+     * @param {RouteStopUpdateArgs} args - Arguments to update one RouteStop.
+     * @example
+     * // Update one RouteStop
+     * const routeStop = await prisma.routeStop.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RouteStopUpdateArgs>(args: SelectSubset<T, RouteStopUpdateArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RouteStops.
+     * @param {RouteStopDeleteManyArgs} args - Arguments to filter RouteStops to delete.
+     * @example
+     * // Delete a few RouteStops
+     * const { count } = await prisma.routeStop.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RouteStopDeleteManyArgs>(args?: SelectSubset<T, RouteStopDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RouteStops.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteStopUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RouteStops
+     * const routeStop = await prisma.routeStop.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RouteStopUpdateManyArgs>(args: SelectSubset<T, RouteStopUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RouteStops and returns the data updated in the database.
+     * @param {RouteStopUpdateManyAndReturnArgs} args - Arguments to update many RouteStops.
+     * @example
+     * // Update many RouteStops
+     * const routeStop = await prisma.routeStop.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RouteStops and only return the `id`
+     * const routeStopWithIdOnly = await prisma.routeStop.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RouteStopUpdateManyAndReturnArgs>(args: SelectSubset<T, RouteStopUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RouteStop.
+     * @param {RouteStopUpsertArgs} args - Arguments to update or create a RouteStop.
+     * @example
+     * // Update or create a RouteStop
+     * const routeStop = await prisma.routeStop.upsert({
+     *   create: {
+     *     // ... data to create a RouteStop
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RouteStop we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RouteStopUpsertArgs>(args: SelectSubset<T, RouteStopUpsertArgs<ExtArgs>>): Prisma__RouteStopClient<$Result.GetResult<Prisma.$RouteStopPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RouteStops.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteStopCountArgs} args - Arguments to filter RouteStops to count.
+     * @example
+     * // Count the number of RouteStops
+     * const count = await prisma.routeStop.count({
+     *   where: {
+     *     // ... the filter for the RouteStops we want to count
+     *   }
+     * })
+    **/
+    count<T extends RouteStopCountArgs>(
+      args?: Subset<T, RouteStopCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RouteStopCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RouteStop.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteStopAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RouteStopAggregateArgs>(args: Subset<T, RouteStopAggregateArgs>): Prisma.PrismaPromise<GetRouteStopAggregateType<T>>
+
+    /**
+     * Group by RouteStop.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteStopGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RouteStopGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RouteStopGroupByArgs['orderBy'] }
+        : { orderBy?: RouteStopGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RouteStopGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRouteStopGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RouteStop model
+   */
+  readonly fields: RouteStopFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RouteStop.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RouteStopClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    project<T extends UserProjectDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserProjectDefaultArgs<ExtArgs>>): Prisma__UserProjectClient<$Result.GetResult<Prisma.$UserProjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    route<T extends RouteDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RouteDefaultArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    stop<T extends StopDefaultArgs<ExtArgs> = {}>(args?: Subset<T, StopDefaultArgs<ExtArgs>>): Prisma__StopClient<$Result.GetResult<Prisma.$StopPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RouteStop model
+   */
+  interface RouteStopFieldRefs {
+    readonly id: FieldRef<"RouteStop", 'String'>
+    readonly route_id: FieldRef<"RouteStop", 'String'>
+    readonly stop_id: FieldRef<"RouteStop", 'String'>
+    readonly stop_sequence: FieldRef<"RouteStop", 'Int'>
+    readonly project_id: FieldRef<"RouteStop", 'String'>
+    readonly created_at: FieldRef<"RouteStop", 'DateTime'>
+    readonly updated_at: FieldRef<"RouteStop", 'DateTime'>
+    readonly direction_id: FieldRef<"RouteStop", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RouteStop findUnique
+   */
+  export type RouteStopFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * Filter, which RouteStop to fetch.
+     */
+    where: RouteStopWhereUniqueInput
+  }
+
+  /**
+   * RouteStop findUniqueOrThrow
+   */
+  export type RouteStopFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * Filter, which RouteStop to fetch.
+     */
+    where: RouteStopWhereUniqueInput
+  }
+
+  /**
+   * RouteStop findFirst
+   */
+  export type RouteStopFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * Filter, which RouteStop to fetch.
+     */
+    where?: RouteStopWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RouteStops to fetch.
+     */
+    orderBy?: RouteStopOrderByWithRelationInput | RouteStopOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RouteStops.
+     */
+    cursor?: RouteStopWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RouteStops from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RouteStops.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RouteStops.
+     */
+    distinct?: RouteStopScalarFieldEnum | RouteStopScalarFieldEnum[]
+  }
+
+  /**
+   * RouteStop findFirstOrThrow
+   */
+  export type RouteStopFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * Filter, which RouteStop to fetch.
+     */
+    where?: RouteStopWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RouteStops to fetch.
+     */
+    orderBy?: RouteStopOrderByWithRelationInput | RouteStopOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RouteStops.
+     */
+    cursor?: RouteStopWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RouteStops from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RouteStops.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RouteStops.
+     */
+    distinct?: RouteStopScalarFieldEnum | RouteStopScalarFieldEnum[]
+  }
+
+  /**
+   * RouteStop findMany
+   */
+  export type RouteStopFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * Filter, which RouteStops to fetch.
+     */
+    where?: RouteStopWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RouteStops to fetch.
+     */
+    orderBy?: RouteStopOrderByWithRelationInput | RouteStopOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RouteStops.
+     */
+    cursor?: RouteStopWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RouteStops from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RouteStops.
+     */
+    skip?: number
+    distinct?: RouteStopScalarFieldEnum | RouteStopScalarFieldEnum[]
+  }
+
+  /**
+   * RouteStop create
+   */
+  export type RouteStopCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * The data needed to create a RouteStop.
+     */
+    data: XOR<RouteStopCreateInput, RouteStopUncheckedCreateInput>
+  }
+
+  /**
+   * RouteStop createMany
+   */
+  export type RouteStopCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RouteStops.
+     */
+    data: RouteStopCreateManyInput | RouteStopCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RouteStop createManyAndReturn
+   */
+  export type RouteStopCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * The data used to create many RouteStops.
+     */
+    data: RouteStopCreateManyInput | RouteStopCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RouteStop update
+   */
+  export type RouteStopUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * The data needed to update a RouteStop.
+     */
+    data: XOR<RouteStopUpdateInput, RouteStopUncheckedUpdateInput>
+    /**
+     * Choose, which RouteStop to update.
+     */
+    where: RouteStopWhereUniqueInput
+  }
+
+  /**
+   * RouteStop updateMany
+   */
+  export type RouteStopUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RouteStops.
+     */
+    data: XOR<RouteStopUpdateManyMutationInput, RouteStopUncheckedUpdateManyInput>
+    /**
+     * Filter which RouteStops to update
+     */
+    where?: RouteStopWhereInput
+    /**
+     * Limit how many RouteStops to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RouteStop updateManyAndReturn
+   */
+  export type RouteStopUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * The data used to update RouteStops.
+     */
+    data: XOR<RouteStopUpdateManyMutationInput, RouteStopUncheckedUpdateManyInput>
+    /**
+     * Filter which RouteStops to update
+     */
+    where?: RouteStopWhereInput
+    /**
+     * Limit how many RouteStops to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RouteStop upsert
+   */
+  export type RouteStopUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * The filter to search for the RouteStop to update in case it exists.
+     */
+    where: RouteStopWhereUniqueInput
+    /**
+     * In case the RouteStop found by the `where` argument doesn't exist, create a new RouteStop with this data.
+     */
+    create: XOR<RouteStopCreateInput, RouteStopUncheckedCreateInput>
+    /**
+     * In case the RouteStop was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RouteStopUpdateInput, RouteStopUncheckedUpdateInput>
+  }
+
+  /**
+   * RouteStop delete
+   */
+  export type RouteStopDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
+    /**
+     * Filter which RouteStop to delete.
+     */
+    where: RouteStopWhereUniqueInput
+  }
+
+  /**
+   * RouteStop deleteMany
+   */
+  export type RouteStopDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RouteStops to delete
+     */
+    where?: RouteStopWhereInput
+    /**
+     * Limit how many RouteStops to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RouteStop without action
+   */
+  export type RouteStopDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RouteStop
+     */
+    select?: RouteStopSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RouteStop
+     */
+    omit?: RouteStopOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteStopInclude<ExtArgs> | null
   }
 
 
@@ -30689,6 +32042,20 @@ export namespace Prisma {
   export type RouteScalarFieldEnum = (typeof RouteScalarFieldEnum)[keyof typeof RouteScalarFieldEnum]
 
 
+  export const RouteStopScalarFieldEnum: {
+    id: 'id',
+    route_id: 'route_id',
+    stop_id: 'stop_id',
+    stop_sequence: 'stop_sequence',
+    project_id: 'project_id',
+    created_at: 'created_at',
+    updated_at: 'updated_at',
+    direction_id: 'direction_id'
+  };
+
+  export type RouteStopScalarFieldEnum = (typeof RouteStopScalarFieldEnum)[keyof typeof RouteStopScalarFieldEnum]
+
+
   export const TripScalarFieldEnum: {
     id: 'id',
     trip_id: 'trip_id',
@@ -31242,6 +32609,7 @@ export namespace Prisma {
     levels?: LevelListRelationFilter
     pathways?: PathwayListRelationFilter
     feedInfo?: FeedInfoListRelationFilter
+    routeStops?: RouteStopListRelationFilter
   }
 
   export type UserProjectOrderByWithRelationInput = {
@@ -31270,6 +32638,7 @@ export namespace Prisma {
     levels?: LevelOrderByRelationAggregateInput
     pathways?: PathwayOrderByRelationAggregateInput
     feedInfo?: FeedInfoOrderByRelationAggregateInput
+    routeStops?: RouteStopOrderByRelationAggregateInput
   }
 
   export type UserProjectWhereUniqueInput = Prisma.AtLeast<{
@@ -31301,6 +32670,7 @@ export namespace Prisma {
     levels?: LevelListRelationFilter
     pathways?: PathwayListRelationFilter
     feedInfo?: FeedInfoListRelationFilter
+    routeStops?: RouteStopListRelationFilter
   }, "id">
 
   export type UserProjectOrderByWithAggregationInput = {
@@ -31745,6 +33115,7 @@ export namespace Prisma {
     parentStop?: XOR<StopNullableScalarRelationFilter, StopWhereInput> | null
     childStops?: StopListRelationFilter
     level?: XOR<LevelNullableScalarRelationFilter, LevelWhereInput> | null
+    routeStops?: RouteStopListRelationFilter
   }
 
   export type StopOrderByWithRelationInput = {
@@ -31776,6 +33147,7 @@ export namespace Prisma {
     parentStop?: StopOrderByWithRelationInput
     childStops?: StopOrderByRelationAggregateInput
     level?: LevelOrderByWithRelationInput
+    routeStops?: RouteStopOrderByRelationAggregateInput
   }
 
   export type StopWhereUniqueInput = Prisma.AtLeast<{
@@ -31811,6 +33183,7 @@ export namespace Prisma {
     parentStop?: XOR<StopNullableScalarRelationFilter, StopWhereInput> | null
     childStops?: StopListRelationFilter
     level?: XOR<LevelNullableScalarRelationFilter, LevelWhereInput> | null
+    routeStops?: RouteStopListRelationFilter
   }, "id" | "stop_id" | "stop_id_project_id">
 
   export type StopOrderByWithAggregationInput = {
@@ -31891,6 +33264,7 @@ export namespace Prisma {
     agency?: XOR<AgencyNullableScalarRelationFilter, AgencyWhereInput> | null
     trips?: TripListRelationFilter
     fareRules?: FareRuleListRelationFilter
+    routeStops?: RouteStopListRelationFilter
   }
 
   export type RouteOrderByWithRelationInput = {
@@ -31916,6 +33290,7 @@ export namespace Prisma {
     agency?: AgencyOrderByWithRelationInput
     trips?: TripOrderByRelationAggregateInput
     fareRules?: FareRuleOrderByRelationAggregateInput
+    routeStops?: RouteStopOrderByRelationAggregateInput
   }
 
   export type RouteWhereUniqueInput = Prisma.AtLeast<{
@@ -31945,6 +33320,7 @@ export namespace Prisma {
     agency?: XOR<AgencyNullableScalarRelationFilter, AgencyWhereInput> | null
     trips?: TripListRelationFilter
     fareRules?: FareRuleListRelationFilter
+    routeStops?: RouteStopListRelationFilter
   }, "id" | "route_id" | "route_id_project_id">
 
   export type RouteOrderByWithAggregationInput = {
@@ -31995,6 +33371,85 @@ export namespace Prisma {
     created_by?: StringNullableWithAggregatesFilter<"Route"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Route"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Route"> | Date | string
+  }
+
+  export type RouteStopWhereInput = {
+    AND?: RouteStopWhereInput | RouteStopWhereInput[]
+    OR?: RouteStopWhereInput[]
+    NOT?: RouteStopWhereInput | RouteStopWhereInput[]
+    id?: StringFilter<"RouteStop"> | string
+    route_id?: StringFilter<"RouteStop"> | string
+    stop_id?: StringFilter<"RouteStop"> | string
+    stop_sequence?: IntFilter<"RouteStop"> | number
+    project_id?: StringFilter<"RouteStop"> | string
+    created_at?: DateTimeFilter<"RouteStop"> | Date | string
+    updated_at?: DateTimeFilter<"RouteStop"> | Date | string
+    direction_id?: IntFilter<"RouteStop"> | number
+    project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
+    route?: XOR<RouteScalarRelationFilter, RouteWhereInput>
+    stop?: XOR<StopScalarRelationFilter, StopWhereInput>
+  }
+
+  export type RouteStopOrderByWithRelationInput = {
+    id?: SortOrder
+    route_id?: SortOrder
+    stop_id?: SortOrder
+    stop_sequence?: SortOrder
+    project_id?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    direction_id?: SortOrder
+    project?: UserProjectOrderByWithRelationInput
+    route?: RouteOrderByWithRelationInput
+    stop?: StopOrderByWithRelationInput
+  }
+
+  export type RouteStopWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    route_id_direction_id_stop_sequence_project_id?: RouteStopRoute_idDirection_idStop_sequenceProject_idCompoundUniqueInput
+    AND?: RouteStopWhereInput | RouteStopWhereInput[]
+    OR?: RouteStopWhereInput[]
+    NOT?: RouteStopWhereInput | RouteStopWhereInput[]
+    route_id?: StringFilter<"RouteStop"> | string
+    stop_id?: StringFilter<"RouteStop"> | string
+    stop_sequence?: IntFilter<"RouteStop"> | number
+    project_id?: StringFilter<"RouteStop"> | string
+    created_at?: DateTimeFilter<"RouteStop"> | Date | string
+    updated_at?: DateTimeFilter<"RouteStop"> | Date | string
+    direction_id?: IntFilter<"RouteStop"> | number
+    project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
+    route?: XOR<RouteScalarRelationFilter, RouteWhereInput>
+    stop?: XOR<StopScalarRelationFilter, StopWhereInput>
+  }, "id" | "route_id_direction_id_stop_sequence_project_id">
+
+  export type RouteStopOrderByWithAggregationInput = {
+    id?: SortOrder
+    route_id?: SortOrder
+    stop_id?: SortOrder
+    stop_sequence?: SortOrder
+    project_id?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    direction_id?: SortOrder
+    _count?: RouteStopCountOrderByAggregateInput
+    _avg?: RouteStopAvgOrderByAggregateInput
+    _max?: RouteStopMaxOrderByAggregateInput
+    _min?: RouteStopMinOrderByAggregateInput
+    _sum?: RouteStopSumOrderByAggregateInput
+  }
+
+  export type RouteStopScalarWhereWithAggregatesInput = {
+    AND?: RouteStopScalarWhereWithAggregatesInput | RouteStopScalarWhereWithAggregatesInput[]
+    OR?: RouteStopScalarWhereWithAggregatesInput[]
+    NOT?: RouteStopScalarWhereWithAggregatesInput | RouteStopScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"RouteStop"> | string
+    route_id?: StringWithAggregatesFilter<"RouteStop"> | string
+    stop_id?: StringWithAggregatesFilter<"RouteStop"> | string
+    stop_sequence?: IntWithAggregatesFilter<"RouteStop"> | number
+    project_id?: StringWithAggregatesFilter<"RouteStop"> | string
+    created_at?: DateTimeWithAggregatesFilter<"RouteStop"> | Date | string
+    updated_at?: DateTimeWithAggregatesFilter<"RouteStop"> | Date | string
+    direction_id?: IntWithAggregatesFilter<"RouteStop"> | number
   }
 
   export type TripWhereInput = {
@@ -33431,6 +34886,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateInput = {
@@ -33458,6 +34914,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUpdateInput = {
@@ -33485,6 +34942,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateInput = {
@@ -33512,6 +34970,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectCreateManyInput = {
@@ -33983,6 +35442,7 @@ export namespace Prisma {
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateInput = {
@@ -34011,6 +35471,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopUpdateInput = {
@@ -34039,6 +35500,7 @@ export namespace Prisma {
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateInput = {
@@ -34067,6 +35529,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type StopCreateManyInput = {
@@ -34153,6 +35616,7 @@ export namespace Prisma {
     agency?: AgencyCreateNestedOneWithoutRoutesInput
     trips?: TripCreateNestedManyWithoutRouteInput
     fareRules?: FareRuleCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopCreateNestedManyWithoutRouteInput
   }
 
   export type RouteUncheckedCreateInput = {
@@ -34176,6 +35640,7 @@ export namespace Prisma {
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutRouteInput
   }
 
   export type RouteUpdateInput = {
@@ -34199,6 +35664,7 @@ export namespace Prisma {
     agency?: AgencyUpdateOneWithoutRoutesNestedInput
     trips?: TripUpdateManyWithoutRouteNestedInput
     fareRules?: FareRuleUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteUncheckedUpdateInput = {
@@ -34222,6 +35688,7 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
     fareRules?: FareRuleUncheckedUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteCreateManyInput = {
@@ -34283,6 +35750,80 @@ export namespace Prisma {
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteStopCreateInput = {
+    id?: string
+    stop_sequence: number
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+    project: UserProjectCreateNestedOneWithoutRouteStopsInput
+    route: RouteCreateNestedOneWithoutRouteStopsInput
+    stop: StopCreateNestedOneWithoutRouteStopsInput
+  }
+
+  export type RouteStopUncheckedCreateInput = {
+    id?: string
+    route_id: string
+    stop_id: string
+    stop_sequence: number
+    project_id: string
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+  }
+
+  export type RouteStopUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+    project?: UserProjectUpdateOneRequiredWithoutRouteStopsNestedInput
+    route?: RouteUpdateOneRequiredWithoutRouteStopsNestedInput
+    stop?: StopUpdateOneRequiredWithoutRouteStopsNestedInput
+  }
+
+  export type RouteStopUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type RouteStopCreateManyInput = {
+    id?: string
+    route_id: string
+    stop_id: string
+    stop_sequence: number
+    project_id: string
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+  }
+
+  export type RouteStopUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type RouteStopUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type TripCreateInput = {
@@ -36000,6 +37541,12 @@ export namespace Prisma {
     none?: FeedInfoWhereInput
   }
 
+  export type RouteStopListRelationFilter = {
+    every?: RouteStopWhereInput
+    some?: RouteStopWhereInput
+    none?: RouteStopWhereInput
+  }
+
   export type AgencyOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -36057,6 +37604,10 @@ export namespace Prisma {
   }
 
   export type FeedInfoOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type RouteStopOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -36518,6 +38069,61 @@ export namespace Prisma {
     isNot?: RouteWhereInput
   }
 
+  export type StopScalarRelationFilter = {
+    is?: StopWhereInput
+    isNot?: StopWhereInput
+  }
+
+  export type RouteStopRoute_idDirection_idStop_sequenceProject_idCompoundUniqueInput = {
+    route_id: string
+    direction_id: number
+    stop_sequence: number
+    project_id: string
+  }
+
+  export type RouteStopCountOrderByAggregateInput = {
+    id?: SortOrder
+    route_id?: SortOrder
+    stop_id?: SortOrder
+    stop_sequence?: SortOrder
+    project_id?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    direction_id?: SortOrder
+  }
+
+  export type RouteStopAvgOrderByAggregateInput = {
+    stop_sequence?: SortOrder
+    direction_id?: SortOrder
+  }
+
+  export type RouteStopMaxOrderByAggregateInput = {
+    id?: SortOrder
+    route_id?: SortOrder
+    stop_id?: SortOrder
+    stop_sequence?: SortOrder
+    project_id?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    direction_id?: SortOrder
+  }
+
+  export type RouteStopMinOrderByAggregateInput = {
+    id?: SortOrder
+    route_id?: SortOrder
+    stop_id?: SortOrder
+    stop_sequence?: SortOrder
+    project_id?: SortOrder
+    created_at?: SortOrder
+    updated_at?: SortOrder
+    direction_id?: SortOrder
+  }
+
+  export type RouteStopSumOrderByAggregateInput = {
+    stop_sequence?: SortOrder
+    direction_id?: SortOrder
+  }
+
   export type CalendarNullableScalarRelationFilter = {
     is?: CalendarWhereInput | null
     isNot?: CalendarWhereInput | null
@@ -36608,11 +38214,6 @@ export namespace Prisma {
   export type TripScalarRelationFilter = {
     is?: TripWhereInput
     isNot?: TripWhereInput
-  }
-
-  export type StopScalarRelationFilter = {
-    is?: StopWhereInput
-    isNot?: StopWhereInput
   }
 
   export type StopTimeTrip_idStop_sequenceProject_idCompoundUniqueInput = {
@@ -37723,6 +39324,13 @@ export namespace Prisma {
     connect?: FeedInfoWhereUniqueInput | FeedInfoWhereUniqueInput[]
   }
 
+  export type RouteStopCreateNestedManyWithoutProjectInput = {
+    create?: XOR<RouteStopCreateWithoutProjectInput, RouteStopUncheckedCreateWithoutProjectInput> | RouteStopCreateWithoutProjectInput[] | RouteStopUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutProjectInput | RouteStopCreateOrConnectWithoutProjectInput[]
+    createMany?: RouteStopCreateManyProjectInputEnvelope
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+  }
+
   export type ProjectShareUncheckedCreateNestedManyWithoutProjectInput = {
     create?: XOR<ProjectShareCreateWithoutProjectInput, ProjectShareUncheckedCreateWithoutProjectInput> | ProjectShareCreateWithoutProjectInput[] | ProjectShareUncheckedCreateWithoutProjectInput[]
     connectOrCreate?: ProjectShareCreateOrConnectWithoutProjectInput | ProjectShareCreateOrConnectWithoutProjectInput[]
@@ -37840,6 +39448,13 @@ export namespace Prisma {
     connectOrCreate?: FeedInfoCreateOrConnectWithoutProjectInput | FeedInfoCreateOrConnectWithoutProjectInput[]
     createMany?: FeedInfoCreateManyProjectInputEnvelope
     connect?: FeedInfoWhereUniqueInput | FeedInfoWhereUniqueInput[]
+  }
+
+  export type RouteStopUncheckedCreateNestedManyWithoutProjectInput = {
+    create?: XOR<RouteStopCreateWithoutProjectInput, RouteStopUncheckedCreateWithoutProjectInput> | RouteStopCreateWithoutProjectInput[] | RouteStopUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutProjectInput | RouteStopCreateOrConnectWithoutProjectInput[]
+    createMany?: RouteStopCreateManyProjectInputEnvelope
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
   }
 
   export type UserUpdateOneRequiredWithoutOwnedProjectsNestedInput = {
@@ -38088,6 +39703,20 @@ export namespace Prisma {
     deleteMany?: FeedInfoScalarWhereInput | FeedInfoScalarWhereInput[]
   }
 
+  export type RouteStopUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<RouteStopCreateWithoutProjectInput, RouteStopUncheckedCreateWithoutProjectInput> | RouteStopCreateWithoutProjectInput[] | RouteStopUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutProjectInput | RouteStopCreateOrConnectWithoutProjectInput[]
+    upsert?: RouteStopUpsertWithWhereUniqueWithoutProjectInput | RouteStopUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: RouteStopCreateManyProjectInputEnvelope
+    set?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    disconnect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    delete?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    update?: RouteStopUpdateWithWhereUniqueWithoutProjectInput | RouteStopUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: RouteStopUpdateManyWithWhereWithoutProjectInput | RouteStopUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
+  }
+
   export type ProjectShareUncheckedUpdateManyWithoutProjectNestedInput = {
     create?: XOR<ProjectShareCreateWithoutProjectInput, ProjectShareUncheckedCreateWithoutProjectInput> | ProjectShareCreateWithoutProjectInput[] | ProjectShareUncheckedCreateWithoutProjectInput[]
     connectOrCreate?: ProjectShareCreateOrConnectWithoutProjectInput | ProjectShareCreateOrConnectWithoutProjectInput[]
@@ -38324,6 +39953,20 @@ export namespace Prisma {
     update?: FeedInfoUpdateWithWhereUniqueWithoutProjectInput | FeedInfoUpdateWithWhereUniqueWithoutProjectInput[]
     updateMany?: FeedInfoUpdateManyWithWhereWithoutProjectInput | FeedInfoUpdateManyWithWhereWithoutProjectInput[]
     deleteMany?: FeedInfoScalarWhereInput | FeedInfoScalarWhereInput[]
+  }
+
+  export type RouteStopUncheckedUpdateManyWithoutProjectNestedInput = {
+    create?: XOR<RouteStopCreateWithoutProjectInput, RouteStopUncheckedCreateWithoutProjectInput> | RouteStopCreateWithoutProjectInput[] | RouteStopUncheckedCreateWithoutProjectInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutProjectInput | RouteStopCreateOrConnectWithoutProjectInput[]
+    upsert?: RouteStopUpsertWithWhereUniqueWithoutProjectInput | RouteStopUpsertWithWhereUniqueWithoutProjectInput[]
+    createMany?: RouteStopCreateManyProjectInputEnvelope
+    set?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    disconnect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    delete?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    update?: RouteStopUpdateWithWhereUniqueWithoutProjectInput | RouteStopUpdateWithWhereUniqueWithoutProjectInput[]
+    updateMany?: RouteStopUpdateManyWithWhereWithoutProjectInput | RouteStopUpdateManyWithWhereWithoutProjectInput[]
+    deleteMany?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
   }
 
   export type UserProjectCreateNestedOneWithoutSharesInput = {
@@ -38574,6 +40217,13 @@ export namespace Prisma {
     connect?: LevelWhereUniqueInput
   }
 
+  export type RouteStopCreateNestedManyWithoutStopInput = {
+    create?: XOR<RouteStopCreateWithoutStopInput, RouteStopUncheckedCreateWithoutStopInput> | RouteStopCreateWithoutStopInput[] | RouteStopUncheckedCreateWithoutStopInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutStopInput | RouteStopCreateOrConnectWithoutStopInput[]
+    createMany?: RouteStopCreateManyStopInputEnvelope
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+  }
+
   export type StopTimeUncheckedCreateNestedManyWithoutStopInput = {
     create?: XOR<StopTimeCreateWithoutStopInput, StopTimeUncheckedCreateWithoutStopInput> | StopTimeCreateWithoutStopInput[] | StopTimeUncheckedCreateWithoutStopInput[]
     connectOrCreate?: StopTimeCreateOrConnectWithoutStopInput | StopTimeCreateOrConnectWithoutStopInput[]
@@ -38614,6 +40264,13 @@ export namespace Prisma {
     connectOrCreate?: StopCreateOrConnectWithoutParentStopInput | StopCreateOrConnectWithoutParentStopInput[]
     createMany?: StopCreateManyParentStopInputEnvelope
     connect?: StopWhereUniqueInput | StopWhereUniqueInput[]
+  }
+
+  export type RouteStopUncheckedCreateNestedManyWithoutStopInput = {
+    create?: XOR<RouteStopCreateWithoutStopInput, RouteStopUncheckedCreateWithoutStopInput> | RouteStopCreateWithoutStopInput[] | RouteStopUncheckedCreateWithoutStopInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutStopInput | RouteStopCreateOrConnectWithoutStopInput[]
+    createMany?: RouteStopCreateManyStopInputEnvelope
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
   }
 
   export type NullableIntFieldUpdateOperationsInput = {
@@ -38736,6 +40393,20 @@ export namespace Prisma {
     update?: XOR<XOR<LevelUpdateToOneWithWhereWithoutStopsInput, LevelUpdateWithoutStopsInput>, LevelUncheckedUpdateWithoutStopsInput>
   }
 
+  export type RouteStopUpdateManyWithoutStopNestedInput = {
+    create?: XOR<RouteStopCreateWithoutStopInput, RouteStopUncheckedCreateWithoutStopInput> | RouteStopCreateWithoutStopInput[] | RouteStopUncheckedCreateWithoutStopInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutStopInput | RouteStopCreateOrConnectWithoutStopInput[]
+    upsert?: RouteStopUpsertWithWhereUniqueWithoutStopInput | RouteStopUpsertWithWhereUniqueWithoutStopInput[]
+    createMany?: RouteStopCreateManyStopInputEnvelope
+    set?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    disconnect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    delete?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    update?: RouteStopUpdateWithWhereUniqueWithoutStopInput | RouteStopUpdateWithWhereUniqueWithoutStopInput[]
+    updateMany?: RouteStopUpdateManyWithWhereWithoutStopInput | RouteStopUpdateManyWithWhereWithoutStopInput[]
+    deleteMany?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
+  }
+
   export type StopTimeUncheckedUpdateManyWithoutStopNestedInput = {
     create?: XOR<StopTimeCreateWithoutStopInput, StopTimeUncheckedCreateWithoutStopInput> | StopTimeCreateWithoutStopInput[] | StopTimeUncheckedCreateWithoutStopInput[]
     connectOrCreate?: StopTimeCreateOrConnectWithoutStopInput | StopTimeCreateOrConnectWithoutStopInput[]
@@ -38820,6 +40491,20 @@ export namespace Prisma {
     deleteMany?: StopScalarWhereInput | StopScalarWhereInput[]
   }
 
+  export type RouteStopUncheckedUpdateManyWithoutStopNestedInput = {
+    create?: XOR<RouteStopCreateWithoutStopInput, RouteStopUncheckedCreateWithoutStopInput> | RouteStopCreateWithoutStopInput[] | RouteStopUncheckedCreateWithoutStopInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutStopInput | RouteStopCreateOrConnectWithoutStopInput[]
+    upsert?: RouteStopUpsertWithWhereUniqueWithoutStopInput | RouteStopUpsertWithWhereUniqueWithoutStopInput[]
+    createMany?: RouteStopCreateManyStopInputEnvelope
+    set?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    disconnect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    delete?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    update?: RouteStopUpdateWithWhereUniqueWithoutStopInput | RouteStopUpdateWithWhereUniqueWithoutStopInput[]
+    updateMany?: RouteStopUpdateManyWithWhereWithoutStopInput | RouteStopUpdateManyWithWhereWithoutStopInput[]
+    deleteMany?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
+  }
+
   export type UserProjectCreateNestedOneWithoutRoutesInput = {
     create?: XOR<UserProjectCreateWithoutRoutesInput, UserProjectUncheckedCreateWithoutRoutesInput>
     connectOrCreate?: UserProjectCreateOrConnectWithoutRoutesInput
@@ -38846,6 +40531,13 @@ export namespace Prisma {
     connect?: FareRuleWhereUniqueInput | FareRuleWhereUniqueInput[]
   }
 
+  export type RouteStopCreateNestedManyWithoutRouteInput = {
+    create?: XOR<RouteStopCreateWithoutRouteInput, RouteStopUncheckedCreateWithoutRouteInput> | RouteStopCreateWithoutRouteInput[] | RouteStopUncheckedCreateWithoutRouteInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutRouteInput | RouteStopCreateOrConnectWithoutRouteInput[]
+    createMany?: RouteStopCreateManyRouteInputEnvelope
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+  }
+
   export type TripUncheckedCreateNestedManyWithoutRouteInput = {
     create?: XOR<TripCreateWithoutRouteInput, TripUncheckedCreateWithoutRouteInput> | TripCreateWithoutRouteInput[] | TripUncheckedCreateWithoutRouteInput[]
     connectOrCreate?: TripCreateOrConnectWithoutRouteInput | TripCreateOrConnectWithoutRouteInput[]
@@ -38858,6 +40550,13 @@ export namespace Prisma {
     connectOrCreate?: FareRuleCreateOrConnectWithoutRouteInput | FareRuleCreateOrConnectWithoutRouteInput[]
     createMany?: FareRuleCreateManyRouteInputEnvelope
     connect?: FareRuleWhereUniqueInput | FareRuleWhereUniqueInput[]
+  }
+
+  export type RouteStopUncheckedCreateNestedManyWithoutRouteInput = {
+    create?: XOR<RouteStopCreateWithoutRouteInput, RouteStopUncheckedCreateWithoutRouteInput> | RouteStopCreateWithoutRouteInput[] | RouteStopUncheckedCreateWithoutRouteInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutRouteInput | RouteStopCreateOrConnectWithoutRouteInput[]
+    createMany?: RouteStopCreateManyRouteInputEnvelope
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
   }
 
   export type UserProjectUpdateOneRequiredWithoutRoutesNestedInput = {
@@ -38906,6 +40605,20 @@ export namespace Prisma {
     deleteMany?: FareRuleScalarWhereInput | FareRuleScalarWhereInput[]
   }
 
+  export type RouteStopUpdateManyWithoutRouteNestedInput = {
+    create?: XOR<RouteStopCreateWithoutRouteInput, RouteStopUncheckedCreateWithoutRouteInput> | RouteStopCreateWithoutRouteInput[] | RouteStopUncheckedCreateWithoutRouteInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutRouteInput | RouteStopCreateOrConnectWithoutRouteInput[]
+    upsert?: RouteStopUpsertWithWhereUniqueWithoutRouteInput | RouteStopUpsertWithWhereUniqueWithoutRouteInput[]
+    createMany?: RouteStopCreateManyRouteInputEnvelope
+    set?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    disconnect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    delete?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    update?: RouteStopUpdateWithWhereUniqueWithoutRouteInput | RouteStopUpdateWithWhereUniqueWithoutRouteInput[]
+    updateMany?: RouteStopUpdateManyWithWhereWithoutRouteInput | RouteStopUpdateManyWithWhereWithoutRouteInput[]
+    deleteMany?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
+  }
+
   export type TripUncheckedUpdateManyWithoutRouteNestedInput = {
     create?: XOR<TripCreateWithoutRouteInput, TripUncheckedCreateWithoutRouteInput> | TripCreateWithoutRouteInput[] | TripUncheckedCreateWithoutRouteInput[]
     connectOrCreate?: TripCreateOrConnectWithoutRouteInput | TripCreateOrConnectWithoutRouteInput[]
@@ -38932,6 +40645,62 @@ export namespace Prisma {
     update?: FareRuleUpdateWithWhereUniqueWithoutRouteInput | FareRuleUpdateWithWhereUniqueWithoutRouteInput[]
     updateMany?: FareRuleUpdateManyWithWhereWithoutRouteInput | FareRuleUpdateManyWithWhereWithoutRouteInput[]
     deleteMany?: FareRuleScalarWhereInput | FareRuleScalarWhereInput[]
+  }
+
+  export type RouteStopUncheckedUpdateManyWithoutRouteNestedInput = {
+    create?: XOR<RouteStopCreateWithoutRouteInput, RouteStopUncheckedCreateWithoutRouteInput> | RouteStopCreateWithoutRouteInput[] | RouteStopUncheckedCreateWithoutRouteInput[]
+    connectOrCreate?: RouteStopCreateOrConnectWithoutRouteInput | RouteStopCreateOrConnectWithoutRouteInput[]
+    upsert?: RouteStopUpsertWithWhereUniqueWithoutRouteInput | RouteStopUpsertWithWhereUniqueWithoutRouteInput[]
+    createMany?: RouteStopCreateManyRouteInputEnvelope
+    set?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    disconnect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    delete?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    connect?: RouteStopWhereUniqueInput | RouteStopWhereUniqueInput[]
+    update?: RouteStopUpdateWithWhereUniqueWithoutRouteInput | RouteStopUpdateWithWhereUniqueWithoutRouteInput[]
+    updateMany?: RouteStopUpdateManyWithWhereWithoutRouteInput | RouteStopUpdateManyWithWhereWithoutRouteInput[]
+    deleteMany?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
+  }
+
+  export type UserProjectCreateNestedOneWithoutRouteStopsInput = {
+    create?: XOR<UserProjectCreateWithoutRouteStopsInput, UserProjectUncheckedCreateWithoutRouteStopsInput>
+    connectOrCreate?: UserProjectCreateOrConnectWithoutRouteStopsInput
+    connect?: UserProjectWhereUniqueInput
+  }
+
+  export type RouteCreateNestedOneWithoutRouteStopsInput = {
+    create?: XOR<RouteCreateWithoutRouteStopsInput, RouteUncheckedCreateWithoutRouteStopsInput>
+    connectOrCreate?: RouteCreateOrConnectWithoutRouteStopsInput
+    connect?: RouteWhereUniqueInput
+  }
+
+  export type StopCreateNestedOneWithoutRouteStopsInput = {
+    create?: XOR<StopCreateWithoutRouteStopsInput, StopUncheckedCreateWithoutRouteStopsInput>
+    connectOrCreate?: StopCreateOrConnectWithoutRouteStopsInput
+    connect?: StopWhereUniqueInput
+  }
+
+  export type UserProjectUpdateOneRequiredWithoutRouteStopsNestedInput = {
+    create?: XOR<UserProjectCreateWithoutRouteStopsInput, UserProjectUncheckedCreateWithoutRouteStopsInput>
+    connectOrCreate?: UserProjectCreateOrConnectWithoutRouteStopsInput
+    upsert?: UserProjectUpsertWithoutRouteStopsInput
+    connect?: UserProjectWhereUniqueInput
+    update?: XOR<XOR<UserProjectUpdateToOneWithWhereWithoutRouteStopsInput, UserProjectUpdateWithoutRouteStopsInput>, UserProjectUncheckedUpdateWithoutRouteStopsInput>
+  }
+
+  export type RouteUpdateOneRequiredWithoutRouteStopsNestedInput = {
+    create?: XOR<RouteCreateWithoutRouteStopsInput, RouteUncheckedCreateWithoutRouteStopsInput>
+    connectOrCreate?: RouteCreateOrConnectWithoutRouteStopsInput
+    upsert?: RouteUpsertWithoutRouteStopsInput
+    connect?: RouteWhereUniqueInput
+    update?: XOR<XOR<RouteUpdateToOneWithWhereWithoutRouteStopsInput, RouteUpdateWithoutRouteStopsInput>, RouteUncheckedUpdateWithoutRouteStopsInput>
+  }
+
+  export type StopUpdateOneRequiredWithoutRouteStopsNestedInput = {
+    create?: XOR<StopCreateWithoutRouteStopsInput, StopUncheckedCreateWithoutRouteStopsInput>
+    connectOrCreate?: StopCreateOrConnectWithoutRouteStopsInput
+    upsert?: StopUpsertWithoutRouteStopsInput
+    connect?: StopWhereUniqueInput
+    update?: XOR<XOR<StopUpdateToOneWithWhereWithoutRouteStopsInput, StopUpdateWithoutRouteStopsInput>, StopUncheckedUpdateWithoutRouteStopsInput>
   }
 
   export type UserProjectCreateNestedOneWithoutTripsInput = {
@@ -39859,6 +41628,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutOwnerInput = {
@@ -39885,6 +41655,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutOwnerInput = {
@@ -40474,6 +42245,7 @@ export namespace Prisma {
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutProjectInput = {
@@ -40501,6 +42273,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutProjectInput = {
@@ -40533,6 +42306,7 @@ export namespace Prisma {
     agency?: AgencyCreateNestedOneWithoutRoutesInput
     trips?: TripCreateNestedManyWithoutRouteInput
     fareRules?: FareRuleCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopCreateNestedManyWithoutRouteInput
   }
 
   export type RouteUncheckedCreateWithoutProjectInput = {
@@ -40555,6 +42329,7 @@ export namespace Prisma {
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutRouteInput
   }
 
   export type RouteCreateOrConnectWithoutProjectInput = {
@@ -41036,6 +42811,36 @@ export namespace Prisma {
 
   export type FeedInfoCreateManyProjectInputEnvelope = {
     data: FeedInfoCreateManyProjectInput | FeedInfoCreateManyProjectInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RouteStopCreateWithoutProjectInput = {
+    id?: string
+    stop_sequence: number
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+    route: RouteCreateNestedOneWithoutRouteStopsInput
+    stop: StopCreateNestedOneWithoutRouteStopsInput
+  }
+
+  export type RouteStopUncheckedCreateWithoutProjectInput = {
+    id?: string
+    route_id: string
+    stop_id: string
+    stop_sequence: number
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+  }
+
+  export type RouteStopCreateOrConnectWithoutProjectInput = {
+    where: RouteStopWhereUniqueInput
+    create: XOR<RouteStopCreateWithoutProjectInput, RouteStopUncheckedCreateWithoutProjectInput>
+  }
+
+  export type RouteStopCreateManyProjectInputEnvelope = {
+    data: RouteStopCreateManyProjectInput | RouteStopCreateManyProjectInput[]
     skipDuplicates?: boolean
   }
 
@@ -41648,6 +43453,36 @@ export namespace Prisma {
     updated_at?: DateTimeFilter<"FeedInfo"> | Date | string
   }
 
+  export type RouteStopUpsertWithWhereUniqueWithoutProjectInput = {
+    where: RouteStopWhereUniqueInput
+    update: XOR<RouteStopUpdateWithoutProjectInput, RouteStopUncheckedUpdateWithoutProjectInput>
+    create: XOR<RouteStopCreateWithoutProjectInput, RouteStopUncheckedCreateWithoutProjectInput>
+  }
+
+  export type RouteStopUpdateWithWhereUniqueWithoutProjectInput = {
+    where: RouteStopWhereUniqueInput
+    data: XOR<RouteStopUpdateWithoutProjectInput, RouteStopUncheckedUpdateWithoutProjectInput>
+  }
+
+  export type RouteStopUpdateManyWithWhereWithoutProjectInput = {
+    where: RouteStopScalarWhereInput
+    data: XOR<RouteStopUpdateManyMutationInput, RouteStopUncheckedUpdateManyWithoutProjectInput>
+  }
+
+  export type RouteStopScalarWhereInput = {
+    AND?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
+    OR?: RouteStopScalarWhereInput[]
+    NOT?: RouteStopScalarWhereInput | RouteStopScalarWhereInput[]
+    id?: StringFilter<"RouteStop"> | string
+    route_id?: StringFilter<"RouteStop"> | string
+    stop_id?: StringFilter<"RouteStop"> | string
+    stop_sequence?: IntFilter<"RouteStop"> | number
+    project_id?: StringFilter<"RouteStop"> | string
+    created_at?: DateTimeFilter<"RouteStop"> | Date | string
+    updated_at?: DateTimeFilter<"RouteStop"> | Date | string
+    direction_id?: IntFilter<"RouteStop"> | number
+  }
+
   export type UserProjectCreateWithoutSharesInput = {
     id?: string
     name: string
@@ -41672,6 +43507,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutSharesInput = {
@@ -41698,6 +43534,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutSharesInput = {
@@ -41785,6 +43622,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutSharesInput = {
@@ -41811,6 +43649,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserUpsertWithoutSharedProjectsInput = {
@@ -41888,6 +43727,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutInvitesInput = {
@@ -41914,6 +43754,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutInvitesInput = {
@@ -42001,6 +43842,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutInvitesInput = {
@@ -42027,6 +43869,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserUpsertWithoutInvitedProjectsInput = {
@@ -42296,6 +44139,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutAgenciesInput = {
@@ -42322,6 +44166,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutAgenciesInput = {
@@ -42349,6 +44194,7 @@ export namespace Prisma {
     project: UserProjectCreateNestedOneWithoutRoutesInput
     trips?: TripCreateNestedManyWithoutRouteInput
     fareRules?: FareRuleCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopCreateNestedManyWithoutRouteInput
   }
 
   export type RouteUncheckedCreateWithoutAgencyInput = {
@@ -42371,6 +44217,7 @@ export namespace Prisma {
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutRouteInput
   }
 
   export type RouteCreateOrConnectWithoutAgencyInput = {
@@ -42458,6 +44305,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutAgenciesInput = {
@@ -42484,6 +44332,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type RouteUpsertWithWhereUniqueWithoutAgencyInput = {
@@ -42542,6 +44391,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutStopsInput = {
@@ -42568,6 +44418,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutStopsInput = {
@@ -42812,6 +44663,7 @@ export namespace Prisma {
     pathwaysTo?: PathwayCreateNestedManyWithoutToStopInput
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutChildStopsInput = {
@@ -42839,6 +44691,7 @@ export namespace Prisma {
     transfersTo?: TransferUncheckedCreateNestedManyWithoutToStopInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutChildStopsInput = {
@@ -42871,6 +44724,7 @@ export namespace Prisma {
     pathwaysTo?: PathwayCreateNestedManyWithoutToStopInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutParentStopInput = {
@@ -42898,6 +44752,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutParentStopInput = {
@@ -42939,6 +44794,36 @@ export namespace Prisma {
     create: XOR<LevelCreateWithoutStopsInput, LevelUncheckedCreateWithoutStopsInput>
   }
 
+  export type RouteStopCreateWithoutStopInput = {
+    id?: string
+    stop_sequence: number
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+    project: UserProjectCreateNestedOneWithoutRouteStopsInput
+    route: RouteCreateNestedOneWithoutRouteStopsInput
+  }
+
+  export type RouteStopUncheckedCreateWithoutStopInput = {
+    id?: string
+    route_id: string
+    stop_sequence: number
+    project_id: string
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+  }
+
+  export type RouteStopCreateOrConnectWithoutStopInput = {
+    where: RouteStopWhereUniqueInput
+    create: XOR<RouteStopCreateWithoutStopInput, RouteStopUncheckedCreateWithoutStopInput>
+  }
+
+  export type RouteStopCreateManyStopInputEnvelope = {
+    data: RouteStopCreateManyStopInput | RouteStopCreateManyStopInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UserProjectUpsertWithoutStopsInput = {
     update: XOR<UserProjectUpdateWithoutStopsInput, UserProjectUncheckedUpdateWithoutStopsInput>
     create: XOR<UserProjectCreateWithoutStopsInput, UserProjectUncheckedCreateWithoutStopsInput>
@@ -42974,6 +44859,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutStopsInput = {
@@ -43000,6 +44886,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type StopTimeUpsertWithWhereUniqueWithoutStopInput = {
@@ -43118,6 +45005,7 @@ export namespace Prisma {
     pathwaysTo?: PathwayUpdateManyWithoutToStopNestedInput
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutChildStopsInput = {
@@ -43145,6 +45033,7 @@ export namespace Prisma {
     transfersTo?: TransferUncheckedUpdateManyWithoutToStopNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type StopUpsertWithWhereUniqueWithoutParentStopInput = {
@@ -43198,6 +45087,22 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutLevelNestedInput
   }
 
+  export type RouteStopUpsertWithWhereUniqueWithoutStopInput = {
+    where: RouteStopWhereUniqueInput
+    update: XOR<RouteStopUpdateWithoutStopInput, RouteStopUncheckedUpdateWithoutStopInput>
+    create: XOR<RouteStopCreateWithoutStopInput, RouteStopUncheckedCreateWithoutStopInput>
+  }
+
+  export type RouteStopUpdateWithWhereUniqueWithoutStopInput = {
+    where: RouteStopWhereUniqueInput
+    data: XOR<RouteStopUpdateWithoutStopInput, RouteStopUncheckedUpdateWithoutStopInput>
+  }
+
+  export type RouteStopUpdateManyWithWhereWithoutStopInput = {
+    where: RouteStopScalarWhereInput
+    data: XOR<RouteStopUpdateManyMutationInput, RouteStopUncheckedUpdateManyWithoutStopInput>
+  }
+
   export type UserProjectCreateWithoutRoutesInput = {
     id?: string
     name: string
@@ -43222,6 +45127,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutRoutesInput = {
@@ -43248,6 +45154,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutRoutesInput = {
@@ -43374,6 +45281,36 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type RouteStopCreateWithoutRouteInput = {
+    id?: string
+    stop_sequence: number
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+    project: UserProjectCreateNestedOneWithoutRouteStopsInput
+    stop: StopCreateNestedOneWithoutRouteStopsInput
+  }
+
+  export type RouteStopUncheckedCreateWithoutRouteInput = {
+    id?: string
+    stop_id: string
+    stop_sequence: number
+    project_id: string
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+  }
+
+  export type RouteStopCreateOrConnectWithoutRouteInput = {
+    where: RouteStopWhereUniqueInput
+    create: XOR<RouteStopCreateWithoutRouteInput, RouteStopUncheckedCreateWithoutRouteInput>
+  }
+
+  export type RouteStopCreateManyRouteInputEnvelope = {
+    data: RouteStopCreateManyRouteInput | RouteStopCreateManyRouteInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UserProjectUpsertWithoutRoutesInput = {
     update: XOR<UserProjectUpdateWithoutRoutesInput, UserProjectUncheckedUpdateWithoutRoutesInput>
     create: XOR<UserProjectCreateWithoutRoutesInput, UserProjectUncheckedCreateWithoutRoutesInput>
@@ -43409,6 +45346,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutRoutesInput = {
@@ -43435,6 +45373,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type AgencyUpsertWithoutRoutesInput = {
@@ -43514,6 +45453,382 @@ export namespace Prisma {
     data: XOR<FareRuleUpdateManyMutationInput, FareRuleUncheckedUpdateManyWithoutRouteInput>
   }
 
+  export type RouteStopUpsertWithWhereUniqueWithoutRouteInput = {
+    where: RouteStopWhereUniqueInput
+    update: XOR<RouteStopUpdateWithoutRouteInput, RouteStopUncheckedUpdateWithoutRouteInput>
+    create: XOR<RouteStopCreateWithoutRouteInput, RouteStopUncheckedCreateWithoutRouteInput>
+  }
+
+  export type RouteStopUpdateWithWhereUniqueWithoutRouteInput = {
+    where: RouteStopWhereUniqueInput
+    data: XOR<RouteStopUpdateWithoutRouteInput, RouteStopUncheckedUpdateWithoutRouteInput>
+  }
+
+  export type RouteStopUpdateManyWithWhereWithoutRouteInput = {
+    where: RouteStopScalarWhereInput
+    data: XOR<RouteStopUpdateManyMutationInput, RouteStopUncheckedUpdateManyWithoutRouteInput>
+  }
+
+  export type UserProjectCreateWithoutRouteStopsInput = {
+    id?: string
+    name: string
+    description?: string | null
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string
+    owner: UserCreateNestedOneWithoutOwnedProjectsInput
+    shares?: ProjectShareCreateNestedManyWithoutProjectInput
+    invites?: ProjectInviteCreateNestedManyWithoutProjectInput
+    agencies?: AgencyCreateNestedManyWithoutProjectInput
+    stops?: StopCreateNestedManyWithoutProjectInput
+    routes?: RouteCreateNestedManyWithoutProjectInput
+    trips?: TripCreateNestedManyWithoutProjectInput
+    stopTimes?: StopTimeCreateNestedManyWithoutProjectInput
+    calendars?: CalendarCreateNestedManyWithoutProjectInput
+    calendarDates?: CalendarDateCreateNestedManyWithoutProjectInput
+    fareAttributes?: FareAttributeCreateNestedManyWithoutProjectInput
+    fareRules?: FareRuleCreateNestedManyWithoutProjectInput
+    shapes?: ShapeCreateNestedManyWithoutProjectInput
+    transfers?: TransferCreateNestedManyWithoutProjectInput
+    frequencies?: FrequencyCreateNestedManyWithoutProjectInput
+    levels?: LevelCreateNestedManyWithoutProjectInput
+    pathways?: PathwayCreateNestedManyWithoutProjectInput
+    feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+  }
+
+  export type UserProjectUncheckedCreateWithoutRouteStopsInput = {
+    id?: string
+    name: string
+    description?: string | null
+    owner_id: string
+    is_active?: boolean
+    created_at?: Date | string
+    updated_at?: Date | string
+    shares?: ProjectShareUncheckedCreateNestedManyWithoutProjectInput
+    invites?: ProjectInviteUncheckedCreateNestedManyWithoutProjectInput
+    agencies?: AgencyUncheckedCreateNestedManyWithoutProjectInput
+    stops?: StopUncheckedCreateNestedManyWithoutProjectInput
+    routes?: RouteUncheckedCreateNestedManyWithoutProjectInput
+    trips?: TripUncheckedCreateNestedManyWithoutProjectInput
+    stopTimes?: StopTimeUncheckedCreateNestedManyWithoutProjectInput
+    calendars?: CalendarUncheckedCreateNestedManyWithoutProjectInput
+    calendarDates?: CalendarDateUncheckedCreateNestedManyWithoutProjectInput
+    fareAttributes?: FareAttributeUncheckedCreateNestedManyWithoutProjectInput
+    fareRules?: FareRuleUncheckedCreateNestedManyWithoutProjectInput
+    shapes?: ShapeUncheckedCreateNestedManyWithoutProjectInput
+    transfers?: TransferUncheckedCreateNestedManyWithoutProjectInput
+    frequencies?: FrequencyUncheckedCreateNestedManyWithoutProjectInput
+    levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
+    pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
+    feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+  }
+
+  export type UserProjectCreateOrConnectWithoutRouteStopsInput = {
+    where: UserProjectWhereUniqueInput
+    create: XOR<UserProjectCreateWithoutRouteStopsInput, UserProjectUncheckedCreateWithoutRouteStopsInput>
+  }
+
+  export type RouteCreateWithoutRouteStopsInput = {
+    id?: string
+    route_id: string
+    route_short_name?: string | null
+    route_long_name?: string | null
+    route_desc?: string | null
+    route_type: number
+    route_url?: string | null
+    route_color?: string | null
+    route_text_color?: string | null
+    route_sort_order?: number | null
+    continuous_pickup?: number | null
+    continuous_drop_off?: number | null
+    network_id?: string | null
+    created_by?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    project: UserProjectCreateNestedOneWithoutRoutesInput
+    agency?: AgencyCreateNestedOneWithoutRoutesInput
+    trips?: TripCreateNestedManyWithoutRouteInput
+    fareRules?: FareRuleCreateNestedManyWithoutRouteInput
+  }
+
+  export type RouteUncheckedCreateWithoutRouteStopsInput = {
+    id?: string
+    route_id: string
+    agency_id?: string | null
+    route_short_name?: string | null
+    route_long_name?: string | null
+    route_desc?: string | null
+    route_type: number
+    route_url?: string | null
+    route_color?: string | null
+    route_text_color?: string | null
+    route_sort_order?: number | null
+    continuous_pickup?: number | null
+    continuous_drop_off?: number | null
+    network_id?: string | null
+    project_id: string
+    created_by?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    trips?: TripUncheckedCreateNestedManyWithoutRouteInput
+    fareRules?: FareRuleUncheckedCreateNestedManyWithoutRouteInput
+  }
+
+  export type RouteCreateOrConnectWithoutRouteStopsInput = {
+    where: RouteWhereUniqueInput
+    create: XOR<RouteCreateWithoutRouteStopsInput, RouteUncheckedCreateWithoutRouteStopsInput>
+  }
+
+  export type StopCreateWithoutRouteStopsInput = {
+    id?: string
+    stop_id: string
+    stop_code?: string | null
+    stop_name: string
+    stop_desc?: string | null
+    stop_lat: number
+    stop_lon: number
+    zone_id?: string | null
+    stop_url?: string | null
+    location_type?: number | null
+    wheelchair_boarding?: number | null
+    platform_code?: string | null
+    tts_stop_name?: string | null
+    created_by?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    project: UserProjectCreateNestedOneWithoutStopsInput
+    stopTimes?: StopTimeCreateNestedManyWithoutStopInput
+    transfers?: TransferCreateNestedManyWithoutFromStopInput
+    transfersTo?: TransferCreateNestedManyWithoutToStopInput
+    pathways?: PathwayCreateNestedManyWithoutFromStopInput
+    pathwaysTo?: PathwayCreateNestedManyWithoutToStopInput
+    parentStop?: StopCreateNestedOneWithoutChildStopsInput
+    childStops?: StopCreateNestedManyWithoutParentStopInput
+    level?: LevelCreateNestedOneWithoutStopsInput
+  }
+
+  export type StopUncheckedCreateWithoutRouteStopsInput = {
+    id?: string
+    stop_id: string
+    stop_code?: string | null
+    stop_name: string
+    stop_desc?: string | null
+    stop_lat: number
+    stop_lon: number
+    zone_id?: string | null
+    stop_url?: string | null
+    location_type?: number | null
+    wheelchair_boarding?: number | null
+    parent_station?: string | null
+    platform_code?: string | null
+    level_id?: string | null
+    tts_stop_name?: string | null
+    project_id: string
+    created_by?: string | null
+    created_at?: Date | string
+    updated_at?: Date | string
+    stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
+    transfers?: TransferUncheckedCreateNestedManyWithoutFromStopInput
+    transfersTo?: TransferUncheckedCreateNestedManyWithoutToStopInput
+    pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
+    pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
+    childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+  }
+
+  export type StopCreateOrConnectWithoutRouteStopsInput = {
+    where: StopWhereUniqueInput
+    create: XOR<StopCreateWithoutRouteStopsInput, StopUncheckedCreateWithoutRouteStopsInput>
+  }
+
+  export type UserProjectUpsertWithoutRouteStopsInput = {
+    update: XOR<UserProjectUpdateWithoutRouteStopsInput, UserProjectUncheckedUpdateWithoutRouteStopsInput>
+    create: XOR<UserProjectCreateWithoutRouteStopsInput, UserProjectUncheckedCreateWithoutRouteStopsInput>
+    where?: UserProjectWhereInput
+  }
+
+  export type UserProjectUpdateToOneWithWhereWithoutRouteStopsInput = {
+    where?: UserProjectWhereInput
+    data: XOR<UserProjectUpdateWithoutRouteStopsInput, UserProjectUncheckedUpdateWithoutRouteStopsInput>
+  }
+
+  export type UserProjectUpdateWithoutRouteStopsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    owner?: UserUpdateOneRequiredWithoutOwnedProjectsNestedInput
+    shares?: ProjectShareUpdateManyWithoutProjectNestedInput
+    invites?: ProjectInviteUpdateManyWithoutProjectNestedInput
+    agencies?: AgencyUpdateManyWithoutProjectNestedInput
+    stops?: StopUpdateManyWithoutProjectNestedInput
+    routes?: RouteUpdateManyWithoutProjectNestedInput
+    trips?: TripUpdateManyWithoutProjectNestedInput
+    stopTimes?: StopTimeUpdateManyWithoutProjectNestedInput
+    calendars?: CalendarUpdateManyWithoutProjectNestedInput
+    calendarDates?: CalendarDateUpdateManyWithoutProjectNestedInput
+    fareAttributes?: FareAttributeUpdateManyWithoutProjectNestedInput
+    fareRules?: FareRuleUpdateManyWithoutProjectNestedInput
+    shapes?: ShapeUpdateManyWithoutProjectNestedInput
+    transfers?: TransferUpdateManyWithoutProjectNestedInput
+    frequencies?: FrequencyUpdateManyWithoutProjectNestedInput
+    levels?: LevelUpdateManyWithoutProjectNestedInput
+    pathways?: PathwayUpdateManyWithoutProjectNestedInput
+    feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+  }
+
+  export type UserProjectUncheckedUpdateWithoutRouteStopsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    owner_id?: StringFieldUpdateOperationsInput | string
+    is_active?: BoolFieldUpdateOperationsInput | boolean
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    shares?: ProjectShareUncheckedUpdateManyWithoutProjectNestedInput
+    invites?: ProjectInviteUncheckedUpdateManyWithoutProjectNestedInput
+    agencies?: AgencyUncheckedUpdateManyWithoutProjectNestedInput
+    stops?: StopUncheckedUpdateManyWithoutProjectNestedInput
+    routes?: RouteUncheckedUpdateManyWithoutProjectNestedInput
+    trips?: TripUncheckedUpdateManyWithoutProjectNestedInput
+    stopTimes?: StopTimeUncheckedUpdateManyWithoutProjectNestedInput
+    calendars?: CalendarUncheckedUpdateManyWithoutProjectNestedInput
+    calendarDates?: CalendarDateUncheckedUpdateManyWithoutProjectNestedInput
+    fareAttributes?: FareAttributeUncheckedUpdateManyWithoutProjectNestedInput
+    fareRules?: FareRuleUncheckedUpdateManyWithoutProjectNestedInput
+    shapes?: ShapeUncheckedUpdateManyWithoutProjectNestedInput
+    transfers?: TransferUncheckedUpdateManyWithoutProjectNestedInput
+    frequencies?: FrequencyUncheckedUpdateManyWithoutProjectNestedInput
+    levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
+    pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
+    feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+  }
+
+  export type RouteUpsertWithoutRouteStopsInput = {
+    update: XOR<RouteUpdateWithoutRouteStopsInput, RouteUncheckedUpdateWithoutRouteStopsInput>
+    create: XOR<RouteCreateWithoutRouteStopsInput, RouteUncheckedCreateWithoutRouteStopsInput>
+    where?: RouteWhereInput
+  }
+
+  export type RouteUpdateToOneWithWhereWithoutRouteStopsInput = {
+    where?: RouteWhereInput
+    data: XOR<RouteUpdateWithoutRouteStopsInput, RouteUncheckedUpdateWithoutRouteStopsInput>
+  }
+
+  export type RouteUpdateWithoutRouteStopsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    route_short_name?: NullableStringFieldUpdateOperationsInput | string | null
+    route_long_name?: NullableStringFieldUpdateOperationsInput | string | null
+    route_desc?: NullableStringFieldUpdateOperationsInput | string | null
+    route_type?: IntFieldUpdateOperationsInput | number
+    route_url?: NullableStringFieldUpdateOperationsInput | string | null
+    route_color?: NullableStringFieldUpdateOperationsInput | string | null
+    route_text_color?: NullableStringFieldUpdateOperationsInput | string | null
+    route_sort_order?: NullableIntFieldUpdateOperationsInput | number | null
+    continuous_pickup?: NullableIntFieldUpdateOperationsInput | number | null
+    continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
+    network_id?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
+    agency?: AgencyUpdateOneWithoutRoutesNestedInput
+    trips?: TripUpdateManyWithoutRouteNestedInput
+    fareRules?: FareRuleUpdateManyWithoutRouteNestedInput
+  }
+
+  export type RouteUncheckedUpdateWithoutRouteStopsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    agency_id?: NullableStringFieldUpdateOperationsInput | string | null
+    route_short_name?: NullableStringFieldUpdateOperationsInput | string | null
+    route_long_name?: NullableStringFieldUpdateOperationsInput | string | null
+    route_desc?: NullableStringFieldUpdateOperationsInput | string | null
+    route_type?: IntFieldUpdateOperationsInput | number
+    route_url?: NullableStringFieldUpdateOperationsInput | string | null
+    route_color?: NullableStringFieldUpdateOperationsInput | string | null
+    route_text_color?: NullableStringFieldUpdateOperationsInput | string | null
+    route_sort_order?: NullableIntFieldUpdateOperationsInput | number | null
+    continuous_pickup?: NullableIntFieldUpdateOperationsInput | number | null
+    continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
+    network_id?: NullableStringFieldUpdateOperationsInput | string | null
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
+    fareRules?: FareRuleUncheckedUpdateManyWithoutRouteNestedInput
+  }
+
+  export type StopUpsertWithoutRouteStopsInput = {
+    update: XOR<StopUpdateWithoutRouteStopsInput, StopUncheckedUpdateWithoutRouteStopsInput>
+    create: XOR<StopCreateWithoutRouteStopsInput, StopUncheckedCreateWithoutRouteStopsInput>
+    where?: StopWhereInput
+  }
+
+  export type StopUpdateToOneWithWhereWithoutRouteStopsInput = {
+    where?: StopWhereInput
+    data: XOR<StopUpdateWithoutRouteStopsInput, StopUncheckedUpdateWithoutRouteStopsInput>
+  }
+
+  export type StopUpdateWithoutRouteStopsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_code?: NullableStringFieldUpdateOperationsInput | string | null
+    stop_name?: StringFieldUpdateOperationsInput | string
+    stop_desc?: NullableStringFieldUpdateOperationsInput | string | null
+    stop_lat?: FloatFieldUpdateOperationsInput | number
+    stop_lon?: FloatFieldUpdateOperationsInput | number
+    zone_id?: NullableStringFieldUpdateOperationsInput | string | null
+    stop_url?: NullableStringFieldUpdateOperationsInput | string | null
+    location_type?: NullableIntFieldUpdateOperationsInput | number | null
+    wheelchair_boarding?: NullableIntFieldUpdateOperationsInput | number | null
+    platform_code?: NullableStringFieldUpdateOperationsInput | string | null
+    tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
+    stopTimes?: StopTimeUpdateManyWithoutStopNestedInput
+    transfers?: TransferUpdateManyWithoutFromStopNestedInput
+    transfersTo?: TransferUpdateManyWithoutToStopNestedInput
+    pathways?: PathwayUpdateManyWithoutFromStopNestedInput
+    pathwaysTo?: PathwayUpdateManyWithoutToStopNestedInput
+    parentStop?: StopUpdateOneWithoutChildStopsNestedInput
+    childStops?: StopUpdateManyWithoutParentStopNestedInput
+    level?: LevelUpdateOneWithoutStopsNestedInput
+  }
+
+  export type StopUncheckedUpdateWithoutRouteStopsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_code?: NullableStringFieldUpdateOperationsInput | string | null
+    stop_name?: StringFieldUpdateOperationsInput | string
+    stop_desc?: NullableStringFieldUpdateOperationsInput | string | null
+    stop_lat?: FloatFieldUpdateOperationsInput | number
+    stop_lon?: FloatFieldUpdateOperationsInput | number
+    zone_id?: NullableStringFieldUpdateOperationsInput | string | null
+    stop_url?: NullableStringFieldUpdateOperationsInput | string | null
+    location_type?: NullableIntFieldUpdateOperationsInput | number | null
+    wheelchair_boarding?: NullableIntFieldUpdateOperationsInput | number | null
+    parent_station?: NullableStringFieldUpdateOperationsInput | string | null
+    platform_code?: NullableStringFieldUpdateOperationsInput | string | null
+    level_id?: NullableStringFieldUpdateOperationsInput | string | null
+    tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
+    transfers?: TransferUncheckedUpdateManyWithoutFromStopNestedInput
+    transfersTo?: TransferUncheckedUpdateManyWithoutToStopNestedInput
+    pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
+    pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
+    childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+  }
+
   export type UserProjectCreateWithoutTripsInput = {
     id?: string
     name: string
@@ -43538,6 +45853,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutTripsInput = {
@@ -43564,6 +45880,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutTripsInput = {
@@ -43591,6 +45908,7 @@ export namespace Prisma {
     project: UserProjectCreateNestedOneWithoutRoutesInput
     agency?: AgencyCreateNestedOneWithoutRoutesInput
     fareRules?: FareRuleCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopCreateNestedManyWithoutRouteInput
   }
 
   export type RouteUncheckedCreateWithoutTripsInput = {
@@ -43613,6 +45931,7 @@ export namespace Prisma {
     created_at?: Date | string
     updated_at?: Date | string
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutRouteInput
   }
 
   export type RouteCreateOrConnectWithoutTripsInput = {
@@ -43746,6 +46065,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutTripsInput = {
@@ -43772,6 +46092,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type RouteUpsertWithoutTripsInput = {
@@ -43805,6 +46126,7 @@ export namespace Prisma {
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
     agency?: AgencyUpdateOneWithoutRoutesNestedInput
     fareRules?: FareRuleUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteUncheckedUpdateWithoutTripsInput = {
@@ -43827,6 +46149,7 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fareRules?: FareRuleUncheckedUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutRouteNestedInput
   }
 
   export type CalendarUpsertWithoutTripsInput = {
@@ -43918,6 +46241,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutStopTimesInput = {
@@ -43944,6 +46268,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutStopTimesInput = {
@@ -44017,6 +46342,7 @@ export namespace Prisma {
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutStopTimesInput = {
@@ -44044,6 +46370,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutStopTimesInput = {
@@ -44086,6 +46413,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutStopTimesInput = {
@@ -44112,6 +46440,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type TripUpsertWithoutStopTimesInput = {
@@ -44197,6 +46526,7 @@ export namespace Prisma {
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutStopTimesInput = {
@@ -44224,6 +46554,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type UserProjectCreateWithoutCalendarsInput = {
@@ -44250,6 +46581,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutCalendarsInput = {
@@ -44276,6 +46608,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutCalendarsInput = {
@@ -44394,6 +46727,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutCalendarsInput = {
@@ -44420,6 +46754,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type TripUpsertWithWhereUniqueWithoutCalendarInput = {
@@ -44478,6 +46813,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutCalendarDatesInput = {
@@ -44504,6 +46840,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutCalendarDatesInput = {
@@ -44589,6 +46926,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutCalendarDatesInput = {
@@ -44615,6 +46953,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type CalendarUpsertWithoutExceptionsInput = {
@@ -44690,6 +47029,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutFareAttributesInput = {
@@ -44716,6 +47056,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutFareAttributesInput = {
@@ -44831,6 +47172,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutFareAttributesInput = {
@@ -44857,6 +47199,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type AgencyUpsertWithoutFareAttributesInput = {
@@ -44944,6 +47287,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutFareRulesInput = {
@@ -44970,6 +47314,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutFareRulesInput = {
@@ -45032,6 +47377,7 @@ export namespace Prisma {
     project: UserProjectCreateNestedOneWithoutRoutesInput
     agency?: AgencyCreateNestedOneWithoutRoutesInput
     trips?: TripCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopCreateNestedManyWithoutRouteInput
   }
 
   export type RouteUncheckedCreateWithoutFareRulesInput = {
@@ -45054,6 +47400,7 @@ export namespace Prisma {
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutRouteInput
   }
 
   export type RouteCreateOrConnectWithoutFareRulesInput = {
@@ -45096,6 +47443,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutFareRulesInput = {
@@ -45122,6 +47470,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type FareAttributeUpsertWithoutFareRulesInput = {
@@ -45196,6 +47545,7 @@ export namespace Prisma {
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
     agency?: AgencyUpdateOneWithoutRoutesNestedInput
     trips?: TripUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteUncheckedUpdateWithoutFareRulesInput = {
@@ -45218,6 +47568,7 @@ export namespace Prisma {
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutRouteNestedInput
   }
 
   export type UserProjectCreateWithoutShapesInput = {
@@ -45244,6 +47595,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutShapesInput = {
@@ -45270,6 +47622,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutShapesInput = {
@@ -45312,6 +47665,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutShapesInput = {
@@ -45338,6 +47692,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectCreateWithoutTransfersInput = {
@@ -45364,6 +47719,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutTransfersInput = {
@@ -45390,6 +47746,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutTransfersInput = {
@@ -45422,6 +47779,7 @@ export namespace Prisma {
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutTransfersInput = {
@@ -45449,6 +47807,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutTransfersInput = {
@@ -45481,6 +47840,7 @@ export namespace Prisma {
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutTransfersToInput = {
@@ -45508,6 +47868,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutTransfersToInput = {
@@ -45550,6 +47911,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutTransfersInput = {
@@ -45576,6 +47938,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type StopUpsertWithoutTransfersInput = {
@@ -45614,6 +47977,7 @@ export namespace Prisma {
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutTransfersInput = {
@@ -45641,6 +48005,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type StopUpsertWithoutTransfersToInput = {
@@ -45679,6 +48044,7 @@ export namespace Prisma {
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutTransfersToInput = {
@@ -45706,6 +48072,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type UserProjectCreateWithoutFrequenciesInput = {
@@ -45732,6 +48099,7 @@ export namespace Prisma {
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutFrequenciesInput = {
@@ -45758,6 +48126,7 @@ export namespace Prisma {
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutFrequenciesInput = {
@@ -45800,6 +48169,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutFrequenciesInput = {
@@ -45826,6 +48196,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectCreateWithoutLevelsInput = {
@@ -45852,6 +48223,7 @@ export namespace Prisma {
     frequencies?: FrequencyCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutLevelsInput = {
@@ -45878,6 +48250,7 @@ export namespace Prisma {
     frequencies?: FrequencyUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutLevelsInput = {
@@ -45910,6 +48283,7 @@ export namespace Prisma {
     pathwaysTo?: PathwayCreateNestedManyWithoutToStopInput
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutLevelInput = {
@@ -45937,6 +48311,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutLevelInput = {
@@ -46034,6 +48409,7 @@ export namespace Prisma {
     frequencies?: FrequencyUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutLevelsInput = {
@@ -46060,6 +48436,7 @@ export namespace Prisma {
     frequencies?: FrequencyUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type StopUpsertWithWhereUniqueWithoutLevelInput = {
@@ -46118,6 +48495,7 @@ export namespace Prisma {
     frequencies?: FrequencyCreateNestedManyWithoutProjectInput
     levels?: LevelCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutPathwaysInput = {
@@ -46144,6 +48522,7 @@ export namespace Prisma {
     frequencies?: FrequencyUncheckedCreateNestedManyWithoutProjectInput
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     feedInfo?: FeedInfoUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutPathwaysInput = {
@@ -46176,6 +48555,7 @@ export namespace Prisma {
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutPathwaysInput = {
@@ -46203,6 +48583,7 @@ export namespace Prisma {
     transfersTo?: TransferUncheckedCreateNestedManyWithoutToStopInput
     pathwaysTo?: PathwayUncheckedCreateNestedManyWithoutToStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutPathwaysInput = {
@@ -46235,6 +48616,7 @@ export namespace Prisma {
     parentStop?: StopCreateNestedOneWithoutChildStopsInput
     childStops?: StopCreateNestedManyWithoutParentStopInput
     level?: LevelCreateNestedOneWithoutStopsInput
+    routeStops?: RouteStopCreateNestedManyWithoutStopInput
   }
 
   export type StopUncheckedCreateWithoutPathwaysToInput = {
@@ -46262,6 +48644,7 @@ export namespace Prisma {
     transfersTo?: TransferUncheckedCreateNestedManyWithoutToStopInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutFromStopInput
     childStops?: StopUncheckedCreateNestedManyWithoutParentStopInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutStopInput
   }
 
   export type StopCreateOrConnectWithoutPathwaysToInput = {
@@ -46333,6 +48716,7 @@ export namespace Prisma {
     frequencies?: FrequencyUpdateManyWithoutProjectNestedInput
     levels?: LevelUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutPathwaysInput = {
@@ -46359,6 +48743,7 @@ export namespace Prisma {
     frequencies?: FrequencyUncheckedUpdateManyWithoutProjectNestedInput
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type StopUpsertWithoutPathwaysInput = {
@@ -46397,6 +48782,7 @@ export namespace Prisma {
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutPathwaysInput = {
@@ -46424,6 +48810,7 @@ export namespace Prisma {
     transfersTo?: TransferUncheckedUpdateManyWithoutToStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type StopUpsertWithoutPathwaysToInput = {
@@ -46462,6 +48849,7 @@ export namespace Prisma {
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutPathwaysToInput = {
@@ -46489,6 +48877,7 @@ export namespace Prisma {
     transfersTo?: TransferUncheckedUpdateManyWithoutToStopNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type LevelUpsertWithoutPathwaysInput = {
@@ -46550,6 +48939,7 @@ export namespace Prisma {
     frequencies?: FrequencyCreateNestedManyWithoutProjectInput
     levels?: LevelCreateNestedManyWithoutProjectInput
     pathways?: PathwayCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectUncheckedCreateWithoutFeedInfoInput = {
@@ -46576,6 +48966,7 @@ export namespace Prisma {
     frequencies?: FrequencyUncheckedCreateNestedManyWithoutProjectInput
     levels?: LevelUncheckedCreateNestedManyWithoutProjectInput
     pathways?: PathwayUncheckedCreateNestedManyWithoutProjectInput
+    routeStops?: RouteStopUncheckedCreateNestedManyWithoutProjectInput
   }
 
   export type UserProjectCreateOrConnectWithoutFeedInfoInput = {
@@ -46618,6 +49009,7 @@ export namespace Prisma {
     frequencies?: FrequencyUpdateManyWithoutProjectNestedInput
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutFeedInfoInput = {
@@ -46644,6 +49036,7 @@ export namespace Prisma {
     frequencies?: FrequencyUncheckedUpdateManyWithoutProjectNestedInput
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectCreateManyOwnerInput = {
@@ -46718,6 +49111,7 @@ export namespace Prisma {
     levels?: LevelUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateWithoutOwnerInput = {
@@ -46744,6 +49138,7 @@ export namespace Prisma {
     levels?: LevelUncheckedUpdateManyWithoutProjectNestedInput
     pathways?: PathwayUncheckedUpdateManyWithoutProjectNestedInput
     feedInfo?: FeedInfoUncheckedUpdateManyWithoutProjectNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutProjectNestedInput
   }
 
   export type UserProjectUncheckedUpdateManyWithoutOwnerInput = {
@@ -47119,6 +49514,16 @@ export namespace Prisma {
     updated_at?: Date | string
   }
 
+  export type RouteStopCreateManyProjectInput = {
+    id?: string
+    route_id: string
+    stop_id: string
+    stop_sequence: number
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
+  }
+
   export type ProjectShareUpdateWithoutProjectInput = {
     id?: StringFieldUpdateOperationsInput | string
     role?: EnumProjectRoleFieldUpdateOperationsInput | $Enums.ProjectRole
@@ -47256,6 +49661,7 @@ export namespace Prisma {
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutProjectInput = {
@@ -47283,6 +49689,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateManyWithoutProjectInput = {
@@ -47326,6 +49733,7 @@ export namespace Prisma {
     agency?: AgencyUpdateOneWithoutRoutesNestedInput
     trips?: TripUpdateManyWithoutRouteNestedInput
     fareRules?: FareRuleUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteUncheckedUpdateWithoutProjectInput = {
@@ -47348,6 +49756,7 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
     fareRules?: FareRuleUncheckedUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteUncheckedUpdateManyWithoutProjectInput = {
@@ -47892,6 +50301,36 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type RouteStopUpdateWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+    route?: RouteUpdateOneRequiredWithoutRouteStopsNestedInput
+    stop?: StopUpdateOneRequiredWithoutRouteStopsNestedInput
+  }
+
+  export type RouteStopUncheckedUpdateWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type RouteStopUncheckedUpdateManyWithoutProjectInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+  }
+
   export type RouteCreateManyAgencyInput = {
     id?: string
     route_id: string
@@ -47946,6 +50385,7 @@ export namespace Prisma {
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
     trips?: TripUpdateManyWithoutRouteNestedInput
     fareRules?: FareRuleUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteUncheckedUpdateWithoutAgencyInput = {
@@ -47968,6 +50408,7 @@ export namespace Prisma {
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
     fareRules?: FareRuleUncheckedUpdateManyWithoutRouteNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutRouteNestedInput
   }
 
   export type RouteUncheckedUpdateManyWithoutAgencyInput = {
@@ -48134,6 +50575,16 @@ export namespace Prisma {
     created_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+  }
+
+  export type RouteStopCreateManyStopInput = {
+    id?: string
+    route_id: string
+    stop_sequence: number
+    project_id: string
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
   }
 
   export type StopTimeUpdateWithoutStopInput = {
@@ -48404,6 +50855,7 @@ export namespace Prisma {
     pathwaysTo?: PathwayUpdateManyWithoutToStopNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
     level?: LevelUpdateOneWithoutStopsNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutParentStopInput = {
@@ -48431,6 +50883,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateManyWithoutParentStopInput = {
@@ -48452,6 +50905,36 @@ export namespace Prisma {
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteStopUpdateWithoutStopInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+    project?: UserProjectUpdateOneRequiredWithoutRouteStopsNestedInput
+    route?: RouteUpdateOneRequiredWithoutRouteStopsNestedInput
+  }
+
+  export type RouteStopUncheckedUpdateWithoutStopInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type RouteStopUncheckedUpdateManyWithoutStopInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    route_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type TripCreateManyRouteInput = {
@@ -48481,6 +50964,16 @@ export namespace Prisma {
     created_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
+  }
+
+  export type RouteStopCreateManyRouteInput = {
+    id?: string
+    stop_id: string
+    stop_sequence: number
+    project_id: string
+    created_at?: Date | string
+    updated_at?: Date | string
+    direction_id?: number
   }
 
   export type TripUpdateWithoutRouteInput = {
@@ -48570,6 +51063,36 @@ export namespace Prisma {
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteStopUpdateWithoutRouteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+    project?: UserProjectUpdateOneRequiredWithoutRouteStopsNestedInput
+    stop?: StopUpdateOneRequiredWithoutRouteStopsNestedInput
+  }
+
+  export type RouteStopUncheckedUpdateWithoutRouteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type RouteStopUncheckedUpdateManyWithoutRouteInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    stop_id?: StringFieldUpdateOperationsInput | string
+    stop_sequence?: IntFieldUpdateOperationsInput | number
+    project_id?: StringFieldUpdateOperationsInput | string
+    created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    direction_id?: IntFieldUpdateOperationsInput | number
   }
 
   export type StopTimeCreateManyTripInput = {
@@ -48872,6 +51395,7 @@ export namespace Prisma {
     pathwaysTo?: PathwayUpdateManyWithoutToStopNestedInput
     parentStop?: StopUpdateOneWithoutChildStopsNestedInput
     childStops?: StopUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateWithoutLevelInput = {
@@ -48899,6 +51423,7 @@ export namespace Prisma {
     pathways?: PathwayUncheckedUpdateManyWithoutFromStopNestedInput
     pathwaysTo?: PathwayUncheckedUpdateManyWithoutToStopNestedInput
     childStops?: StopUncheckedUpdateManyWithoutParentStopNestedInput
+    routeStops?: RouteStopUncheckedUpdateManyWithoutStopNestedInput
   }
 
   export type StopUncheckedUpdateManyWithoutLevelInput = {

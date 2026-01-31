@@ -2,7 +2,9 @@ import { prisma } from "../../utils/prisma.js"
 
 // Get all stops for a project
 export async function getStops(projectId, query = {}) {
-    const { page = 1, limit = 10, search = "" } = query
+    const page = Number(query.page) || 1
+    const limit = Number(query.limit) || 10
+    const search = query.search || ""
     const skip = (page - 1) * limit
 
     const whereClause = {

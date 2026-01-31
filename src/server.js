@@ -8,6 +8,7 @@ import routeRoutes from './routes/routeRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
 import gtfsRoutes from './routes/gtfsRoutes.js';
 import publicRoutes from './routes/publicRoutes.js';
+import { errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -30,13 +31,7 @@ app.use('/api/gtfs', gtfsRoutes);
 app.use('/api/public', publicRoutes);
 
 // Global Error Handler
-app.use((err, req, res, next) => {
-    console.error('Global Error Handler:', err);
-    res.status(err.status || 500).json({
-        error: err.message || 'Internal Server Error',
-        stack: process.env.NODE_ENV === 'development' ? err.stack : undefined
-    });
-});
+app.use(errorHandler);
 
 app.get('/', (req, res) => {
     res.json({ message: 'GTFS Backend API is running' });

@@ -23,6 +23,8 @@ const GTFS_TABLES = {
     trips: { model: "trip", primaryKey: "trip_id" },
     stop_times: { model: "stopTime", primaryKey: null },
     shapes: { model: "shape", primaryKey: null },
+    fare_attributes: { model: "fareAttribute", primaryKey: "fare_id" },
+    fare_rules: { model: "fareRule", primaryKey: null },
 }
 
 const IMPORT_ORDER = [
@@ -34,6 +36,8 @@ const IMPORT_ORDER = [
     "trips",
     "stop_times",
     "shapes",
+    "fare_attributes",
+    "fare_rules",
 ]
 
 class GTFSUploadProcessor {
@@ -140,6 +144,17 @@ class GTFSUploadProcessor {
                 shape_pt_sequence: this.toInt(normalized.shape_pt_sequence),
                 shape_dist_traveled: this.toFloat(normalized.shape_dist_traveled),
             }),
+            fareAttribute: () => ({
+                ...normalized,
+                price: this.toFloat(normalized.price),
+                payment_method: this.toInt(normalized.payment_method),
+                transfers: this.toInt(normalized.transfers),
+                transfer_duration: this.toInt(normalized.transfer_duration),
+            }),
+            fareRule: () => ({
+                ...normalized,
+                // fare_rules typically has no numeric fields, just references
+            }),
         }
 
         return normalizers[model] ? normalizers[model]() : normalized
@@ -152,6 +167,7 @@ class GTFSUploadProcessor {
             { key: "routeIds", sql: `SELECT route_id FROM "Route" WHERE project_id = $1` },
             { key: "tripIds", sql: `SELECT trip_id FROM "Trip" WHERE project_id = $1` },
             { key: "serviceIds", sql: `SELECT service_id FROM "Calendar" WHERE project_id = $1 UNION SELECT service_id FROM "CalendarDate" WHERE project_id = $1` },
+            { key: "fareIds", sql: `SELECT fare_id FROM "FareAttribute" WHERE project_id = $1` },
         ]
 
         for (const { key, sql } of queries) {
@@ -177,6 +193,7 @@ class GTFSUploadProcessor {
             trip: "tripIds",
             calendar: "serviceIds",
             calendarDate: "serviceIds",
+            fareAttribute: "fareIds",
         }
 
         const keyName = modelToKeyMap[model]
@@ -202,6 +219,7 @@ class GTFSUploadProcessor {
             stopTime: (r) =>
                 this.referenceIds.get("tripIds").has(r.trip_id) &&
                 this.referenceIds.get("stopIds").has(r.stop_id),
+            fareRule: (r) => this.referenceIds.get("fareIds").has(r.fare_id),
         }
 
         if (!filters[model]) return records
