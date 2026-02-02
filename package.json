@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch src/server.js",
-    "db:reset": "npx prisma migrate reset --force --schema=./prisma/schema.prisma && npx prisma generate",
+    "db:reset": "npx prisma migrate reset --force --schema=./prisma/schema.prisma && npx prisma db seed && npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
     "db:push": "npx prisma db push"
   },
@@ -42,5 +42,8 @@
   },
   "devDependencies": {
     "prisma": "^7.3.0"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   }
 }

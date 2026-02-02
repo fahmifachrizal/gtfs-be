@@ -5,6 +5,7 @@ import { appendFile, mkdir } from "fs/promises"
 import { join } from "path"
 import { v4 as uuidv4 } from "uuid"
 import { checkProjectAccess } from "../../utils/auth.js"
+import { deduplicateStopTimes } from "./processors.js"
 
 // Configuration
 const CONFIG = {
@@ -319,7 +320,11 @@ class GTFSUploadProcessor {
             }
 
             const normalizedRecords = rawRecords.map((record) => this.normalizeRecord(tableConfig.model, record))
-            const filteredRecords = this.filterRecordsByDependencies(tableConfig.model, normalizedRecords)
+            let filteredRecords = this.filterRecordsByDependencies(tableConfig.model, normalizedRecords)
+
+            if (tableConfig.model === "stopTime") {
+                filteredRecords = deduplicateStopTimes(filteredRecords)
+            }
 
             if (!filteredRecords.length) {
                 await this.logToFile(`- ${tableName}: No valid records after dependency filtering, skipping.`)

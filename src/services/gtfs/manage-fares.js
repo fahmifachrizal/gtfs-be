@@ -1,6 +1,6 @@
 import { prisma } from "../../utils/prisma.js"
 
-export async function createFare(projectId, data) {
+export async function createFare(projectId, data, userId = null) {
     const {
         fare_id,
         price,
@@ -24,12 +24,13 @@ export async function createFare(projectId, data) {
             transfers: transfers !== undefined ? parseInt(transfers) : null,
             agency_id: agency_id || null,
             transfer_duration: transfer_duration ? parseInt(transfer_duration) : null,
-            project_id: projectId
+            project_id: projectId,
+            created_by: userId
         }
     })
 }
 
-export async function updateFare(projectId, fareId, data) {
+export async function updateFare(projectId, fareId, data, userId = null) {
     const existing = await prisma.fareAttribute.findFirst({
         where: {
             fare_id: fareId,
@@ -91,7 +92,7 @@ export async function deleteFare(projectId, fareId) {
 }
 
 // Fare Rules CRUD
-export async function createFareRule(projectId, data) {
+export async function createFareRule(projectId, data, userId = null) {
     const { fare_id, route_id, origin_id, destination_id, contains_id } = data
 
     if (!fare_id) {
@@ -105,7 +106,8 @@ export async function createFareRule(projectId, data) {
             origin_id: origin_id || null,
             destination_id: destination_id || null,
             contains_id: contains_id || null,
-            project_id: projectId
+            project_id: projectId,
+            created_by: userId
         }
     })
 }

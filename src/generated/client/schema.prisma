@@ -192,6 +192,7 @@ model Agency {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -225,6 +226,7 @@ model Stop {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -267,6 +269,7 @@ model Route {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -319,6 +322,7 @@ model Trip {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -353,6 +357,7 @@ model StopTime {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -385,6 +390,7 @@ model Calendar {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -408,6 +414,7 @@ model CalendarDate {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -433,6 +440,7 @@ model FareAttribute {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -456,6 +464,7 @@ model FareRule {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -478,6 +487,7 @@ model Shape {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -499,6 +509,7 @@ model Transfer {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -515,7 +526,7 @@ model Transfer {
 
 model Frequency {
   id           String @id @default(uuid())
-  trip_id      String @unique
+  trip_id      String
   start_time   String
   end_time     String
   headway_secs Int
@@ -524,12 +535,14 @@ model Frequency {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
   // Relations
   project UserProject @relation(fields: [project_id], references: [id], onDelete: Cascade)
 
+  @@unique([trip_id, start_time, project_id])
   @@index([trip_id])
   @@index([start_time])
   @@index([project_id])
@@ -544,6 +557,7 @@ model Level {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -575,6 +589,7 @@ model Pathway {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -606,6 +621,7 @@ model FeedInfo {
   // User context fields
   project_id String
   created_by String?
+  updated_by String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 

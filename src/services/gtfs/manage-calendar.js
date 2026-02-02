@@ -1,6 +1,6 @@
 import { prisma } from "../../utils/prisma.js"
 
-export async function createCalendar(projectId, data) {
+export async function createCalendar(projectId, data, userId = null) {
     const {
         service_id,
         monday,
@@ -30,12 +30,13 @@ export async function createCalendar(projectId, data) {
             sunday: parseInt(sunday) || 0,
             start_date,
             end_date,
-            project_id: projectId
+            project_id: projectId,
+            created_by: userId
         }
     })
 }
 
-export async function updateCalendar(projectId, serviceId, data) {
+export async function updateCalendar(projectId, serviceId, data, userId = null) {
     const existing = await prisma.calendar.findFirst({
         where: {
             service_id: serviceId,

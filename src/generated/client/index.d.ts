@@ -11961,6 +11961,7 @@ export namespace Prisma {
     agency_email: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -11977,6 +11978,7 @@ export namespace Prisma {
     agency_email: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -11993,6 +11995,7 @@ export namespace Prisma {
     agency_email: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -12011,6 +12014,7 @@ export namespace Prisma {
     agency_email?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -12027,6 +12031,7 @@ export namespace Prisma {
     agency_email?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -12043,6 +12048,7 @@ export namespace Prisma {
     agency_email?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -12132,6 +12138,7 @@ export namespace Prisma {
     agency_email: string | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: AgencyCountAggregateOutputType | null
@@ -12165,6 +12172,7 @@ export namespace Prisma {
     agency_email?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -12185,6 +12193,7 @@ export namespace Prisma {
     agency_email?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -12202,6 +12211,7 @@ export namespace Prisma {
     agency_email?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -12219,11 +12229,12 @@ export namespace Prisma {
     agency_email?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type AgencyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "agency_id" | "agency_name" | "agency_url" | "agency_timezone" | "agency_lang" | "agency_phone" | "agency_fare_url" | "agency_email" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["agency"]>
+  export type AgencyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "agency_id" | "agency_name" | "agency_url" | "agency_timezone" | "agency_lang" | "agency_phone" | "agency_fare_url" | "agency_email" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["agency"]>
   export type AgencyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     routes?: boolean | Agency$routesArgs<ExtArgs>
@@ -12256,6 +12267,7 @@ export namespace Prisma {
       agency_email: string | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["agency"]>
@@ -12695,6 +12707,7 @@ export namespace Prisma {
     readonly agency_email: FieldRef<"Agency", 'String'>
     readonly project_id: FieldRef<"Agency", 'String'>
     readonly created_by: FieldRef<"Agency", 'String'>
+    readonly updated_by: FieldRef<"Agency", 'String'>
     readonly created_at: FieldRef<"Agency", 'DateTime'>
     readonly updated_at: FieldRef<"Agency", 'DateTime'>
   }
@@ -13203,6 +13216,7 @@ export namespace Prisma {
     tts_stop_name: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -13225,6 +13239,7 @@ export namespace Prisma {
     tts_stop_name: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -13247,6 +13262,7 @@ export namespace Prisma {
     tts_stop_name: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -13285,6 +13301,7 @@ export namespace Prisma {
     tts_stop_name?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -13307,6 +13324,7 @@ export namespace Prisma {
     tts_stop_name?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -13329,6 +13347,7 @@ export namespace Prisma {
     tts_stop_name?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -13438,6 +13457,7 @@ export namespace Prisma {
     tts_stop_name: string | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: StopCountAggregateOutputType | null
@@ -13479,6 +13499,7 @@ export namespace Prisma {
     tts_stop_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -13512,6 +13533,7 @@ export namespace Prisma {
     tts_stop_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -13537,6 +13559,7 @@ export namespace Prisma {
     tts_stop_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -13562,11 +13585,12 @@ export namespace Prisma {
     tts_stop_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type StopOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "stop_id" | "stop_code" | "stop_name" | "stop_desc" | "stop_lat" | "stop_lon" | "zone_id" | "stop_url" | "location_type" | "wheelchair_boarding" | "parent_station" | "platform_code" | "level_id" | "tts_stop_name" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["stop"]>
+  export type StopOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "stop_id" | "stop_code" | "stop_name" | "stop_desc" | "stop_lat" | "stop_lon" | "zone_id" | "stop_url" | "location_type" | "wheelchair_boarding" | "parent_station" | "platform_code" | "level_id" | "tts_stop_name" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["stop"]>
   export type StopInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     stopTimes?: boolean | Stop$stopTimesArgs<ExtArgs>
@@ -13623,6 +13647,7 @@ export namespace Prisma {
       tts_stop_name: string | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["stop"]>
@@ -14075,6 +14100,7 @@ export namespace Prisma {
     readonly tts_stop_name: FieldRef<"Stop", 'String'>
     readonly project_id: FieldRef<"Stop", 'String'>
     readonly created_by: FieldRef<"Stop", 'String'>
+    readonly updated_by: FieldRef<"Stop", 'String'>
     readonly created_at: FieldRef<"Stop", 'DateTime'>
     readonly updated_at: FieldRef<"Stop", 'DateTime'>
   }
@@ -14740,6 +14766,7 @@ export namespace Prisma {
     network_id: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -14761,6 +14788,7 @@ export namespace Prisma {
     network_id: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -14782,6 +14810,7 @@ export namespace Prisma {
     network_id: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -14819,6 +14848,7 @@ export namespace Prisma {
     network_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -14840,6 +14870,7 @@ export namespace Prisma {
     network_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -14861,6 +14892,7 @@ export namespace Prisma {
     network_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -14969,6 +15001,7 @@ export namespace Prisma {
     network_id: string | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: RouteCountAggregateOutputType | null
@@ -15009,6 +15042,7 @@ export namespace Prisma {
     network_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -15036,6 +15070,7 @@ export namespace Prisma {
     network_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -15059,6 +15094,7 @@ export namespace Prisma {
     network_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -15082,11 +15118,12 @@ export namespace Prisma {
     network_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type RouteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "route_id" | "agency_id" | "route_short_name" | "route_long_name" | "route_desc" | "route_type" | "route_url" | "route_color" | "route_text_color" | "route_sort_order" | "continuous_pickup" | "continuous_drop_off" | "network_id" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["route"]>
+  export type RouteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "route_id" | "agency_id" | "route_short_name" | "route_long_name" | "route_desc" | "route_type" | "route_url" | "route_color" | "route_text_color" | "route_sort_order" | "continuous_pickup" | "continuous_drop_off" | "network_id" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["route"]>
   export type RouteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     agency?: boolean | Route$agencyArgs<ExtArgs>
@@ -15130,6 +15167,7 @@ export namespace Prisma {
       network_id: string | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["route"]>
@@ -15576,6 +15614,7 @@ export namespace Prisma {
     readonly network_id: FieldRef<"Route", 'String'>
     readonly project_id: FieldRef<"Route", 'String'>
     readonly created_by: FieldRef<"Route", 'String'>
+    readonly updated_by: FieldRef<"Route", 'String'>
     readonly created_at: FieldRef<"Route", 'DateTime'>
     readonly updated_at: FieldRef<"Route", 'DateTime'>
   }
@@ -17272,6 +17311,7 @@ export namespace Prisma {
     bikes_allowed: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -17290,6 +17330,7 @@ export namespace Prisma {
     bikes_allowed: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -17308,6 +17349,7 @@ export namespace Prisma {
     bikes_allowed: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -17340,6 +17382,7 @@ export namespace Prisma {
     bikes_allowed?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -17358,6 +17401,7 @@ export namespace Prisma {
     bikes_allowed?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -17376,6 +17420,7 @@ export namespace Prisma {
     bikes_allowed?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -17481,6 +17526,7 @@ export namespace Prisma {
     bikes_allowed: number | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: TripCountAggregateOutputType | null
@@ -17518,6 +17564,7 @@ export namespace Prisma {
     bikes_allowed?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -17541,6 +17588,7 @@ export namespace Prisma {
     bikes_allowed?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -17562,6 +17610,7 @@ export namespace Prisma {
     bikes_allowed?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -17583,11 +17632,12 @@ export namespace Prisma {
     bikes_allowed?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type TripOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "trip_id" | "route_id" | "service_id" | "trip_headsign" | "trip_short_name" | "direction_id" | "block_id" | "shape_id" | "wheelchair_accessible" | "bikes_allowed" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["trip"]>
+  export type TripOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "trip_id" | "route_id" | "service_id" | "trip_headsign" | "trip_short_name" | "direction_id" | "block_id" | "shape_id" | "wheelchair_accessible" | "bikes_allowed" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["trip"]>
   export type TripInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     route?: boolean | RouteDefaultArgs<ExtArgs>
@@ -17628,6 +17678,7 @@ export namespace Prisma {
       bikes_allowed: number | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["trip"]>
@@ -18070,6 +18121,7 @@ export namespace Prisma {
     readonly bikes_allowed: FieldRef<"Trip", 'Int'>
     readonly project_id: FieldRef<"Trip", 'String'>
     readonly created_by: FieldRef<"Trip", 'String'>
+    readonly updated_by: FieldRef<"Trip", 'String'>
     readonly created_at: FieldRef<"Trip", 'DateTime'>
     readonly updated_at: FieldRef<"Trip", 'DateTime'>
   }
@@ -18577,6 +18629,7 @@ export namespace Prisma {
     timepoint: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -18597,6 +18650,7 @@ export namespace Prisma {
     timepoint: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -18617,6 +18671,7 @@ export namespace Prisma {
     timepoint: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -18659,6 +18714,7 @@ export namespace Prisma {
     timepoint?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -18679,6 +18735,7 @@ export namespace Prisma {
     timepoint?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -18699,6 +18756,7 @@ export namespace Prisma {
     timepoint?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -18806,6 +18864,7 @@ export namespace Prisma {
     timepoint: number | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: StopTimeCountAggregateOutputType | null
@@ -18845,6 +18904,7 @@ export namespace Prisma {
     timepoint?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -18868,6 +18928,7 @@ export namespace Prisma {
     timepoint?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -18891,6 +18952,7 @@ export namespace Prisma {
     timepoint?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -18914,11 +18976,12 @@ export namespace Prisma {
     timepoint?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type StopTimeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "trip_id" | "stop_id" | "arrival_time" | "departure_time" | "stop_sequence" | "stop_headsign" | "pickup_type" | "drop_off_type" | "continuous_pickup" | "continuous_drop_off" | "shape_dist_traveled" | "timepoint" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["stopTime"]>
+  export type StopTimeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "trip_id" | "stop_id" | "arrival_time" | "departure_time" | "stop_sequence" | "stop_headsign" | "pickup_type" | "drop_off_type" | "continuous_pickup" | "continuous_drop_off" | "shape_dist_traveled" | "timepoint" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["stopTime"]>
   export type StopTimeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     trip?: boolean | TripDefaultArgs<ExtArgs>
@@ -18958,6 +19021,7 @@ export namespace Prisma {
       timepoint: number | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["stopTime"]>
@@ -19401,6 +19465,7 @@ export namespace Prisma {
     readonly timepoint: FieldRef<"StopTime", 'Int'>
     readonly project_id: FieldRef<"StopTime", 'String'>
     readonly created_by: FieldRef<"StopTime", 'String'>
+    readonly updated_by: FieldRef<"StopTime", 'String'>
     readonly created_at: FieldRef<"StopTime", 'DateTime'>
     readonly updated_at: FieldRef<"StopTime", 'DateTime'>
   }
@@ -19863,6 +19928,7 @@ export namespace Prisma {
     end_date: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -19881,6 +19947,7 @@ export namespace Prisma {
     end_date: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -19899,6 +19966,7 @@ export namespace Prisma {
     end_date: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -19939,6 +20007,7 @@ export namespace Prisma {
     end_date?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -19957,6 +20026,7 @@ export namespace Prisma {
     end_date?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -19975,6 +20045,7 @@ export namespace Prisma {
     end_date?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -20080,6 +20151,7 @@ export namespace Prisma {
     end_date: string
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: CalendarCountAggregateOutputType | null
@@ -20117,6 +20189,7 @@ export namespace Prisma {
     end_date?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -20139,6 +20212,7 @@ export namespace Prisma {
     end_date?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -20158,6 +20232,7 @@ export namespace Prisma {
     end_date?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -20177,11 +20252,12 @@ export namespace Prisma {
     end_date?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type CalendarOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "service_id" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday" | "sunday" | "start_date" | "end_date" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["calendar"]>
+  export type CalendarOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "service_id" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday" | "sunday" | "start_date" | "end_date" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["calendar"]>
   export type CalendarInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     trips?: boolean | Calendar$tripsArgs<ExtArgs>
@@ -20216,6 +20292,7 @@ export namespace Prisma {
       end_date: string
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["calendar"]>
@@ -20657,6 +20734,7 @@ export namespace Prisma {
     readonly end_date: FieldRef<"Calendar", 'String'>
     readonly project_id: FieldRef<"Calendar", 'String'>
     readonly created_by: FieldRef<"Calendar", 'String'>
+    readonly updated_by: FieldRef<"Calendar", 'String'>
     readonly created_at: FieldRef<"Calendar", 'DateTime'>
     readonly updated_at: FieldRef<"Calendar", 'DateTime'>
   }
@@ -21148,6 +21226,7 @@ export namespace Prisma {
     exception_type: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -21159,6 +21238,7 @@ export namespace Prisma {
     exception_type: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -21170,6 +21250,7 @@ export namespace Prisma {
     exception_type: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -21191,6 +21272,7 @@ export namespace Prisma {
     exception_type?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -21202,6 +21284,7 @@ export namespace Prisma {
     exception_type?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -21213,6 +21296,7 @@ export namespace Prisma {
     exception_type?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -21311,6 +21395,7 @@ export namespace Prisma {
     exception_type: number
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: CalendarDateCountAggregateOutputType | null
@@ -21341,6 +21426,7 @@ export namespace Prisma {
     exception_type?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -21354,6 +21440,7 @@ export namespace Prisma {
     exception_type?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -21367,6 +21454,7 @@ export namespace Prisma {
     exception_type?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -21380,11 +21468,12 @@ export namespace Prisma {
     exception_type?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type CalendarDateOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "service_id" | "date" | "exception_type" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["calendarDate"]>
+  export type CalendarDateOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "service_id" | "date" | "exception_type" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["calendarDate"]>
   export type CalendarDateInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     calendar?: boolean | CalendarDefaultArgs<ExtArgs>
@@ -21411,6 +21500,7 @@ export namespace Prisma {
       exception_type: number
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["calendarDate"]>
@@ -21844,6 +21934,7 @@ export namespace Prisma {
     readonly exception_type: FieldRef<"CalendarDate", 'Int'>
     readonly project_id: FieldRef<"CalendarDate", 'String'>
     readonly created_by: FieldRef<"CalendarDate", 'String'>
+    readonly updated_by: FieldRef<"CalendarDate", 'String'>
     readonly created_at: FieldRef<"CalendarDate", 'DateTime'>
     readonly updated_at: FieldRef<"CalendarDate", 'DateTime'>
   }
@@ -22297,6 +22388,7 @@ export namespace Prisma {
     transfer_duration: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -22312,6 +22404,7 @@ export namespace Prisma {
     transfer_duration: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -22327,6 +22420,7 @@ export namespace Prisma {
     transfer_duration: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -22358,6 +22452,7 @@ export namespace Prisma {
     transfer_duration?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -22373,6 +22468,7 @@ export namespace Prisma {
     transfer_duration?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -22388,6 +22484,7 @@ export namespace Prisma {
     transfer_duration?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -22490,6 +22587,7 @@ export namespace Prisma {
     transfer_duration: number | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: FareAttributeCountAggregateOutputType | null
@@ -22524,6 +22622,7 @@ export namespace Prisma {
     transfer_duration?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -22543,6 +22642,7 @@ export namespace Prisma {
     transfer_duration?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -22560,6 +22660,7 @@ export namespace Prisma {
     transfer_duration?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -22577,11 +22678,12 @@ export namespace Prisma {
     transfer_duration?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type FareAttributeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fare_id" | "price" | "currency_type" | "payment_method" | "transfers" | "agency_id" | "transfer_duration" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["fareAttribute"]>
+  export type FareAttributeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fare_id" | "price" | "currency_type" | "payment_method" | "transfers" | "agency_id" | "transfer_duration" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["fareAttribute"]>
   export type FareAttributeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     agency?: boolean | FareAttribute$agencyArgs<ExtArgs>
@@ -22615,6 +22717,7 @@ export namespace Prisma {
       transfer_duration: number | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["fareAttribute"]>
@@ -23053,6 +23156,7 @@ export namespace Prisma {
     readonly transfer_duration: FieldRef<"FareAttribute", 'Int'>
     readonly project_id: FieldRef<"FareAttribute", 'String'>
     readonly created_by: FieldRef<"FareAttribute", 'String'>
+    readonly updated_by: FieldRef<"FareAttribute", 'String'>
     readonly created_at: FieldRef<"FareAttribute", 'DateTime'>
     readonly updated_at: FieldRef<"FareAttribute", 'DateTime'>
   }
@@ -23531,6 +23635,7 @@ export namespace Prisma {
     contains_id: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -23544,6 +23649,7 @@ export namespace Prisma {
     contains_id: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -23557,6 +23663,7 @@ export namespace Prisma {
     contains_id: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -23572,6 +23679,7 @@ export namespace Prisma {
     contains_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -23585,6 +23693,7 @@ export namespace Prisma {
     contains_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -23598,6 +23707,7 @@ export namespace Prisma {
     contains_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -23684,6 +23794,7 @@ export namespace Prisma {
     contains_id: string | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: FareRuleCountAggregateOutputType | null
@@ -23714,6 +23825,7 @@ export namespace Prisma {
     contains_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -23730,6 +23842,7 @@ export namespace Prisma {
     contains_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -23746,6 +23859,7 @@ export namespace Prisma {
     contains_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -23762,11 +23876,12 @@ export namespace Prisma {
     contains_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type FareRuleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fare_id" | "route_id" | "origin_id" | "destination_id" | "contains_id" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["fareRule"]>
+  export type FareRuleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fare_id" | "route_id" | "origin_id" | "destination_id" | "contains_id" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["fareRule"]>
   export type FareRuleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     fare_attribute?: boolean | FareAttributeDefaultArgs<ExtArgs>
@@ -23799,6 +23914,7 @@ export namespace Prisma {
       contains_id: string | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["fareRule"]>
@@ -24235,6 +24351,7 @@ export namespace Prisma {
     readonly contains_id: FieldRef<"FareRule", 'String'>
     readonly project_id: FieldRef<"FareRule", 'String'>
     readonly created_by: FieldRef<"FareRule", 'String'>
+    readonly updated_by: FieldRef<"FareRule", 'String'>
     readonly created_at: FieldRef<"FareRule", 'DateTime'>
     readonly updated_at: FieldRef<"FareRule", 'DateTime'>
   }
@@ -24705,6 +24822,7 @@ export namespace Prisma {
     shape_dist_traveled: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -24718,6 +24836,7 @@ export namespace Prisma {
     shape_dist_traveled: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -24731,6 +24850,7 @@ export namespace Prisma {
     shape_dist_traveled: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -24760,6 +24880,7 @@ export namespace Prisma {
     shape_dist_traveled?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -24773,6 +24894,7 @@ export namespace Prisma {
     shape_dist_traveled?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -24786,6 +24908,7 @@ export namespace Prisma {
     shape_dist_traveled?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -24886,6 +25009,7 @@ export namespace Prisma {
     shape_dist_traveled: number | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: ShapeCountAggregateOutputType | null
@@ -24918,6 +25042,7 @@ export namespace Prisma {
     shape_dist_traveled?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -24932,6 +25057,7 @@ export namespace Prisma {
     shape_dist_traveled?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -24946,6 +25072,7 @@ export namespace Prisma {
     shape_dist_traveled?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -24960,11 +25087,12 @@ export namespace Prisma {
     shape_dist_traveled?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type ShapeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "shape_id" | "shape_pt_sequence" | "shape_pt_lat" | "shape_pt_lon" | "shape_dist_traveled" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["shape"]>
+  export type ShapeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "shape_id" | "shape_pt_sequence" | "shape_pt_lat" | "shape_pt_lon" | "shape_dist_traveled" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["shape"]>
   export type ShapeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
   }
@@ -24989,6 +25117,7 @@ export namespace Prisma {
       shape_dist_traveled: number | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["shape"]>
@@ -25423,6 +25552,7 @@ export namespace Prisma {
     readonly shape_dist_traveled: FieldRef<"Shape", 'Float'>
     readonly project_id: FieldRef<"Shape", 'String'>
     readonly created_by: FieldRef<"Shape", 'String'>
+    readonly updated_by: FieldRef<"Shape", 'String'>
     readonly created_at: FieldRef<"Shape", 'DateTime'>
     readonly updated_at: FieldRef<"Shape", 'DateTime'>
   }
@@ -25869,6 +25999,7 @@ export namespace Prisma {
     min_transfer_time: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -25881,6 +26012,7 @@ export namespace Prisma {
     min_transfer_time: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -25893,6 +26025,7 @@ export namespace Prisma {
     min_transfer_time: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -25917,6 +26050,7 @@ export namespace Prisma {
     min_transfer_time?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -25929,6 +26063,7 @@ export namespace Prisma {
     min_transfer_time?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -25941,6 +26076,7 @@ export namespace Prisma {
     min_transfer_time?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -26040,6 +26176,7 @@ export namespace Prisma {
     min_transfer_time: number | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: TransferCountAggregateOutputType | null
@@ -26071,6 +26208,7 @@ export namespace Prisma {
     min_transfer_time?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -26086,6 +26224,7 @@ export namespace Prisma {
     min_transfer_time?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -26101,6 +26240,7 @@ export namespace Prisma {
     min_transfer_time?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -26116,11 +26256,12 @@ export namespace Prisma {
     min_transfer_time?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type TransferOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "from_stop_id" | "to_stop_id" | "transfer_type" | "min_transfer_time" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["transfer"]>
+  export type TransferOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "from_stop_id" | "to_stop_id" | "transfer_type" | "min_transfer_time" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["transfer"]>
   export type TransferInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     fromStop?: boolean | StopDefaultArgs<ExtArgs>
@@ -26152,6 +26293,7 @@ export namespace Prisma {
       min_transfer_time: number | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["transfer"]>
@@ -26587,6 +26729,7 @@ export namespace Prisma {
     readonly min_transfer_time: FieldRef<"Transfer", 'Int'>
     readonly project_id: FieldRef<"Transfer", 'String'>
     readonly created_by: FieldRef<"Transfer", 'String'>
+    readonly updated_by: FieldRef<"Transfer", 'String'>
     readonly created_at: FieldRef<"Transfer", 'DateTime'>
     readonly updated_at: FieldRef<"Transfer", 'DateTime'>
   }
@@ -27034,6 +27177,7 @@ export namespace Prisma {
     exact_times: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -27047,6 +27191,7 @@ export namespace Prisma {
     exact_times: number | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -27060,6 +27205,7 @@ export namespace Prisma {
     exact_times: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -27085,6 +27231,7 @@ export namespace Prisma {
     exact_times?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -27098,6 +27245,7 @@ export namespace Prisma {
     exact_times?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -27111,6 +27259,7 @@ export namespace Prisma {
     exact_times?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -27211,6 +27360,7 @@ export namespace Prisma {
     exact_times: number | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: FrequencyCountAggregateOutputType | null
@@ -27243,6 +27393,7 @@ export namespace Prisma {
     exact_times?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -27257,6 +27408,7 @@ export namespace Prisma {
     exact_times?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -27271,6 +27423,7 @@ export namespace Prisma {
     exact_times?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -27285,11 +27438,12 @@ export namespace Prisma {
     exact_times?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type FrequencyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "trip_id" | "start_time" | "end_time" | "headway_secs" | "exact_times" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["frequency"]>
+  export type FrequencyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "trip_id" | "start_time" | "end_time" | "headway_secs" | "exact_times" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["frequency"]>
   export type FrequencyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
   }
@@ -27314,6 +27468,7 @@ export namespace Prisma {
       exact_times: number | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["frequency"]>
@@ -27748,6 +27903,7 @@ export namespace Prisma {
     readonly exact_times: FieldRef<"Frequency", 'Int'>
     readonly project_id: FieldRef<"Frequency", 'String'>
     readonly created_by: FieldRef<"Frequency", 'String'>
+    readonly updated_by: FieldRef<"Frequency", 'String'>
     readonly created_at: FieldRef<"Frequency", 'DateTime'>
     readonly updated_at: FieldRef<"Frequency", 'DateTime'>
   }
@@ -28191,6 +28347,7 @@ export namespace Prisma {
     level_name: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -28202,6 +28359,7 @@ export namespace Prisma {
     level_name: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -28213,6 +28371,7 @@ export namespace Prisma {
     level_name: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -28234,6 +28393,7 @@ export namespace Prisma {
     level_name?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -28245,6 +28405,7 @@ export namespace Prisma {
     level_name?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -28256,6 +28417,7 @@ export namespace Prisma {
     level_name?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -28354,6 +28516,7 @@ export namespace Prisma {
     level_name: string | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: LevelCountAggregateOutputType | null
@@ -28384,6 +28547,7 @@ export namespace Prisma {
     level_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -28399,6 +28563,7 @@ export namespace Prisma {
     level_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -28411,6 +28576,7 @@ export namespace Prisma {
     level_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -28423,11 +28589,12 @@ export namespace Prisma {
     level_name?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type LevelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "level_id" | "level_index" | "level_name" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["level"]>
+  export type LevelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "level_id" | "level_index" | "level_name" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["level"]>
   export type LevelInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     stops?: boolean | Level$stopsArgs<ExtArgs>
@@ -28455,6 +28622,7 @@ export namespace Prisma {
       level_name: string | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["level"]>
@@ -28889,6 +29057,7 @@ export namespace Prisma {
     readonly level_name: FieldRef<"Level", 'String'>
     readonly project_id: FieldRef<"Level", 'String'>
     readonly created_by: FieldRef<"Level", 'String'>
+    readonly updated_by: FieldRef<"Level", 'String'>
     readonly created_at: FieldRef<"Level", 'DateTime'>
     readonly updated_at: FieldRef<"Level", 'DateTime'>
   }
@@ -29402,6 +29571,7 @@ export namespace Prisma {
     level_id: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -29423,6 +29593,7 @@ export namespace Prisma {
     level_id: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -29444,6 +29615,7 @@ export namespace Prisma {
     level_id: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -29487,6 +29659,7 @@ export namespace Prisma {
     level_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -29508,6 +29681,7 @@ export namespace Prisma {
     level_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -29529,6 +29703,7 @@ export namespace Prisma {
     level_id?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -29637,6 +29812,7 @@ export namespace Prisma {
     level_id: string | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: PathwayCountAggregateOutputType | null
@@ -29677,6 +29853,7 @@ export namespace Prisma {
     level_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -29702,6 +29879,7 @@ export namespace Prisma {
     level_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -29727,6 +29905,7 @@ export namespace Prisma {
     level_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -29752,11 +29931,12 @@ export namespace Prisma {
     level_id?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type PathwayOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "pathway_id" | "from_stop_id" | "to_stop_id" | "pathway_mode" | "is_bidirectional" | "length" | "traversal_time" | "stair_count" | "max_slope" | "min_width" | "signposted_as" | "reversed_signposted_as" | "level_id" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["pathway"]>
+  export type PathwayOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "pathway_id" | "from_stop_id" | "to_stop_id" | "pathway_mode" | "is_bidirectional" | "length" | "traversal_time" | "stair_count" | "max_slope" | "min_width" | "signposted_as" | "reversed_signposted_as" | "level_id" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["pathway"]>
   export type PathwayInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
     fromStop?: boolean | StopDefaultArgs<ExtArgs>
@@ -29801,6 +29981,7 @@ export namespace Prisma {
       level_id: string | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["pathway"]>
@@ -30246,6 +30427,7 @@ export namespace Prisma {
     readonly level_id: FieldRef<"Pathway", 'String'>
     readonly project_id: FieldRef<"Pathway", 'String'>
     readonly created_by: FieldRef<"Pathway", 'String'>
+    readonly updated_by: FieldRef<"Pathway", 'String'>
     readonly created_at: FieldRef<"Pathway", 'DateTime'>
     readonly updated_at: FieldRef<"Pathway", 'DateTime'>
   }
@@ -30704,6 +30886,7 @@ export namespace Prisma {
     feed_contact_url: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -30721,6 +30904,7 @@ export namespace Prisma {
     feed_contact_url: string | null
     project_id: string | null
     created_by: string | null
+    updated_by: string | null
     created_at: Date | null
     updated_at: Date | null
   }
@@ -30738,6 +30922,7 @@ export namespace Prisma {
     feed_contact_url: number
     project_id: number
     created_by: number
+    updated_by: number
     created_at: number
     updated_at: number
     _all: number
@@ -30757,6 +30942,7 @@ export namespace Prisma {
     feed_contact_url?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -30774,6 +30960,7 @@ export namespace Prisma {
     feed_contact_url?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
   }
@@ -30791,6 +30978,7 @@ export namespace Prisma {
     feed_contact_url?: true
     project_id?: true
     created_by?: true
+    updated_by?: true
     created_at?: true
     updated_at?: true
     _all?: true
@@ -30881,6 +31069,7 @@ export namespace Prisma {
     feed_contact_url: string | null
     project_id: string
     created_by: string | null
+    updated_by: string | null
     created_at: Date
     updated_at: Date
     _count: FeedInfoCountAggregateOutputType | null
@@ -30915,6 +31104,7 @@ export namespace Prisma {
     feed_contact_url?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -30933,6 +31123,7 @@ export namespace Prisma {
     feed_contact_url?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -30951,6 +31142,7 @@ export namespace Prisma {
     feed_contact_url?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
@@ -30969,11 +31161,12 @@ export namespace Prisma {
     feed_contact_url?: boolean
     project_id?: boolean
     created_by?: boolean
+    updated_by?: boolean
     created_at?: boolean
     updated_at?: boolean
   }
 
-  export type FeedInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "feed_publisher_name" | "feed_publisher_url" | "feed_lang" | "default_lang" | "feed_start_date" | "feed_end_date" | "feed_version" | "feed_contact_email" | "feed_contact_url" | "project_id" | "created_by" | "created_at" | "updated_at", ExtArgs["result"]["feedInfo"]>
+  export type FeedInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "feed_publisher_name" | "feed_publisher_url" | "feed_lang" | "default_lang" | "feed_start_date" | "feed_end_date" | "feed_version" | "feed_contact_email" | "feed_contact_url" | "project_id" | "created_by" | "updated_by" | "created_at" | "updated_at", ExtArgs["result"]["feedInfo"]>
   export type FeedInfoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     project?: boolean | UserProjectDefaultArgs<ExtArgs>
   }
@@ -31002,6 +31195,7 @@ export namespace Prisma {
       feed_contact_url: string | null
       project_id: string
       created_by: string | null
+      updated_by: string | null
       created_at: Date
       updated_at: Date
     }, ExtArgs["result"]["feedInfo"]>
@@ -31440,6 +31634,7 @@ export namespace Prisma {
     readonly feed_contact_url: FieldRef<"FeedInfo", 'String'>
     readonly project_id: FieldRef<"FeedInfo", 'String'>
     readonly created_by: FieldRef<"FeedInfo", 'String'>
+    readonly updated_by: FieldRef<"FeedInfo", 'String'>
     readonly created_at: FieldRef<"FeedInfo", 'DateTime'>
     readonly updated_at: FieldRef<"FeedInfo", 'DateTime'>
   }
@@ -31986,6 +32181,7 @@ export namespace Prisma {
     agency_email: 'agency_email',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32011,6 +32207,7 @@ export namespace Prisma {
     tts_stop_name: 'tts_stop_name',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32035,6 +32232,7 @@ export namespace Prisma {
     network_id: 'network_id',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32070,6 +32268,7 @@ export namespace Prisma {
     bikes_allowed: 'bikes_allowed',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32093,6 +32292,7 @@ export namespace Prisma {
     timepoint: 'timepoint',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32114,6 +32314,7 @@ export namespace Prisma {
     end_date: 'end_date',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32128,6 +32329,7 @@ export namespace Prisma {
     exception_type: 'exception_type',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32146,6 +32348,7 @@ export namespace Prisma {
     transfer_duration: 'transfer_duration',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32162,6 +32365,7 @@ export namespace Prisma {
     contains_id: 'contains_id',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32178,6 +32382,7 @@ export namespace Prisma {
     shape_dist_traveled: 'shape_dist_traveled',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32193,6 +32398,7 @@ export namespace Prisma {
     min_transfer_time: 'min_transfer_time',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32209,6 +32415,7 @@ export namespace Prisma {
     exact_times: 'exact_times',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32223,6 +32430,7 @@ export namespace Prisma {
     level_name: 'level_name',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32247,6 +32455,7 @@ export namespace Prisma {
     level_id: 'level_id',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32267,6 +32476,7 @@ export namespace Prisma {
     feed_contact_url: 'feed_contact_url',
     project_id: 'project_id',
     created_by: 'created_by',
+    updated_by: 'updated_by',
     created_at: 'created_at',
     updated_at: 'updated_at'
   };
@@ -32996,6 +33206,7 @@ export namespace Prisma {
     agency_email?: StringNullableFilter<"Agency"> | string | null
     project_id?: StringFilter<"Agency"> | string
     created_by?: StringNullableFilter<"Agency"> | string | null
+    updated_by?: StringNullableFilter<"Agency"> | string | null
     created_at?: DateTimeFilter<"Agency"> | Date | string
     updated_at?: DateTimeFilter<"Agency"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33015,6 +33226,7 @@ export namespace Prisma {
     agency_email?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33038,6 +33250,7 @@ export namespace Prisma {
     agency_email?: StringNullableFilter<"Agency"> | string | null
     project_id?: StringFilter<"Agency"> | string
     created_by?: StringNullableFilter<"Agency"> | string | null
+    updated_by?: StringNullableFilter<"Agency"> | string | null
     created_at?: DateTimeFilter<"Agency"> | Date | string
     updated_at?: DateTimeFilter<"Agency"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33057,6 +33270,7 @@ export namespace Prisma {
     agency_email?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: AgencyCountOrderByAggregateInput
@@ -33079,6 +33293,7 @@ export namespace Prisma {
     agency_email?: StringNullableWithAggregatesFilter<"Agency"> | string | null
     project_id?: StringWithAggregatesFilter<"Agency"> | string
     created_by?: StringNullableWithAggregatesFilter<"Agency"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Agency"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Agency"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Agency"> | Date | string
   }
@@ -33104,6 +33319,7 @@ export namespace Prisma {
     tts_stop_name?: StringNullableFilter<"Stop"> | string | null
     project_id?: StringFilter<"Stop"> | string
     created_by?: StringNullableFilter<"Stop"> | string | null
+    updated_by?: StringNullableFilter<"Stop"> | string | null
     created_at?: DateTimeFilter<"Stop"> | Date | string
     updated_at?: DateTimeFilter<"Stop"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33136,6 +33352,7 @@ export namespace Prisma {
     tts_stop_name?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33172,6 +33389,7 @@ export namespace Prisma {
     tts_stop_name?: StringNullableFilter<"Stop"> | string | null
     project_id?: StringFilter<"Stop"> | string
     created_by?: StringNullableFilter<"Stop"> | string | null
+    updated_by?: StringNullableFilter<"Stop"> | string | null
     created_at?: DateTimeFilter<"Stop"> | Date | string
     updated_at?: DateTimeFilter<"Stop"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33204,6 +33422,7 @@ export namespace Prisma {
     tts_stop_name?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: StopCountOrderByAggregateInput
@@ -33234,6 +33453,7 @@ export namespace Prisma {
     tts_stop_name?: StringNullableWithAggregatesFilter<"Stop"> | string | null
     project_id?: StringWithAggregatesFilter<"Stop"> | string
     created_by?: StringNullableWithAggregatesFilter<"Stop"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Stop"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Stop"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Stop"> | Date | string
   }
@@ -33258,6 +33478,7 @@ export namespace Prisma {
     network_id?: StringNullableFilter<"Route"> | string | null
     project_id?: StringFilter<"Route"> | string
     created_by?: StringNullableFilter<"Route"> | string | null
+    updated_by?: StringNullableFilter<"Route"> | string | null
     created_at?: DateTimeFilter<"Route"> | Date | string
     updated_at?: DateTimeFilter<"Route"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33284,6 +33505,7 @@ export namespace Prisma {
     network_id?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33314,6 +33536,7 @@ export namespace Prisma {
     network_id?: StringNullableFilter<"Route"> | string | null
     project_id?: StringFilter<"Route"> | string
     created_by?: StringNullableFilter<"Route"> | string | null
+    updated_by?: StringNullableFilter<"Route"> | string | null
     created_at?: DateTimeFilter<"Route"> | Date | string
     updated_at?: DateTimeFilter<"Route"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33340,6 +33563,7 @@ export namespace Prisma {
     network_id?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: RouteCountOrderByAggregateInput
@@ -33369,6 +33593,7 @@ export namespace Prisma {
     network_id?: StringNullableWithAggregatesFilter<"Route"> | string | null
     project_id?: StringWithAggregatesFilter<"Route"> | string
     created_by?: StringNullableWithAggregatesFilter<"Route"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Route"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Route"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Route"> | Date | string
   }
@@ -33469,6 +33694,7 @@ export namespace Prisma {
     bikes_allowed?: IntNullableFilter<"Trip"> | number | null
     project_id?: StringFilter<"Trip"> | string
     created_by?: StringNullableFilter<"Trip"> | string | null
+    updated_by?: StringNullableFilter<"Trip"> | string | null
     created_at?: DateTimeFilter<"Trip"> | Date | string
     updated_at?: DateTimeFilter<"Trip"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33491,6 +33717,7 @@ export namespace Prisma {
     bikes_allowed?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33517,6 +33744,7 @@ export namespace Prisma {
     bikes_allowed?: IntNullableFilter<"Trip"> | number | null
     project_id?: StringFilter<"Trip"> | string
     created_by?: StringNullableFilter<"Trip"> | string | null
+    updated_by?: StringNullableFilter<"Trip"> | string | null
     created_at?: DateTimeFilter<"Trip"> | Date | string
     updated_at?: DateTimeFilter<"Trip"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33539,6 +33767,7 @@ export namespace Prisma {
     bikes_allowed?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: TripCountOrderByAggregateInput
@@ -33565,6 +33794,7 @@ export namespace Prisma {
     bikes_allowed?: IntNullableWithAggregatesFilter<"Trip"> | number | null
     project_id?: StringWithAggregatesFilter<"Trip"> | string
     created_by?: StringNullableWithAggregatesFilter<"Trip"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Trip"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Trip"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Trip"> | Date | string
   }
@@ -33588,6 +33818,7 @@ export namespace Prisma {
     timepoint?: IntNullableFilter<"StopTime"> | number | null
     project_id?: StringFilter<"StopTime"> | string
     created_by?: StringNullableFilter<"StopTime"> | string | null
+    updated_by?: StringNullableFilter<"StopTime"> | string | null
     created_at?: DateTimeFilter<"StopTime"> | Date | string
     updated_at?: DateTimeFilter<"StopTime"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33611,6 +33842,7 @@ export namespace Prisma {
     timepoint?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33638,6 +33870,7 @@ export namespace Prisma {
     timepoint?: IntNullableFilter<"StopTime"> | number | null
     project_id?: StringFilter<"StopTime"> | string
     created_by?: StringNullableFilter<"StopTime"> | string | null
+    updated_by?: StringNullableFilter<"StopTime"> | string | null
     created_at?: DateTimeFilter<"StopTime"> | Date | string
     updated_at?: DateTimeFilter<"StopTime"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33661,6 +33894,7 @@ export namespace Prisma {
     timepoint?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: StopTimeCountOrderByAggregateInput
@@ -33689,6 +33923,7 @@ export namespace Prisma {
     timepoint?: IntNullableWithAggregatesFilter<"StopTime"> | number | null
     project_id?: StringWithAggregatesFilter<"StopTime"> | string
     created_by?: StringNullableWithAggregatesFilter<"StopTime"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"StopTime"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"StopTime"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"StopTime"> | Date | string
   }
@@ -33710,6 +33945,7 @@ export namespace Prisma {
     end_date?: StringFilter<"Calendar"> | string
     project_id?: StringFilter<"Calendar"> | string
     created_by?: StringNullableFilter<"Calendar"> | string | null
+    updated_by?: StringNullableFilter<"Calendar"> | string | null
     created_at?: DateTimeFilter<"Calendar"> | Date | string
     updated_at?: DateTimeFilter<"Calendar"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33731,6 +33967,7 @@ export namespace Prisma {
     end_date?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33756,6 +33993,7 @@ export namespace Prisma {
     end_date?: StringFilter<"Calendar"> | string
     project_id?: StringFilter<"Calendar"> | string
     created_by?: StringNullableFilter<"Calendar"> | string | null
+    updated_by?: StringNullableFilter<"Calendar"> | string | null
     created_at?: DateTimeFilter<"Calendar"> | Date | string
     updated_at?: DateTimeFilter<"Calendar"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33777,6 +34015,7 @@ export namespace Prisma {
     end_date?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: CalendarCountOrderByAggregateInput
@@ -33803,6 +34042,7 @@ export namespace Prisma {
     end_date?: StringWithAggregatesFilter<"Calendar"> | string
     project_id?: StringWithAggregatesFilter<"Calendar"> | string
     created_by?: StringNullableWithAggregatesFilter<"Calendar"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Calendar"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Calendar"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Calendar"> | Date | string
   }
@@ -33817,6 +34057,7 @@ export namespace Prisma {
     exception_type?: IntFilter<"CalendarDate"> | number
     project_id?: StringFilter<"CalendarDate"> | string
     created_by?: StringNullableFilter<"CalendarDate"> | string | null
+    updated_by?: StringNullableFilter<"CalendarDate"> | string | null
     created_at?: DateTimeFilter<"CalendarDate"> | Date | string
     updated_at?: DateTimeFilter<"CalendarDate"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33830,6 +34071,7 @@ export namespace Prisma {
     exception_type?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33847,6 +34089,7 @@ export namespace Prisma {
     exception_type?: IntFilter<"CalendarDate"> | number
     project_id?: StringFilter<"CalendarDate"> | string
     created_by?: StringNullableFilter<"CalendarDate"> | string | null
+    updated_by?: StringNullableFilter<"CalendarDate"> | string | null
     created_at?: DateTimeFilter<"CalendarDate"> | Date | string
     updated_at?: DateTimeFilter<"CalendarDate"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33860,6 +34103,7 @@ export namespace Prisma {
     exception_type?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: CalendarDateCountOrderByAggregateInput
@@ -33879,6 +34123,7 @@ export namespace Prisma {
     exception_type?: IntWithAggregatesFilter<"CalendarDate"> | number
     project_id?: StringWithAggregatesFilter<"CalendarDate"> | string
     created_by?: StringNullableWithAggregatesFilter<"CalendarDate"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"CalendarDate"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"CalendarDate"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"CalendarDate"> | Date | string
   }
@@ -33897,6 +34142,7 @@ export namespace Prisma {
     transfer_duration?: IntNullableFilter<"FareAttribute"> | number | null
     project_id?: StringFilter<"FareAttribute"> | string
     created_by?: StringNullableFilter<"FareAttribute"> | string | null
+    updated_by?: StringNullableFilter<"FareAttribute"> | string | null
     created_at?: DateTimeFilter<"FareAttribute"> | Date | string
     updated_at?: DateTimeFilter<"FareAttribute"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33915,6 +34161,7 @@ export namespace Prisma {
     transfer_duration?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -33937,6 +34184,7 @@ export namespace Prisma {
     transfer_duration?: IntNullableFilter<"FareAttribute"> | number | null
     project_id?: StringFilter<"FareAttribute"> | string
     created_by?: StringNullableFilter<"FareAttribute"> | string | null
+    updated_by?: StringNullableFilter<"FareAttribute"> | string | null
     created_at?: DateTimeFilter<"FareAttribute"> | Date | string
     updated_at?: DateTimeFilter<"FareAttribute"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -33955,6 +34203,7 @@ export namespace Prisma {
     transfer_duration?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: FareAttributeCountOrderByAggregateInput
@@ -33978,6 +34227,7 @@ export namespace Prisma {
     transfer_duration?: IntNullableWithAggregatesFilter<"FareAttribute"> | number | null
     project_id?: StringWithAggregatesFilter<"FareAttribute"> | string
     created_by?: StringNullableWithAggregatesFilter<"FareAttribute"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"FareAttribute"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"FareAttribute"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"FareAttribute"> | Date | string
   }
@@ -33994,6 +34244,7 @@ export namespace Prisma {
     contains_id?: StringNullableFilter<"FareRule"> | string | null
     project_id?: StringFilter<"FareRule"> | string
     created_by?: StringNullableFilter<"FareRule"> | string | null
+    updated_by?: StringNullableFilter<"FareRule"> | string | null
     created_at?: DateTimeFilter<"FareRule"> | Date | string
     updated_at?: DateTimeFilter<"FareRule"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34010,6 +34261,7 @@ export namespace Prisma {
     contains_id?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -34029,6 +34281,7 @@ export namespace Prisma {
     contains_id?: StringNullableFilter<"FareRule"> | string | null
     project_id?: StringFilter<"FareRule"> | string
     created_by?: StringNullableFilter<"FareRule"> | string | null
+    updated_by?: StringNullableFilter<"FareRule"> | string | null
     created_at?: DateTimeFilter<"FareRule"> | Date | string
     updated_at?: DateTimeFilter<"FareRule"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34045,6 +34298,7 @@ export namespace Prisma {
     contains_id?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: FareRuleCountOrderByAggregateInput
@@ -34064,6 +34318,7 @@ export namespace Prisma {
     contains_id?: StringNullableWithAggregatesFilter<"FareRule"> | string | null
     project_id?: StringWithAggregatesFilter<"FareRule"> | string
     created_by?: StringNullableWithAggregatesFilter<"FareRule"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"FareRule"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"FareRule"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"FareRule"> | Date | string
   }
@@ -34080,6 +34335,7 @@ export namespace Prisma {
     shape_dist_traveled?: FloatNullableFilter<"Shape"> | number | null
     project_id?: StringFilter<"Shape"> | string
     created_by?: StringNullableFilter<"Shape"> | string | null
+    updated_by?: StringNullableFilter<"Shape"> | string | null
     created_at?: DateTimeFilter<"Shape"> | Date | string
     updated_at?: DateTimeFilter<"Shape"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34094,6 +34350,7 @@ export namespace Prisma {
     shape_dist_traveled?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -34112,6 +34369,7 @@ export namespace Prisma {
     shape_dist_traveled?: FloatNullableFilter<"Shape"> | number | null
     project_id?: StringFilter<"Shape"> | string
     created_by?: StringNullableFilter<"Shape"> | string | null
+    updated_by?: StringNullableFilter<"Shape"> | string | null
     created_at?: DateTimeFilter<"Shape"> | Date | string
     updated_at?: DateTimeFilter<"Shape"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34126,6 +34384,7 @@ export namespace Prisma {
     shape_dist_traveled?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: ShapeCountOrderByAggregateInput
@@ -34147,6 +34406,7 @@ export namespace Prisma {
     shape_dist_traveled?: FloatNullableWithAggregatesFilter<"Shape"> | number | null
     project_id?: StringWithAggregatesFilter<"Shape"> | string
     created_by?: StringNullableWithAggregatesFilter<"Shape"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Shape"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Shape"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Shape"> | Date | string
   }
@@ -34162,6 +34422,7 @@ export namespace Prisma {
     min_transfer_time?: IntNullableFilter<"Transfer"> | number | null
     project_id?: StringFilter<"Transfer"> | string
     created_by?: StringNullableFilter<"Transfer"> | string | null
+    updated_by?: StringNullableFilter<"Transfer"> | string | null
     created_at?: DateTimeFilter<"Transfer"> | Date | string
     updated_at?: DateTimeFilter<"Transfer"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34177,6 +34438,7 @@ export namespace Prisma {
     min_transfer_time?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -34196,6 +34458,7 @@ export namespace Prisma {
     min_transfer_time?: IntNullableFilter<"Transfer"> | number | null
     project_id?: StringFilter<"Transfer"> | string
     created_by?: StringNullableFilter<"Transfer"> | string | null
+    updated_by?: StringNullableFilter<"Transfer"> | string | null
     created_at?: DateTimeFilter<"Transfer"> | Date | string
     updated_at?: DateTimeFilter<"Transfer"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34211,6 +34474,7 @@ export namespace Prisma {
     min_transfer_time?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: TransferCountOrderByAggregateInput
@@ -34231,6 +34495,7 @@ export namespace Prisma {
     min_transfer_time?: IntNullableWithAggregatesFilter<"Transfer"> | number | null
     project_id?: StringWithAggregatesFilter<"Transfer"> | string
     created_by?: StringNullableWithAggregatesFilter<"Transfer"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Transfer"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Transfer"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Transfer"> | Date | string
   }
@@ -34247,6 +34512,7 @@ export namespace Prisma {
     exact_times?: IntNullableFilter<"Frequency"> | number | null
     project_id?: StringFilter<"Frequency"> | string
     created_by?: StringNullableFilter<"Frequency"> | string | null
+    updated_by?: StringNullableFilter<"Frequency"> | string | null
     created_at?: DateTimeFilter<"Frequency"> | Date | string
     updated_at?: DateTimeFilter<"Frequency"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34261,6 +34527,7 @@ export namespace Prisma {
     exact_times?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -34268,20 +34535,22 @@ export namespace Prisma {
 
   export type FrequencyWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    trip_id?: string
+    trip_id_start_time_project_id?: FrequencyTrip_idStart_timeProject_idCompoundUniqueInput
     AND?: FrequencyWhereInput | FrequencyWhereInput[]
     OR?: FrequencyWhereInput[]
     NOT?: FrequencyWhereInput | FrequencyWhereInput[]
+    trip_id?: StringFilter<"Frequency"> | string
     start_time?: StringFilter<"Frequency"> | string
     end_time?: StringFilter<"Frequency"> | string
     headway_secs?: IntFilter<"Frequency"> | number
     exact_times?: IntNullableFilter<"Frequency"> | number | null
     project_id?: StringFilter<"Frequency"> | string
     created_by?: StringNullableFilter<"Frequency"> | string | null
+    updated_by?: StringNullableFilter<"Frequency"> | string | null
     created_at?: DateTimeFilter<"Frequency"> | Date | string
     updated_at?: DateTimeFilter<"Frequency"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
-  }, "id" | "trip_id">
+  }, "id" | "trip_id_start_time_project_id">
 
   export type FrequencyOrderByWithAggregationInput = {
     id?: SortOrder
@@ -34292,6 +34561,7 @@ export namespace Prisma {
     exact_times?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: FrequencyCountOrderByAggregateInput
@@ -34313,6 +34583,7 @@ export namespace Prisma {
     exact_times?: IntNullableWithAggregatesFilter<"Frequency"> | number | null
     project_id?: StringWithAggregatesFilter<"Frequency"> | string
     created_by?: StringNullableWithAggregatesFilter<"Frequency"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Frequency"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Frequency"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Frequency"> | Date | string
   }
@@ -34327,6 +34598,7 @@ export namespace Prisma {
     level_name?: StringNullableFilter<"Level"> | string | null
     project_id?: StringFilter<"Level"> | string
     created_by?: StringNullableFilter<"Level"> | string | null
+    updated_by?: StringNullableFilter<"Level"> | string | null
     created_at?: DateTimeFilter<"Level"> | Date | string
     updated_at?: DateTimeFilter<"Level"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34341,6 +34613,7 @@ export namespace Prisma {
     level_name?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -34359,6 +34632,7 @@ export namespace Prisma {
     level_name?: StringNullableFilter<"Level"> | string | null
     project_id?: StringFilter<"Level"> | string
     created_by?: StringNullableFilter<"Level"> | string | null
+    updated_by?: StringNullableFilter<"Level"> | string | null
     created_at?: DateTimeFilter<"Level"> | Date | string
     updated_at?: DateTimeFilter<"Level"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34373,6 +34647,7 @@ export namespace Prisma {
     level_name?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: LevelCountOrderByAggregateInput
@@ -34392,6 +34667,7 @@ export namespace Prisma {
     level_name?: StringNullableWithAggregatesFilter<"Level"> | string | null
     project_id?: StringWithAggregatesFilter<"Level"> | string
     created_by?: StringNullableWithAggregatesFilter<"Level"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Level"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Level"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Level"> | Date | string
   }
@@ -34416,6 +34692,7 @@ export namespace Prisma {
     level_id?: StringNullableFilter<"Pathway"> | string | null
     project_id?: StringFilter<"Pathway"> | string
     created_by?: StringNullableFilter<"Pathway"> | string | null
+    updated_by?: StringNullableFilter<"Pathway"> | string | null
     created_at?: DateTimeFilter<"Pathway"> | Date | string
     updated_at?: DateTimeFilter<"Pathway"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34441,6 +34718,7 @@ export namespace Prisma {
     level_id?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -34470,6 +34748,7 @@ export namespace Prisma {
     level_id?: StringNullableFilter<"Pathway"> | string | null
     project_id?: StringFilter<"Pathway"> | string
     created_by?: StringNullableFilter<"Pathway"> | string | null
+    updated_by?: StringNullableFilter<"Pathway"> | string | null
     created_at?: DateTimeFilter<"Pathway"> | Date | string
     updated_at?: DateTimeFilter<"Pathway"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34495,6 +34774,7 @@ export namespace Prisma {
     level_id?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: PathwayCountOrderByAggregateInput
@@ -34524,6 +34804,7 @@ export namespace Prisma {
     level_id?: StringNullableWithAggregatesFilter<"Pathway"> | string | null
     project_id?: StringWithAggregatesFilter<"Pathway"> | string
     created_by?: StringNullableWithAggregatesFilter<"Pathway"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"Pathway"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"Pathway"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"Pathway"> | Date | string
   }
@@ -34544,6 +34825,7 @@ export namespace Prisma {
     feed_contact_url?: StringNullableFilter<"FeedInfo"> | string | null
     project_id?: StringFilter<"FeedInfo"> | string
     created_by?: StringNullableFilter<"FeedInfo"> | string | null
+    updated_by?: StringNullableFilter<"FeedInfo"> | string | null
     created_at?: DateTimeFilter<"FeedInfo"> | Date | string
     updated_at?: DateTimeFilter<"FeedInfo"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34562,6 +34844,7 @@ export namespace Prisma {
     feed_contact_url?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     project?: UserProjectOrderByWithRelationInput
@@ -34583,6 +34866,7 @@ export namespace Prisma {
     feed_contact_url?: StringNullableFilter<"FeedInfo"> | string | null
     project_id?: StringFilter<"FeedInfo"> | string
     created_by?: StringNullableFilter<"FeedInfo"> | string | null
+    updated_by?: StringNullableFilter<"FeedInfo"> | string | null
     created_at?: DateTimeFilter<"FeedInfo"> | Date | string
     updated_at?: DateTimeFilter<"FeedInfo"> | Date | string
     project?: XOR<UserProjectScalarRelationFilter, UserProjectWhereInput>
@@ -34601,6 +34885,7 @@ export namespace Prisma {
     feed_contact_url?: SortOrderInput | SortOrder
     project_id?: SortOrder
     created_by?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: FeedInfoCountOrderByAggregateInput
@@ -34624,6 +34909,7 @@ export namespace Prisma {
     feed_contact_url?: StringNullableWithAggregatesFilter<"FeedInfo"> | string | null
     project_id?: StringWithAggregatesFilter<"FeedInfo"> | string
     created_by?: StringNullableWithAggregatesFilter<"FeedInfo"> | string | null
+    updated_by?: StringNullableWithAggregatesFilter<"FeedInfo"> | string | null
     created_at?: DateTimeWithAggregatesFilter<"FeedInfo"> | Date | string
     updated_at?: DateTimeWithAggregatesFilter<"FeedInfo"> | Date | string
   }
@@ -35308,6 +35594,7 @@ export namespace Prisma {
     agency_fare_url?: string | null
     agency_email?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutAgenciesInput
@@ -35327,6 +35614,7 @@ export namespace Prisma {
     agency_email?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     routes?: RouteUncheckedCreateNestedManyWithoutAgencyInput
@@ -35344,6 +35632,7 @@ export namespace Prisma {
     agency_fare_url?: NullableStringFieldUpdateOperationsInput | string | null
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutAgenciesNestedInput
@@ -35363,6 +35652,7 @@ export namespace Prisma {
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     routes?: RouteUncheckedUpdateManyWithoutAgencyNestedInput
@@ -35381,6 +35671,7 @@ export namespace Prisma {
     agency_email?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -35396,6 +35687,7 @@ export namespace Prisma {
     agency_fare_url?: NullableStringFieldUpdateOperationsInput | string | null
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35412,6 +35704,7 @@ export namespace Prisma {
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35431,6 +35724,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -35463,6 +35757,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -35489,6 +35784,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -35521,6 +35817,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -35550,6 +35847,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -35569,6 +35867,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35591,6 +35890,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35610,6 +35910,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutRoutesInput
@@ -35636,6 +35937,7 @@ export namespace Prisma {
     network_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
@@ -35658,6 +35960,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
@@ -35684,6 +35987,7 @@ export namespace Prisma {
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
@@ -35708,6 +36012,7 @@ export namespace Prisma {
     network_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -35727,6 +36032,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35748,6 +36054,7 @@ export namespace Prisma {
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35837,6 +36144,7 @@ export namespace Prisma {
     wheelchair_accessible?: number | null
     bikes_allowed?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutTripsInput
@@ -35859,6 +36167,7 @@ export namespace Prisma {
     bikes_allowed?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutTripInput
@@ -35875,6 +36184,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutTripsNestedInput
@@ -35897,6 +36207,7 @@ export namespace Prisma {
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutTripNestedInput
@@ -35916,6 +36227,7 @@ export namespace Prisma {
     bikes_allowed?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -35931,6 +36243,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35949,6 +36262,7 @@ export namespace Prisma {
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35966,6 +36280,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     timepoint?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopTimesInput
@@ -35989,6 +36304,7 @@ export namespace Prisma {
     timepoint?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36006,6 +36322,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopTimesNestedInput
@@ -36029,6 +36346,7 @@ export namespace Prisma {
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36049,6 +36367,7 @@ export namespace Prisma {
     timepoint?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36066,6 +36385,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36086,6 +36406,7 @@ export namespace Prisma {
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36103,6 +36424,7 @@ export namespace Prisma {
     start_date: string
     end_date: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutCalendarsInput
@@ -36124,6 +36446,7 @@ export namespace Prisma {
     end_date: string
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutCalendarInput
@@ -36143,6 +36466,7 @@ export namespace Prisma {
     start_date?: StringFieldUpdateOperationsInput | string
     end_date?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutCalendarsNestedInput
@@ -36164,6 +36488,7 @@ export namespace Prisma {
     end_date?: StringFieldUpdateOperationsInput | string
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutCalendarNestedInput
@@ -36184,6 +36509,7 @@ export namespace Prisma {
     end_date: string
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36201,6 +36527,7 @@ export namespace Prisma {
     start_date?: StringFieldUpdateOperationsInput | string
     end_date?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36219,6 +36546,7 @@ export namespace Prisma {
     end_date?: StringFieldUpdateOperationsInput | string
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36228,6 +36556,7 @@ export namespace Prisma {
     date: string
     exception_type: number
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutCalendarDatesInput
@@ -36241,6 +36570,7 @@ export namespace Prisma {
     exception_type: number
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36250,6 +36580,7 @@ export namespace Prisma {
     date?: StringFieldUpdateOperationsInput | string
     exception_type?: IntFieldUpdateOperationsInput | number
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutCalendarDatesNestedInput
@@ -36263,6 +36594,7 @@ export namespace Prisma {
     exception_type?: IntFieldUpdateOperationsInput | number
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36274,6 +36606,7 @@ export namespace Prisma {
     exception_type: number
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36283,6 +36616,7 @@ export namespace Prisma {
     date?: StringFieldUpdateOperationsInput | string
     exception_type?: IntFieldUpdateOperationsInput | number
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36294,6 +36628,7 @@ export namespace Prisma {
     exception_type?: IntFieldUpdateOperationsInput | number
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36307,6 +36642,7 @@ export namespace Prisma {
     transfers?: number | null
     transfer_duration?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFareAttributesInput
@@ -36325,6 +36661,7 @@ export namespace Prisma {
     transfer_duration?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutFare_attributeInput
@@ -36339,6 +36676,7 @@ export namespace Prisma {
     transfers?: NullableIntFieldUpdateOperationsInput | number | null
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFareAttributesNestedInput
@@ -36357,6 +36695,7 @@ export namespace Prisma {
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fareRules?: FareRuleUncheckedUpdateManyWithoutFare_attributeNestedInput
@@ -36373,6 +36712,7 @@ export namespace Prisma {
     transfer_duration?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36386,6 +36726,7 @@ export namespace Prisma {
     transfers?: NullableIntFieldUpdateOperationsInput | number | null
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36401,6 +36742,7 @@ export namespace Prisma {
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36411,6 +36753,7 @@ export namespace Prisma {
     destination_id?: string | null
     contains_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFareRulesInput
@@ -36427,6 +36770,7 @@ export namespace Prisma {
     contains_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36437,6 +36781,7 @@ export namespace Prisma {
     destination_id?: NullableStringFieldUpdateOperationsInput | string | null
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFareRulesNestedInput
@@ -36453,6 +36798,7 @@ export namespace Prisma {
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36466,6 +36812,7 @@ export namespace Prisma {
     contains_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36476,6 +36823,7 @@ export namespace Prisma {
     destination_id?: NullableStringFieldUpdateOperationsInput | string | null
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36489,6 +36837,7 @@ export namespace Prisma {
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36501,6 +36850,7 @@ export namespace Prisma {
     shape_pt_lon: number
     shape_dist_traveled?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutShapesInput
@@ -36515,6 +36865,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36527,6 +36878,7 @@ export namespace Prisma {
     shape_pt_lon?: FloatFieldUpdateOperationsInput | number
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutShapesNestedInput
@@ -36541,6 +36893,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36554,6 +36907,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36566,6 +36920,7 @@ export namespace Prisma {
     shape_pt_lon?: FloatFieldUpdateOperationsInput | number
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36579,6 +36934,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36588,6 +36944,7 @@ export namespace Prisma {
     transfer_type?: number
     min_transfer_time?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutTransfersInput
@@ -36603,6 +36960,7 @@ export namespace Prisma {
     min_transfer_time?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36612,6 +36970,7 @@ export namespace Prisma {
     transfer_type?: IntFieldUpdateOperationsInput | number
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutTransfersNestedInput
@@ -36627,6 +36986,7 @@ export namespace Prisma {
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36639,6 +36999,7 @@ export namespace Prisma {
     min_transfer_time?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36648,6 +37009,7 @@ export namespace Prisma {
     transfer_type?: IntFieldUpdateOperationsInput | number
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36660,6 +37022,7 @@ export namespace Prisma {
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36672,6 +37035,7 @@ export namespace Prisma {
     headway_secs: number
     exact_times?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFrequenciesInput
@@ -36686,6 +37050,7 @@ export namespace Prisma {
     exact_times?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36698,6 +37063,7 @@ export namespace Prisma {
     headway_secs?: IntFieldUpdateOperationsInput | number
     exact_times?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFrequenciesNestedInput
@@ -36712,6 +37078,7 @@ export namespace Prisma {
     exact_times?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36725,6 +37092,7 @@ export namespace Prisma {
     exact_times?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36737,6 +37105,7 @@ export namespace Prisma {
     headway_secs?: IntFieldUpdateOperationsInput | number
     exact_times?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36750,6 +37119,7 @@ export namespace Prisma {
     exact_times?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36760,6 +37130,7 @@ export namespace Prisma {
     level_index: number
     level_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutLevelsInput
@@ -36774,6 +37145,7 @@ export namespace Prisma {
     level_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stops?: StopUncheckedCreateNestedManyWithoutLevelInput
@@ -36786,6 +37158,7 @@ export namespace Prisma {
     level_index?: FloatFieldUpdateOperationsInput | number
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutLevelsNestedInput
@@ -36800,6 +37173,7 @@ export namespace Prisma {
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stops?: StopUncheckedUpdateManyWithoutLevelNestedInput
@@ -36813,6 +37187,7 @@ export namespace Prisma {
     level_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36823,6 +37198,7 @@ export namespace Prisma {
     level_index?: FloatFieldUpdateOperationsInput | number
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36834,6 +37210,7 @@ export namespace Prisma {
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36851,6 +37228,7 @@ export namespace Prisma {
     signposted_as?: string | null
     reversed_signposted_as?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutPathwaysInput
@@ -36876,6 +37254,7 @@ export namespace Prisma {
     level_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36893,6 +37272,7 @@ export namespace Prisma {
     signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutPathwaysNestedInput
@@ -36918,6 +37298,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36939,6 +37320,7 @@ export namespace Prisma {
     level_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -36956,6 +37338,7 @@ export namespace Prisma {
     signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36977,6 +37360,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -36993,6 +37377,7 @@ export namespace Prisma {
     feed_contact_email?: string | null
     feed_contact_url?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFeedInfoInput
@@ -37011,6 +37396,7 @@ export namespace Prisma {
     feed_contact_url?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -37027,6 +37413,7 @@ export namespace Prisma {
     feed_contact_email?: NullableStringFieldUpdateOperationsInput | string | null
     feed_contact_url?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFeedInfoNestedInput
@@ -37045,6 +37432,7 @@ export namespace Prisma {
     feed_contact_url?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -37062,6 +37450,7 @@ export namespace Prisma {
     feed_contact_url?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -37078,6 +37467,7 @@ export namespace Prisma {
     feed_contact_email?: NullableStringFieldUpdateOperationsInput | string | null
     feed_contact_url?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -37095,6 +37485,7 @@ export namespace Prisma {
     feed_contact_url?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -37819,6 +38210,7 @@ export namespace Prisma {
     agency_email?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -37835,6 +38227,7 @@ export namespace Prisma {
     agency_email?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -37851,6 +38244,7 @@ export namespace Prisma {
     agency_email?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -37899,6 +38293,7 @@ export namespace Prisma {
     tts_stop_name?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -37928,6 +38323,7 @@ export namespace Prisma {
     tts_stop_name?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -37950,6 +38346,7 @@ export namespace Prisma {
     tts_stop_name?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38004,6 +38401,7 @@ export namespace Prisma {
     network_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38032,6 +38430,7 @@ export namespace Prisma {
     network_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38053,6 +38452,7 @@ export namespace Prisma {
     network_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38148,6 +38548,7 @@ export namespace Prisma {
     bikes_allowed?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38172,6 +38573,7 @@ export namespace Prisma {
     bikes_allowed?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38190,6 +38592,7 @@ export namespace Prisma {
     bikes_allowed?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38238,6 +38641,7 @@ export namespace Prisma {
     timepoint?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38268,6 +38672,7 @@ export namespace Prisma {
     timepoint?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38288,6 +38693,7 @@ export namespace Prisma {
     timepoint?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38337,6 +38743,7 @@ export namespace Prisma {
     end_date?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38365,6 +38772,7 @@ export namespace Prisma {
     end_date?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38383,6 +38791,7 @@ export namespace Prisma {
     end_date?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38415,6 +38824,7 @@ export namespace Prisma {
     exception_type?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38430,6 +38840,7 @@ export namespace Prisma {
     exception_type?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38441,6 +38852,7 @@ export namespace Prisma {
     exception_type?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38465,6 +38877,7 @@ export namespace Prisma {
     transfer_duration?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38487,6 +38900,7 @@ export namespace Prisma {
     transfer_duration?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38502,6 +38916,7 @@ export namespace Prisma {
     transfer_duration?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38532,6 +38947,7 @@ export namespace Prisma {
     contains_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38545,6 +38961,7 @@ export namespace Prisma {
     contains_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38558,6 +38975,7 @@ export namespace Prisma {
     contains_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38577,6 +38995,7 @@ export namespace Prisma {
     shape_dist_traveled?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38597,6 +39016,7 @@ export namespace Prisma {
     shape_dist_traveled?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38610,6 +39030,7 @@ export namespace Prisma {
     shape_dist_traveled?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38635,6 +39056,7 @@ export namespace Prisma {
     min_transfer_time?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38652,6 +39074,7 @@ export namespace Prisma {
     min_transfer_time?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38664,6 +39087,7 @@ export namespace Prisma {
     min_transfer_time?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38671,6 +39095,12 @@ export namespace Prisma {
   export type TransferSumOrderByAggregateInput = {
     transfer_type?: SortOrder
     min_transfer_time?: SortOrder
+  }
+
+  export type FrequencyTrip_idStart_timeProject_idCompoundUniqueInput = {
+    trip_id: string
+    start_time: string
+    project_id: string
   }
 
   export type FrequencyCountOrderByAggregateInput = {
@@ -38682,6 +39112,7 @@ export namespace Prisma {
     exact_times?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38700,6 +39131,7 @@ export namespace Prisma {
     exact_times?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38713,6 +39145,7 @@ export namespace Prisma {
     exact_times?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38734,6 +39167,7 @@ export namespace Prisma {
     level_name?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38749,6 +39183,7 @@ export namespace Prisma {
     level_name?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38760,6 +39195,7 @@ export namespace Prisma {
     level_name?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38790,6 +39226,7 @@ export namespace Prisma {
     level_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38821,6 +39258,7 @@ export namespace Prisma {
     level_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38842,6 +39280,7 @@ export namespace Prisma {
     level_id?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38869,6 +39308,7 @@ export namespace Prisma {
     feed_contact_url?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38886,6 +39326,7 @@ export namespace Prisma {
     feed_contact_url?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -38903,6 +39344,7 @@ export namespace Prisma {
     feed_contact_url?: SortOrder
     project_id?: SortOrder
     created_by?: SortOrder
+    updated_by?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
   }
@@ -42187,6 +42629,7 @@ export namespace Prisma {
     agency_fare_url?: string | null
     agency_email?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     routes?: RouteCreateNestedManyWithoutAgencyInput
@@ -42204,6 +42647,7 @@ export namespace Prisma {
     agency_fare_url?: string | null
     agency_email?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     routes?: RouteUncheckedCreateNestedManyWithoutAgencyInput
@@ -42235,6 +42679,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeCreateNestedManyWithoutStopInput
@@ -42265,6 +42710,7 @@ export namespace Prisma {
     level_id?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -42301,6 +42747,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     agency?: AgencyCreateNestedOneWithoutRoutesInput
@@ -42325,6 +42772,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
@@ -42353,6 +42801,7 @@ export namespace Prisma {
     wheelchair_accessible?: number | null
     bikes_allowed?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     route: RouteCreateNestedOneWithoutTripsInput
@@ -42373,6 +42822,7 @@ export namespace Prisma {
     wheelchair_accessible?: number | null
     bikes_allowed?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutTripInput
@@ -42401,6 +42851,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     timepoint?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trip: TripCreateNestedOneWithoutStopTimesInput
@@ -42422,6 +42873,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     timepoint?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42449,6 +42901,7 @@ export namespace Prisma {
     start_date: string
     end_date: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripCreateNestedManyWithoutCalendarInput
@@ -42468,6 +42921,7 @@ export namespace Prisma {
     start_date: string
     end_date: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutCalendarInput
@@ -42489,6 +42943,7 @@ export namespace Prisma {
     date: string
     exception_type: number
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     calendar: CalendarCreateNestedOneWithoutExceptionsInput
@@ -42500,6 +42955,7 @@ export namespace Prisma {
     date: string
     exception_type: number
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42523,6 +42979,7 @@ export namespace Prisma {
     transfers?: number | null
     transfer_duration?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     agency?: AgencyCreateNestedOneWithoutFareAttributesInput
@@ -42539,6 +42996,7 @@ export namespace Prisma {
     agency_id?: string | null
     transfer_duration?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutFare_attributeInput
@@ -42560,6 +43018,7 @@ export namespace Prisma {
     destination_id?: string | null
     contains_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fare_attribute: FareAttributeCreateNestedOneWithoutFareRulesInput
@@ -42574,6 +43033,7 @@ export namespace Prisma {
     destination_id?: string | null
     contains_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42596,6 +43056,7 @@ export namespace Prisma {
     shape_pt_lon: number
     shape_dist_traveled?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42608,6 +43069,7 @@ export namespace Prisma {
     shape_pt_lon: number
     shape_dist_traveled?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42627,6 +43089,7 @@ export namespace Prisma {
     transfer_type?: number
     min_transfer_time?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fromStop: StopCreateNestedOneWithoutTransfersInput
@@ -42640,6 +43103,7 @@ export namespace Prisma {
     transfer_type?: number
     min_transfer_time?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42662,6 +43126,7 @@ export namespace Prisma {
     headway_secs: number
     exact_times?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42674,6 +43139,7 @@ export namespace Prisma {
     headway_secs: number
     exact_times?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42694,6 +43160,7 @@ export namespace Prisma {
     level_index: number
     level_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stops?: StopCreateNestedManyWithoutLevelInput
@@ -42706,6 +43173,7 @@ export namespace Prisma {
     level_index: number
     level_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stops?: StopUncheckedCreateNestedManyWithoutLevelInput
@@ -42735,6 +43203,7 @@ export namespace Prisma {
     signposted_as?: string | null
     reversed_signposted_as?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fromStop: StopCreateNestedOneWithoutPathwaysInput
@@ -42758,6 +43227,7 @@ export namespace Prisma {
     reversed_signposted_as?: string | null
     level_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42784,6 +43254,7 @@ export namespace Prisma {
     feed_contact_email?: string | null
     feed_contact_url?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42800,6 +43271,7 @@ export namespace Prisma {
     feed_contact_email?: string | null
     feed_contact_url?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -42958,6 +43430,7 @@ export namespace Prisma {
     agency_email?: StringNullableFilter<"Agency"> | string | null
     project_id?: StringFilter<"Agency"> | string
     created_by?: StringNullableFilter<"Agency"> | string | null
+    updated_by?: StringNullableFilter<"Agency"> | string | null
     created_at?: DateTimeFilter<"Agency"> | Date | string
     updated_at?: DateTimeFilter<"Agency"> | Date | string
   }
@@ -42999,6 +43472,7 @@ export namespace Prisma {
     tts_stop_name?: StringNullableFilter<"Stop"> | string | null
     project_id?: StringFilter<"Stop"> | string
     created_by?: StringNullableFilter<"Stop"> | string | null
+    updated_by?: StringNullableFilter<"Stop"> | string | null
     created_at?: DateTimeFilter<"Stop"> | Date | string
     updated_at?: DateTimeFilter<"Stop"> | Date | string
   }
@@ -43039,6 +43513,7 @@ export namespace Prisma {
     network_id?: StringNullableFilter<"Route"> | string | null
     project_id?: StringFilter<"Route"> | string
     created_by?: StringNullableFilter<"Route"> | string | null
+    updated_by?: StringNullableFilter<"Route"> | string | null
     created_at?: DateTimeFilter<"Route"> | Date | string
     updated_at?: DateTimeFilter<"Route"> | Date | string
   }
@@ -43076,6 +43551,7 @@ export namespace Prisma {
     bikes_allowed?: IntNullableFilter<"Trip"> | number | null
     project_id?: StringFilter<"Trip"> | string
     created_by?: StringNullableFilter<"Trip"> | string | null
+    updated_by?: StringNullableFilter<"Trip"> | string | null
     created_at?: DateTimeFilter<"Trip"> | Date | string
     updated_at?: DateTimeFilter<"Trip"> | Date | string
   }
@@ -43115,6 +43591,7 @@ export namespace Prisma {
     timepoint?: IntNullableFilter<"StopTime"> | number | null
     project_id?: StringFilter<"StopTime"> | string
     created_by?: StringNullableFilter<"StopTime"> | string | null
+    updated_by?: StringNullableFilter<"StopTime"> | string | null
     created_at?: DateTimeFilter<"StopTime"> | Date | string
     updated_at?: DateTimeFilter<"StopTime"> | Date | string
   }
@@ -43152,6 +43629,7 @@ export namespace Prisma {
     end_date?: StringFilter<"Calendar"> | string
     project_id?: StringFilter<"Calendar"> | string
     created_by?: StringNullableFilter<"Calendar"> | string | null
+    updated_by?: StringNullableFilter<"Calendar"> | string | null
     created_at?: DateTimeFilter<"Calendar"> | Date | string
     updated_at?: DateTimeFilter<"Calendar"> | Date | string
   }
@@ -43182,6 +43660,7 @@ export namespace Prisma {
     exception_type?: IntFilter<"CalendarDate"> | number
     project_id?: StringFilter<"CalendarDate"> | string
     created_by?: StringNullableFilter<"CalendarDate"> | string | null
+    updated_by?: StringNullableFilter<"CalendarDate"> | string | null
     created_at?: DateTimeFilter<"CalendarDate"> | Date | string
     updated_at?: DateTimeFilter<"CalendarDate"> | Date | string
   }
@@ -43216,6 +43695,7 @@ export namespace Prisma {
     transfer_duration?: IntNullableFilter<"FareAttribute"> | number | null
     project_id?: StringFilter<"FareAttribute"> | string
     created_by?: StringNullableFilter<"FareAttribute"> | string | null
+    updated_by?: StringNullableFilter<"FareAttribute"> | string | null
     created_at?: DateTimeFilter<"FareAttribute"> | Date | string
     updated_at?: DateTimeFilter<"FareAttribute"> | Date | string
   }
@@ -43248,6 +43728,7 @@ export namespace Prisma {
     contains_id?: StringNullableFilter<"FareRule"> | string | null
     project_id?: StringFilter<"FareRule"> | string
     created_by?: StringNullableFilter<"FareRule"> | string | null
+    updated_by?: StringNullableFilter<"FareRule"> | string | null
     created_at?: DateTimeFilter<"FareRule"> | Date | string
     updated_at?: DateTimeFilter<"FareRule"> | Date | string
   }
@@ -43280,6 +43761,7 @@ export namespace Prisma {
     shape_dist_traveled?: FloatNullableFilter<"Shape"> | number | null
     project_id?: StringFilter<"Shape"> | string
     created_by?: StringNullableFilter<"Shape"> | string | null
+    updated_by?: StringNullableFilter<"Shape"> | string | null
     created_at?: DateTimeFilter<"Shape"> | Date | string
     updated_at?: DateTimeFilter<"Shape"> | Date | string
   }
@@ -43311,6 +43793,7 @@ export namespace Prisma {
     min_transfer_time?: IntNullableFilter<"Transfer"> | number | null
     project_id?: StringFilter<"Transfer"> | string
     created_by?: StringNullableFilter<"Transfer"> | string | null
+    updated_by?: StringNullableFilter<"Transfer"> | string | null
     created_at?: DateTimeFilter<"Transfer"> | Date | string
     updated_at?: DateTimeFilter<"Transfer"> | Date | string
   }
@@ -43343,6 +43826,7 @@ export namespace Prisma {
     exact_times?: IntNullableFilter<"Frequency"> | number | null
     project_id?: StringFilter<"Frequency"> | string
     created_by?: StringNullableFilter<"Frequency"> | string | null
+    updated_by?: StringNullableFilter<"Frequency"> | string | null
     created_at?: DateTimeFilter<"Frequency"> | Date | string
     updated_at?: DateTimeFilter<"Frequency"> | Date | string
   }
@@ -43373,6 +43857,7 @@ export namespace Prisma {
     level_name?: StringNullableFilter<"Level"> | string | null
     project_id?: StringFilter<"Level"> | string
     created_by?: StringNullableFilter<"Level"> | string | null
+    updated_by?: StringNullableFilter<"Level"> | string | null
     created_at?: DateTimeFilter<"Level"> | Date | string
     updated_at?: DateTimeFilter<"Level"> | Date | string
   }
@@ -43413,6 +43898,7 @@ export namespace Prisma {
     level_id?: StringNullableFilter<"Pathway"> | string | null
     project_id?: StringFilter<"Pathway"> | string
     created_by?: StringNullableFilter<"Pathway"> | string | null
+    updated_by?: StringNullableFilter<"Pathway"> | string | null
     created_at?: DateTimeFilter<"Pathway"> | Date | string
     updated_at?: DateTimeFilter<"Pathway"> | Date | string
   }
@@ -43449,6 +43935,7 @@ export namespace Prisma {
     feed_contact_url?: StringNullableFilter<"FeedInfo"> | string | null
     project_id?: StringFilter<"FeedInfo"> | string
     created_by?: StringNullableFilter<"FeedInfo"> | string | null
+    updated_by?: StringNullableFilter<"FeedInfo"> | string | null
     created_at?: DateTimeFilter<"FeedInfo"> | Date | string
     updated_at?: DateTimeFilter<"FeedInfo"> | Date | string
   }
@@ -44189,6 +44676,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutRoutesInput
@@ -44213,6 +44701,7 @@ export namespace Prisma {
     network_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
@@ -44239,6 +44728,7 @@ export namespace Prisma {
     transfers?: number | null
     transfer_duration?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFareAttributesInput
@@ -44255,6 +44745,7 @@ export namespace Prisma {
     transfer_duration?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutFare_attributeInput
@@ -44439,6 +44930,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     timepoint?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopTimesInput
@@ -44460,6 +44952,7 @@ export namespace Prisma {
     timepoint?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -44479,6 +44972,7 @@ export namespace Prisma {
     transfer_type?: number
     min_transfer_time?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutTransfersInput
@@ -44492,6 +44986,7 @@ export namespace Prisma {
     min_transfer_time?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -44511,6 +45006,7 @@ export namespace Prisma {
     transfer_type?: number
     min_transfer_time?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutTransfersInput
@@ -44524,6 +45020,7 @@ export namespace Prisma {
     min_transfer_time?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -44551,6 +45048,7 @@ export namespace Prisma {
     signposted_as?: string | null
     reversed_signposted_as?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutPathwaysInput
@@ -44574,6 +45072,7 @@ export namespace Prisma {
     level_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -44601,6 +45100,7 @@ export namespace Prisma {
     signposted_as?: string | null
     reversed_signposted_as?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutPathwaysInput
@@ -44624,6 +45124,7 @@ export namespace Prisma {
     level_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -44653,6 +45154,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -44684,6 +45186,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -44714,6 +45217,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -44744,6 +45248,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -44771,6 +45276,7 @@ export namespace Prisma {
     level_index: number
     level_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutLevelsInput
@@ -44784,6 +45290,7 @@ export namespace Prisma {
     level_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     pathways?: PathwayUncheckedCreateNestedManyWithoutLevelInput
@@ -44995,6 +45502,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -45026,6 +45534,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -45069,6 +45578,7 @@ export namespace Prisma {
     level_index?: FloatFieldUpdateOperationsInput | number
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutLevelsNestedInput
@@ -45082,6 +45592,7 @@ export namespace Prisma {
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     pathways?: PathwayUncheckedUpdateManyWithoutLevelNestedInput
@@ -45173,6 +45684,7 @@ export namespace Prisma {
     agency_fare_url?: string | null
     agency_email?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutAgenciesInput
@@ -45191,6 +45703,7 @@ export namespace Prisma {
     agency_email?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fareAttributes?: FareAttributeUncheckedCreateNestedManyWithoutAgencyInput
@@ -45212,6 +45725,7 @@ export namespace Prisma {
     wheelchair_accessible?: number | null
     bikes_allowed?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutTripsInput
@@ -45232,6 +45746,7 @@ export namespace Prisma {
     bikes_allowed?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutTripInput
@@ -45253,6 +45768,7 @@ export namespace Prisma {
     destination_id?: string | null
     contains_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFareRulesInput
@@ -45267,6 +45783,7 @@ export namespace Prisma {
     contains_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -45398,6 +45915,7 @@ export namespace Prisma {
     agency_fare_url?: NullableStringFieldUpdateOperationsInput | string | null
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutAgenciesNestedInput
@@ -45416,6 +45934,7 @@ export namespace Prisma {
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fareAttributes?: FareAttributeUncheckedUpdateManyWithoutAgencyNestedInput
@@ -45543,6 +46062,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutRoutesInput
@@ -45568,6 +46088,7 @@ export namespace Prisma {
     network_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
@@ -45594,6 +46115,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -45625,6 +46147,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -45731,6 +46254,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
@@ -45756,6 +46280,7 @@ export namespace Prisma {
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
@@ -45788,6 +46313,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -45819,6 +46345,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -45903,6 +46430,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutRoutesInput
@@ -45928,6 +46456,7 @@ export namespace Prisma {
     network_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     fareRules?: FareRuleUncheckedCreateNestedManyWithoutRouteInput
@@ -45952,6 +46481,7 @@ export namespace Prisma {
     start_date: string
     end_date: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutCalendarsInput
@@ -45972,6 +46502,7 @@ export namespace Prisma {
     end_date: string
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     exceptions?: CalendarDateUncheckedCreateNestedManyWithoutCalendarInput
@@ -45995,6 +46526,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     timepoint?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopTimesInput
@@ -46016,6 +46548,7 @@ export namespace Prisma {
     timepoint?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -46121,6 +46654,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
@@ -46146,6 +46680,7 @@ export namespace Prisma {
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fareRules?: FareRuleUncheckedUpdateManyWithoutRouteNestedInput
@@ -46176,6 +46711,7 @@ export namespace Prisma {
     start_date?: StringFieldUpdateOperationsInput | string
     end_date?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutCalendarsNestedInput
@@ -46196,6 +46732,7 @@ export namespace Prisma {
     end_date?: StringFieldUpdateOperationsInput | string
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     exceptions?: CalendarDateUncheckedUpdateManyWithoutCalendarNestedInput
@@ -46287,6 +46824,7 @@ export namespace Prisma {
     wheelchair_accessible?: number | null
     bikes_allowed?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutTripsInput
@@ -46308,6 +46846,7 @@ export namespace Prisma {
     bikes_allowed?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -46332,6 +46871,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -46363,6 +46903,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     transfers?: TransferUncheckedCreateNestedManyWithoutFromStopInput
@@ -46465,6 +47006,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutTripsNestedInput
@@ -46486,6 +47028,7 @@ export namespace Prisma {
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -46516,6 +47059,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -46547,6 +47091,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     transfers?: TransferUncheckedUpdateManyWithoutFromStopNestedInput
@@ -46627,6 +47172,7 @@ export namespace Prisma {
     wheelchair_accessible?: number | null
     bikes_allowed?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutTripsInput
@@ -46647,6 +47193,7 @@ export namespace Prisma {
     bikes_allowed?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutTripInput
@@ -46667,6 +47214,7 @@ export namespace Prisma {
     date: string
     exception_type: number
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutCalendarDatesInput
@@ -46678,6 +47226,7 @@ export namespace Prisma {
     exception_type: number
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -46861,6 +47410,7 @@ export namespace Prisma {
     start_date: string
     end_date: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutCalendarsInput
@@ -46881,6 +47431,7 @@ export namespace Prisma {
     end_date: string
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutCalendarInput
@@ -46980,6 +47531,7 @@ export namespace Prisma {
     start_date?: StringFieldUpdateOperationsInput | string
     end_date?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutCalendarsNestedInput
@@ -47000,6 +47552,7 @@ export namespace Prisma {
     end_date?: StringFieldUpdateOperationsInput | string
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutCalendarNestedInput
@@ -47075,6 +47628,7 @@ export namespace Prisma {
     agency_fare_url?: string | null
     agency_email?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutAgenciesInput
@@ -47093,6 +47647,7 @@ export namespace Prisma {
     agency_email?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     routes?: RouteUncheckedCreateNestedManyWithoutAgencyInput
@@ -47109,6 +47664,7 @@ export namespace Prisma {
     destination_id?: string | null
     contains_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFareRulesInput
@@ -47123,6 +47679,7 @@ export namespace Prisma {
     contains_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -47224,6 +47781,7 @@ export namespace Prisma {
     agency_fare_url?: NullableStringFieldUpdateOperationsInput | string | null
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutAgenciesNestedInput
@@ -47242,6 +47800,7 @@ export namespace Prisma {
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     routes?: RouteUncheckedUpdateManyWithoutAgencyNestedInput
@@ -47331,6 +47890,7 @@ export namespace Prisma {
     transfers?: number | null
     transfer_duration?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutFareAttributesInput
@@ -47348,6 +47908,7 @@ export namespace Prisma {
     transfer_duration?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -47372,6 +47933,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutRoutesInput
@@ -47397,6 +47959,7 @@ export namespace Prisma {
     network_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     trips?: TripUncheckedCreateNestedManyWithoutRouteInput
@@ -47493,6 +48056,7 @@ export namespace Prisma {
     transfers?: NullableIntFieldUpdateOperationsInput | number | null
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFareAttributesNestedInput
@@ -47510,6 +48074,7 @@ export namespace Prisma {
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -47540,6 +48105,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
@@ -47565,6 +48131,7 @@ export namespace Prisma {
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
@@ -47769,6 +48336,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -47800,6 +48368,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -47830,6 +48399,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -47861,6 +48431,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -47967,6 +48538,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -47998,6 +48570,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -48034,6 +48607,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -48065,6 +48639,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -48273,6 +48848,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -48303,6 +48879,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -48337,6 +48914,7 @@ export namespace Prisma {
     signposted_as?: string | null
     reversed_signposted_as?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutPathwaysInput
@@ -48360,6 +48938,7 @@ export namespace Prisma {
     reversed_signposted_as?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -48545,6 +49124,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -48576,6 +49156,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -48606,6 +49187,7 @@ export namespace Prisma {
     platform_code?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutStopsInput
@@ -48637,6 +49219,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stopTimes?: StopTimeUncheckedCreateNestedManyWithoutStopInput
@@ -48658,6 +49241,7 @@ export namespace Prisma {
     level_index: number
     level_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     project: UserProjectCreateNestedOneWithoutLevelsInput
@@ -48671,6 +49255,7 @@ export namespace Prisma {
     level_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
     stops?: StopUncheckedCreateNestedManyWithoutLevelInput
@@ -48772,6 +49357,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -48803,6 +49389,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -48839,6 +49426,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -48870,6 +49458,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -48897,6 +49486,7 @@ export namespace Prisma {
     level_index?: FloatFieldUpdateOperationsInput | number
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutLevelsNestedInput
@@ -48910,6 +49500,7 @@ export namespace Prisma {
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stops?: StopUncheckedUpdateManyWithoutLevelNestedInput
@@ -49299,6 +49890,7 @@ export namespace Prisma {
     agency_fare_url?: string | null
     agency_email?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49320,6 +49912,7 @@ export namespace Prisma {
     level_id?: string | null
     tts_stop_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49340,6 +49933,7 @@ export namespace Prisma {
     continuous_drop_off?: number | null
     network_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49357,6 +49951,7 @@ export namespace Prisma {
     wheelchair_accessible?: number | null
     bikes_allowed?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49376,6 +49971,7 @@ export namespace Prisma {
     shape_dist_traveled?: number | null
     timepoint?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49393,6 +49989,7 @@ export namespace Prisma {
     start_date: string
     end_date: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49403,6 +50000,7 @@ export namespace Prisma {
     date: string
     exception_type: number
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49417,6 +50015,7 @@ export namespace Prisma {
     agency_id?: string | null
     transfer_duration?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49429,6 +50028,7 @@ export namespace Prisma {
     destination_id?: string | null
     contains_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49441,6 +50041,7 @@ export namespace Prisma {
     shape_pt_lon: number
     shape_dist_traveled?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49452,6 +50053,7 @@ export namespace Prisma {
     transfer_type?: number
     min_transfer_time?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49464,6 +50066,7 @@ export namespace Prisma {
     headway_secs: number
     exact_times?: number | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49474,6 +50077,7 @@ export namespace Prisma {
     level_index: number
     level_name?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49494,6 +50098,7 @@ export namespace Prisma {
     reversed_signposted_as?: string | null
     level_id?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49510,6 +50115,7 @@ export namespace Prisma {
     feed_contact_email?: string | null
     feed_contact_url?: string | null
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -49598,6 +50204,7 @@ export namespace Prisma {
     agency_fare_url?: NullableStringFieldUpdateOperationsInput | string | null
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     routes?: RouteUpdateManyWithoutAgencyNestedInput
@@ -49615,6 +50222,7 @@ export namespace Prisma {
     agency_fare_url?: NullableStringFieldUpdateOperationsInput | string | null
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     routes?: RouteUncheckedUpdateManyWithoutAgencyNestedInput
@@ -49632,6 +50240,7 @@ export namespace Prisma {
     agency_fare_url?: NullableStringFieldUpdateOperationsInput | string | null
     agency_email?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49651,6 +50260,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUpdateManyWithoutStopNestedInput
@@ -49681,6 +50291,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -49709,6 +50320,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49728,6 +50340,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     agency?: AgencyUpdateOneWithoutRoutesNestedInput
@@ -49752,6 +50365,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
@@ -49775,6 +50389,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49790,6 +50405,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     route?: RouteUpdateOneRequiredWithoutTripsNestedInput
@@ -49810,6 +50426,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutTripNestedInput
@@ -49828,6 +50445,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49845,6 +50463,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trip?: TripUpdateOneRequiredWithoutStopTimesNestedInput
@@ -49866,6 +50485,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49885,6 +50505,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49902,6 +50523,7 @@ export namespace Prisma {
     start_date?: StringFieldUpdateOperationsInput | string
     end_date?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUpdateManyWithoutCalendarNestedInput
@@ -49921,6 +50543,7 @@ export namespace Prisma {
     start_date?: StringFieldUpdateOperationsInput | string
     end_date?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutCalendarNestedInput
@@ -49940,6 +50563,7 @@ export namespace Prisma {
     start_date?: StringFieldUpdateOperationsInput | string
     end_date?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49949,6 +50573,7 @@ export namespace Prisma {
     date?: StringFieldUpdateOperationsInput | string
     exception_type?: IntFieldUpdateOperationsInput | number
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     calendar?: CalendarUpdateOneRequiredWithoutExceptionsNestedInput
@@ -49960,6 +50585,7 @@ export namespace Prisma {
     date?: StringFieldUpdateOperationsInput | string
     exception_type?: IntFieldUpdateOperationsInput | number
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49970,6 +50596,7 @@ export namespace Prisma {
     date?: StringFieldUpdateOperationsInput | string
     exception_type?: IntFieldUpdateOperationsInput | number
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -49983,6 +50610,7 @@ export namespace Prisma {
     transfers?: NullableIntFieldUpdateOperationsInput | number | null
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     agency?: AgencyUpdateOneWithoutFareAttributesNestedInput
@@ -49999,6 +50627,7 @@ export namespace Prisma {
     agency_id?: NullableStringFieldUpdateOperationsInput | string | null
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fareRules?: FareRuleUncheckedUpdateManyWithoutFare_attributeNestedInput
@@ -50014,6 +50643,7 @@ export namespace Prisma {
     agency_id?: NullableStringFieldUpdateOperationsInput | string | null
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50024,6 +50654,7 @@ export namespace Prisma {
     destination_id?: NullableStringFieldUpdateOperationsInput | string | null
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fare_attribute?: FareAttributeUpdateOneRequiredWithoutFareRulesNestedInput
@@ -50038,6 +50669,7 @@ export namespace Prisma {
     destination_id?: NullableStringFieldUpdateOperationsInput | string | null
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50050,6 +50682,7 @@ export namespace Prisma {
     destination_id?: NullableStringFieldUpdateOperationsInput | string | null
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50062,6 +50695,7 @@ export namespace Prisma {
     shape_pt_lon?: FloatFieldUpdateOperationsInput | number
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50074,6 +50708,7 @@ export namespace Prisma {
     shape_pt_lon?: FloatFieldUpdateOperationsInput | number
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50086,6 +50721,7 @@ export namespace Prisma {
     shape_pt_lon?: FloatFieldUpdateOperationsInput | number
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50095,6 +50731,7 @@ export namespace Prisma {
     transfer_type?: IntFieldUpdateOperationsInput | number
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fromStop?: StopUpdateOneRequiredWithoutTransfersNestedInput
@@ -50108,6 +50745,7 @@ export namespace Prisma {
     transfer_type?: IntFieldUpdateOperationsInput | number
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50119,6 +50757,7 @@ export namespace Prisma {
     transfer_type?: IntFieldUpdateOperationsInput | number
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50131,6 +50770,7 @@ export namespace Prisma {
     headway_secs?: IntFieldUpdateOperationsInput | number
     exact_times?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50143,6 +50783,7 @@ export namespace Prisma {
     headway_secs?: IntFieldUpdateOperationsInput | number
     exact_times?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50155,6 +50796,7 @@ export namespace Prisma {
     headway_secs?: IntFieldUpdateOperationsInput | number
     exact_times?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50165,6 +50807,7 @@ export namespace Prisma {
     level_index?: FloatFieldUpdateOperationsInput | number
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stops?: StopUpdateManyWithoutLevelNestedInput
@@ -50177,6 +50820,7 @@ export namespace Prisma {
     level_index?: FloatFieldUpdateOperationsInput | number
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stops?: StopUncheckedUpdateManyWithoutLevelNestedInput
@@ -50189,6 +50833,7 @@ export namespace Prisma {
     level_index?: FloatFieldUpdateOperationsInput | number
     level_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50206,6 +50851,7 @@ export namespace Prisma {
     signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fromStop?: StopUpdateOneRequiredWithoutPathwaysNestedInput
@@ -50229,6 +50875,7 @@ export namespace Prisma {
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50249,6 +50896,7 @@ export namespace Prisma {
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50265,6 +50913,7 @@ export namespace Prisma {
     feed_contact_email?: NullableStringFieldUpdateOperationsInput | string | null
     feed_contact_url?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50281,6 +50930,7 @@ export namespace Prisma {
     feed_contact_email?: NullableStringFieldUpdateOperationsInput | string | null
     feed_contact_url?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50297,6 +50947,7 @@ export namespace Prisma {
     feed_contact_email?: NullableStringFieldUpdateOperationsInput | string | null
     feed_contact_url?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50347,6 +50998,7 @@ export namespace Prisma {
     network_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50361,6 +51013,7 @@ export namespace Prisma {
     transfer_duration?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50380,6 +51033,7 @@ export namespace Prisma {
     continuous_drop_off?: NullableIntFieldUpdateOperationsInput | number | null
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutRoutesNestedInput
@@ -50404,6 +51058,7 @@ export namespace Prisma {
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     trips?: TripUncheckedUpdateManyWithoutRouteNestedInput
@@ -50427,6 +51082,7 @@ export namespace Prisma {
     network_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50440,6 +51096,7 @@ export namespace Prisma {
     transfers?: NullableIntFieldUpdateOperationsInput | number | null
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFareAttributesNestedInput
@@ -50456,6 +51113,7 @@ export namespace Prisma {
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     fareRules?: FareRuleUncheckedUpdateManyWithoutFare_attributeNestedInput
@@ -50471,6 +51129,7 @@ export namespace Prisma {
     transfer_duration?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50490,6 +51149,7 @@ export namespace Prisma {
     timepoint?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50501,6 +51161,7 @@ export namespace Prisma {
     min_transfer_time?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50512,6 +51173,7 @@ export namespace Prisma {
     min_transfer_time?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50532,6 +51194,7 @@ export namespace Prisma {
     level_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50552,6 +51215,7 @@ export namespace Prisma {
     level_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50573,6 +51237,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50600,6 +51265,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopTimesNestedInput
@@ -50621,6 +51287,7 @@ export namespace Prisma {
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50640,6 +51307,7 @@ export namespace Prisma {
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50649,6 +51317,7 @@ export namespace Prisma {
     transfer_type?: IntFieldUpdateOperationsInput | number
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutTransfersNestedInput
@@ -50662,6 +51331,7 @@ export namespace Prisma {
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50673,6 +51343,7 @@ export namespace Prisma {
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50682,6 +51353,7 @@ export namespace Prisma {
     transfer_type?: IntFieldUpdateOperationsInput | number
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutTransfersNestedInput
@@ -50695,6 +51367,7 @@ export namespace Prisma {
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50706,6 +51379,7 @@ export namespace Prisma {
     min_transfer_time?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50723,6 +51397,7 @@ export namespace Prisma {
     signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutPathwaysNestedInput
@@ -50746,6 +51421,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50766,6 +51442,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50783,6 +51460,7 @@ export namespace Prisma {
     signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutPathwaysNestedInput
@@ -50806,6 +51484,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50826,6 +51505,7 @@ export namespace Prisma {
     level_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50845,6 +51525,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -50875,6 +51556,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -50903,6 +51585,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -50950,6 +51633,7 @@ export namespace Prisma {
     bikes_allowed?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50962,6 +51646,7 @@ export namespace Prisma {
     contains_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -50987,6 +51672,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutTripsNestedInput
@@ -51007,6 +51693,7 @@ export namespace Prisma {
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutTripNestedInput
@@ -51025,6 +51712,7 @@ export namespace Prisma {
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51035,6 +51723,7 @@ export namespace Prisma {
     destination_id?: NullableStringFieldUpdateOperationsInput | string | null
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFareRulesNestedInput
@@ -51049,6 +51738,7 @@ export namespace Prisma {
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51061,6 +51751,7 @@ export namespace Prisma {
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51110,6 +51801,7 @@ export namespace Prisma {
     timepoint?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -51127,6 +51819,7 @@ export namespace Prisma {
     shape_dist_traveled?: NullableFloatFieldUpdateOperationsInput | number | null
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopTimesNestedInput
@@ -51148,6 +51841,7 @@ export namespace Prisma {
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51167,6 +51861,7 @@ export namespace Prisma {
     timepoint?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51184,6 +51879,7 @@ export namespace Prisma {
     bikes_allowed?: number | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -51194,6 +51890,7 @@ export namespace Prisma {
     exception_type: number
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -51209,6 +51906,7 @@ export namespace Prisma {
     wheelchair_accessible?: NullableIntFieldUpdateOperationsInput | number | null
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutTripsNestedInput
@@ -51229,6 +51927,7 @@ export namespace Prisma {
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutTripNestedInput
@@ -51247,6 +51946,7 @@ export namespace Prisma {
     bikes_allowed?: NullableIntFieldUpdateOperationsInput | number | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51256,6 +51956,7 @@ export namespace Prisma {
     date?: StringFieldUpdateOperationsInput | string
     exception_type?: IntFieldUpdateOperationsInput | number
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutCalendarDatesNestedInput
@@ -51267,6 +51968,7 @@ export namespace Prisma {
     exception_type?: IntFieldUpdateOperationsInput | number
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51277,6 +51979,7 @@ export namespace Prisma {
     exception_type?: IntFieldUpdateOperationsInput | number
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51289,6 +51992,7 @@ export namespace Prisma {
     contains_id?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -51299,6 +52003,7 @@ export namespace Prisma {
     destination_id?: NullableStringFieldUpdateOperationsInput | string | null
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutFareRulesNestedInput
@@ -51313,6 +52018,7 @@ export namespace Prisma {
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51325,6 +52031,7 @@ export namespace Prisma {
     contains_id?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51346,6 +52053,7 @@ export namespace Prisma {
     tts_stop_name?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -51366,6 +52074,7 @@ export namespace Prisma {
     reversed_signposted_as?: string | null
     project_id: string
     created_by?: string | null
+    updated_by?: string | null
     created_at?: Date | string
     updated_at?: Date | string
   }
@@ -51385,6 +52094,7 @@ export namespace Prisma {
     platform_code?: NullableStringFieldUpdateOperationsInput | string | null
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutStopsNestedInput
@@ -51415,6 +52125,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     stopTimes?: StopTimeUncheckedUpdateManyWithoutStopNestedInput
@@ -51443,6 +52154,7 @@ export namespace Prisma {
     tts_stop_name?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51460,6 +52172,7 @@ export namespace Prisma {
     signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     project?: UserProjectUpdateOneRequiredWithoutPathwaysNestedInput
@@ -51483,6 +52196,7 @@ export namespace Prisma {
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -51503,6 +52217,7 @@ export namespace Prisma {
     reversed_signposted_as?: NullableStringFieldUpdateOperationsInput | string | null
     project_id?: StringFieldUpdateOperationsInput | string
     created_by?: NullableStringFieldUpdateOperationsInput | string | null
+    updated_by?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -2,6 +2,8 @@ import { prisma } from "../../utils/prisma.js"
 
 /**
  * Get detailed route information including stops for each direction
+ *
+ * Flow: Route → findMany Trip (distinct direction_id) → findFirst Trip (representative) → findMany StopTime → include Stop
  */
 export async function getRouteDetails(projectId, routeId) {
     // Find the route
@@ -30,7 +32,7 @@ export async function getRouteDetails(projectId, routeId) {
 
     const availableDirections = availableDirectionsResult.map(d => d.direction_id)
 
-    // Fetch stops for each direction
+    // Get stops from trips (Route → Trip → StopTimes → Stop)
     const directionStops = {}
 
     for (const direction of availableDirections) {
@@ -44,7 +46,7 @@ export async function getRouteDetails(projectId, routeId) {
         })
 
         if (representativeTrip) {
-            // Get all stops for this trip
+            // Get all stops for this trip via stop_times
             const stops = await prisma.stopTime.findMany({
                 where: { trip_id: representativeTrip.trip_id },
                 orderBy: { stop_sequence: "asc" },

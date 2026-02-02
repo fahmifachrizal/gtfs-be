@@ -215,6 +215,7 @@ exports.Prisma.AgencyScalarFieldEnum = {
   agency_email: 'agency_email',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -237,6 +238,7 @@ exports.Prisma.StopScalarFieldEnum = {
   tts_stop_name: 'tts_stop_name',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -258,6 +260,7 @@ exports.Prisma.RouteScalarFieldEnum = {
   network_id: 'network_id',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -287,6 +290,7 @@ exports.Prisma.TripScalarFieldEnum = {
   bikes_allowed: 'bikes_allowed',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -307,6 +311,7 @@ exports.Prisma.StopTimeScalarFieldEnum = {
   timepoint: 'timepoint',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -325,6 +330,7 @@ exports.Prisma.CalendarScalarFieldEnum = {
   end_date: 'end_date',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -336,6 +342,7 @@ exports.Prisma.CalendarDateScalarFieldEnum = {
   exception_type: 'exception_type',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -351,6 +358,7 @@ exports.Prisma.FareAttributeScalarFieldEnum = {
   transfer_duration: 'transfer_duration',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -364,6 +372,7 @@ exports.Prisma.FareRuleScalarFieldEnum = {
   contains_id: 'contains_id',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -377,6 +386,7 @@ exports.Prisma.ShapeScalarFieldEnum = {
   shape_dist_traveled: 'shape_dist_traveled',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -389,6 +399,7 @@ exports.Prisma.TransferScalarFieldEnum = {
   min_transfer_time: 'min_transfer_time',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -402,6 +413,7 @@ exports.Prisma.FrequencyScalarFieldEnum = {
   exact_times: 'exact_times',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -413,6 +425,7 @@ exports.Prisma.LevelScalarFieldEnum = {
   level_name: 'level_name',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -434,6 +447,7 @@ exports.Prisma.PathwayScalarFieldEnum = {
   level_id: 'level_id',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };
@@ -451,6 +465,7 @@ exports.Prisma.FeedInfoScalarFieldEnum = {
   feed_contact_url: 'feed_contact_url',
   project_id: 'project_id',
   created_by: 'created_by',
+  updated_by: 'updated_by',
   created_at: 'created_at',
   updated_at: 'updated_at'
 };

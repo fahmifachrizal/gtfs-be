@@ -11,6 +11,12 @@ import {
 import {
     uploadGTFS,
     resetGTFS,
+    // Agencies
+    getAgencies,
+    getAgency,
+    createAgency,
+    updateAgency,
+    deleteAgency,
     // Stops
     getStops,
     getStopById,
@@ -33,6 +39,12 @@ import {
     addStopToRoute,
     removeStopFromRoute,
     reorderRouteStops,
+    // Shapes
+    getShapes,
+    getShape,
+    createOrUpdateShape,
+    deleteShape,
+    generateShapeFromRoute,
     // Trips
     getTrips,
     getTripById,
@@ -42,12 +54,31 @@ import {
     getCalendar,
     createCalendar,
     updateCalendar,
+    // Stop Times
+    getAllStopTimes,
+    getStopTimes,
+    createStopTimes,
+    autoGenerateStopTimes,
+    updateStopTime,
+    deleteStopTimes,
+    // Frequencies
+    getFrequencies,
+    getFrequenciesByTrip,
+    createFrequency,
+    updateFrequency,
+    deleteFrequency,
+    generateDefaultFrequencies,
+    // Transfers
+    getTransfers,
+    getTransfersByStop,
+    createTransfer,
+    updateTransfer,
+    deleteTransfer,
+    generateTransfersForNearbyStops,
     // Fares
     getFares,
     createFare,
-    updateFare,
-    // Agencies
-    getAgencies
+    updateFare
 } from '../controllers/gtfsController.js';
 import { requireAuth } from '../middleware/auth.js';
 import multer from 'multer';
@@ -146,5 +177,40 @@ router.put('/:id/fares/:fareId', mapProjectId, updateFare);
 
 // ============ AGENCIES ============
 router.get('/:id/agencies', mapProjectId, getAgencies);
+router.get('/:id/agencies/:agencyId', mapProjectId, getAgency);
+router.post('/:id/agencies', mapProjectId, createAgency);
+router.put('/:id/agencies/:agencyId', mapProjectId, updateAgency);
+router.delete('/:id/agencies/:agencyId', mapProjectId, deleteAgency);
+
+// ============ SHAPES ============
+router.get('/:id/shapes', mapProjectId, getShapes);
+router.get('/:id/shapes/:shapeId', mapProjectId, getShape);
+router.post('/:id/shapes', mapProjectId, createOrUpdateShape);
+router.delete('/:id/shapes/:shapeId', mapProjectId, deleteShape);
+router.post('/:id/routes/:routeId/generate-shape', mapProjectId, generateShapeFromRoute);
+
+// ============ STOP TIMES ============
+router.get('/:id/stop-times', mapProjectId, getAllStopTimes);
+router.get('/:id/trips/:tripId/stop-times', mapProjectId, getStopTimes);
+router.post('/:id/trips/:tripId/stop-times', mapProjectId, createStopTimes);
+router.post('/:id/trips/:tripId/stop-times/auto-generate', mapProjectId, autoGenerateStopTimes);
+router.put('/:id/trips/:tripId/stop-times/:stopSequence', mapProjectId, updateStopTime);
+router.delete('/:id/trips/:tripId/stop-times', mapProjectId, deleteStopTimes);
+
+// ============ FREQUENCIES ============
+router.get('/:id/frequencies', mapProjectId, getFrequencies);
+router.get('/:id/trips/:tripId/frequencies', mapProjectId, getFrequenciesByTrip);
+router.post('/:id/frequencies', mapProjectId, createFrequency);
+router.put('/:id/frequencies/:frequencyId', mapProjectId, updateFrequency);
+router.delete('/:id/frequencies/:frequencyId', mapProjectId, deleteFrequency);
+router.post('/:id/trips/:tripId/frequencies/generate', mapProjectId, generateDefaultFrequencies);
+
+// ============ TRANSFERS ============
+router.get('/:id/transfers', mapProjectId, getTransfers);
+router.get('/:id/stops/:stopId/transfers', mapProjectId, getTransfersByStop);
+router.post('/:id/transfers', mapProjectId, createTransfer);
+router.put('/:id/transfers/:transferId', mapProjectId, updateTransfer);
+router.delete('/:id/transfers/:transferId', mapProjectId, deleteTransfer);
+router.post('/:id/transfers/generate', mapProjectId, generateTransfersForNearbyStops);
 
 export default router;

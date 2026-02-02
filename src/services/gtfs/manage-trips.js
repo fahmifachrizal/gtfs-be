@@ -1,6 +1,6 @@
 import { prisma } from "../../utils/prisma.js"
 
-export async function createTrip(projectId, data) {
+export async function createTrip(projectId, data, userId = null) {
     const {
         trip_id,
         route_id,
@@ -33,12 +33,13 @@ export async function createTrip(projectId, data) {
             shape_id,
             wheelchair_accessible: wheelchair_accessible !== undefined ? parseInt(wheelchair_accessible) : 0,
             bikes_allowed: bikes_allowed !== undefined ? parseInt(bikes_allowed) : 0,
-            project_id: projectId
+            project_id: projectId,
+            created_by: userId
         }
     })
 }
 
-export async function updateTrip(projectId, tripId, data) {
+export async function updateTrip(projectId, tripId, data, userId = null) {
     const existing = await prisma.trip.findFirst({
         where: {
             trip_id: tripId,
