@@ -38,7 +38,7 @@ export {
 } from './manage-shapes.js';
 
 // Trips - use existing files
-export { getTrips, getTripById, getRoutePathAndStops } from './get-trips.js';
+export { getTrips, getTripById, getRoutePathAndStops, getRouteGroups } from './get-trips.js';
 export { createTrip, updateTrip, deleteTrip } from './manage-trips.js';
 
 // Calendar - use existing files

@@ -142,3 +142,45 @@ export async function getRoutePathAndStops(projectId, routeId, directionId = 0) 
             }))
     };
 }
+
+export async function getRouteGroups(projectId) {
+    // 1. Get all unique route and direction combinations
+    // Based on your DB, this identifies distinct paths like 10D-Dir0 and 10D-Dir1
+    const uniqueTrips = await prisma.trip.findMany({
+        where: { project_id: projectId },
+        distinct: ['route_id', 'direction_id'],
+        select: {
+            route_id: true,
+            direction_id: true,
+        }
+    });
+
+    // 2. Fetch the actual Route metadata for descriptions/colors
+    const routeDetails = await prisma.route.findMany({
+        where: {
+            project_id: projectId,
+            route_id: { in: uniqueTrips.map(t => t.route_id) }
+        },
+        select: {
+            route_id: true,
+            route_short_name: true,
+            route_long_name: true,
+            route_color: true,
+            route_desc: true,
+        }
+    });
+
+    // 3. Combine into the dropdown format
+    return uniqueTrips.map(trip => {
+        const detail = routeDetails.find(r => r.route_id === trip.route_id);
+        return {
+            route_id: trip.route_id,
+            direction_id: trip.direction_id,
+            route_short_name: detail?.route_short_name || trip.route_id,
+            route_long_name: detail?.route_long_name || "",
+            route_color: detail?.route_color || "000000",
+            // Helper for your frontend selection
+            display_name: `${detail?.route_short_name || trip.route_id} (${trip.direction_id === 0 ? 'Outbound' : 'Inbound'})`
+        };
+    });
+}
