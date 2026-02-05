@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
     "db:reset": "npx prisma migrate reset --force --schema=./prisma/schema.prisma && npx prisma db seed && npx prisma generate",
     "db:migrate": "npx prisma migrate dev",
     "db:push": "npx prisma db push"
