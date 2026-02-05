@@ -8,6 +8,7 @@ import routeRoutes from './routes/routeRoutes.js';
 import projectRoutes from './routes/projectRoutes.js';
 import gtfsRoutes from './routes/gtfsRoutes.js';
 import publicRoutes from './routes/publicRoutes.js';
+import healthRoutes from './routes/healthRoutes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 const app = express();
@@ -29,6 +30,7 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/route', routeRoutes);
 app.use('/api/gtfs', gtfsRoutes);
 app.use('/api/public', publicRoutes);
+app.use('/api/health', healthRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
